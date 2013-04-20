@@ -1,0 +1,12 @@
+algo = java -jar JCell.jar in-3.txt out.txt
+execdir = .
+deterministic = 0
+run_obj = runtime
+overall_obj = mean
+cutoff_time = 5000
+cutoff_length = 200000
+tunerTimeout = 300
+paramfile = parametrosSP.txt
+outdir = salida
+instance_file = in-3.txt
+test_instance_file = in-3.txt
