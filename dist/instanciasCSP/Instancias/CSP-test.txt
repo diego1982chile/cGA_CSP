@@ -1,8 +1,6 @@
-F:\JCell\dist\instanciasCSP\ATP32.txt
-F:\JCell\dist\instanciasCSP\ATP33.txt
-F:\JCell\dist\instanciasCSP\ATP34.txt
-F:\JCell\dist\instanciasCSP\ATP35.txt
-F:\JCell\dist\instanciasCSP\ATP36.txt
-F:\JCell\dist\instanciasCSP\ATP37.txt
-F:\JCell\dist\instanciasCSP\ATP38.txt
-F:\JCell\dist\instanciasCSP\ATP39.txt
+1432L F:\JCell\dist\instanciasCSP\A2s.txt 3535
+2314L	F:\JCell\dist\instanciasCSP\ATP31.txt 823976
+3214L	F:\JCell\dist\instanciasCSP\CHL2s.txt 3279
+3412L	F:\JCell\dist\instanciasCSP\CU2.txt 26100
+3421L	F:\JCell\dist\instanciasCSP\Hchl6s.txt 61002
+2134L	F:\JCell\dist\instanciasCSP\STS4s.txt 9770

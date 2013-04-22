@@ -48,10 +48,7 @@ public class JCell implements GenerationListener
     
     // Código agregado para obtener curvas de convergencia   
     private static File output= new File("output.csv");        
-    DecimalFormat df = new DecimalFormat("0.000000000000000000");    
-    
-    // Codigo agregado para caliracion de parametros paramILS
-    // private static File input= new File("in.txt");            
+    DecimalFormat df = new DecimalFormat("0.000000000000000000");               
     
     public static void main (String args[]) throws Exception
     {
@@ -69,9 +66,10 @@ public class JCell implements GenerationListener
            System.exit(-1);
         }                 
     	
-		Random r = new Random(3816L); // seed for the random number generator
-//                Random r = new Random(); // seed for the random number generator
-		
+//		Random r = new Random(3816L); // seed for the random number generator
+                Random r = new Random(); // seed for the random number generator
+                System.out.println(r.toString());
+                
                 long inicio, fin; // starting and ending time
 	
 		JCell sel = new JCell();

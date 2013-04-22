@@ -59,7 +59,7 @@ public class JCellIslands implements GenerationListener {
 
         JCellIslands sel = new JCellIslands();
         
-        int idExperimento=3; 
+        int idExperimento=0; 
         
 //        Identificador del experimento: 
 //        0: AG-Generacional
@@ -119,23 +119,7 @@ public class JCellIslands implements GenerationListener {
         cutOffTime= Integer.parseInt(args[1]); // Capturar cutoff time
         cutOffLength= Integer.parseInt(args[2]); // Capturar cutoff length (Ej: Limite de evaluaciones)
         seed= new Random(Long.parseLong(args[3])); // Capturar semilla
-        params= args[4].toString(); // Capturar nomre de archivo con parametros                        
-        
-        // Capturar parametros comunes a todos los AG
-        try
-        {
-            br = new BufferedReader(new FileReader(params));                                         
-            st = new StringTokenizer(br.readLine());            
-            
-            popSize= (new Integer(st.nextToken())).intValue();            
-            mutac= (new Double(st.nextToken())).doubleValue();                        
-            cross= (new Double(st.nextToken())).doubleValue();                                                                                                   
-            System.out.println("Pop size="+popSize+" mutac="+mutac+" cross="+cross);                    
-        }
-        catch (Exception e)
-        {
-            System.err.println("ERROR: "+e);
-        }
+        params= args[4].toString(); // Capturar nomre de archivo con parametros                                                
                 
         switch(idExperimento)
         {
@@ -145,45 +129,62 @@ public class JCellIslands implements GenerationListener {
                     ea = new GenGA(seed);                                        
                 else                
                     ea = new SSGA(seed);                                  
-                for (int i = 0; i < args.length; i++) 
-                {                    
-                    if (args[i].compareTo("-po") == 0) popSize = Integer.parseInt(args[++i]);
-                    if (args[i].compareTo("-el") == 0) evaluationsLimit = Integer.parseInt(args[++i]);
-                    if (args[i].compareTo("-m") == 0) mutac = Double.parseDouble(args[++i]);
-                    if (args[i].compareTo("-c") == 0) cross = Double.parseDouble(args[++i]);
-                    if (args[i].compareTo("-f") == 0) instanceName= args[++i].toString();
+                try
+                {// Capturar parametros AG
+                    br = new BufferedReader(new FileReader(params));                                         
+                    st = new StringTokenizer(br.readLine());            
+
+                    popSize= (new Integer(st.nextToken())).intValue();            
+                    mutac= (new Double(st.nextToken())).doubleValue();                        
+                    cross= (new Double(st.nextToken())).doubleValue();                                                                                                   
+                    System.out.println("Pop size="+popSize+" mutac="+mutac+" cross="+cross);                    
+                }
+                catch (Exception e)
+                {
+                    System.err.println("ERROR: "+e);
                 }                
                 pop = new Population(popSize);                                     
                 break;
             case 2:
-                ea = new DistributedGA(seed);       
-             
-                for (int i = 0; i < args.length; i++) 
-                {                    
-                    if (args[i].compareTo("-i") == 0) islands = Integer.parseInt(args[++i]);                    
-                    if (args[i].compareTo("-ti") == 0) islandSize = Integer.parseInt(args[++i]);
-                    if (args[i].compareTo("-mf") == 0) migrationFreq = Integer.parseInt(args[++i]);                    
-                    if (args[i].compareTo("-el") == 0) evaluationsLimit = Integer.parseInt(args[++i]);
-                    if (args[i].compareTo("-m") == 0) mutac = Double.parseDouble(args[++i]);
-                    if (args[i].compareTo("-c") == 0) cross = Double.parseDouble(args[++i]);
-                    if (args[i].compareTo("-f") == 0) instanceName= args[++i].toString();
-                }                
+                ea = new DistributedGA(seed);                    
+                try
+                {// Capturar parametros AG Distribuido
+                    br = new BufferedReader(new FileReader(params));                                         
+                    st = new StringTokenizer(br.readLine());            
+
+                    islands= (new Integer(st.nextToken())).intValue();            
+                    islandSize= (new Double(st.nextToken())).intValue();                        
+                    migrationFreq= (new Double(st.nextToken())).intValue();                                            
+                    cross= (new Double(st.nextToken())).doubleValue();                    
+                    mutac= (new Double(st.nextToken())).doubleValue();                                                                                                   
+                    System.out.println("Pop size="+popSize+" mutac="+mutac+" cross="+cross);                    
+                }
+                catch (Exception e)
+                {
+                    System.err.println("ERROR: "+e);
+                }                                                                
                 pop = new PopIsland(islands, islandSize);   
                 break;
             case 3:
                 ea = new CellularGA(seed);                
                                
-                for (int i = 0; i < args.length; i++) 
-                {                    
-                    if (args[i].compareTo("-x") == 0) dX = Integer.parseInt(args[++i]);                    
-                    if (args[i].compareTo("-y") == 0) dY = Integer.parseInt(args[++i]);                                        
-                    if (args[i].compareTo("-nh") == 0) neigh = args[++i].toString();                    
-                    if (args[i].compareTo("-up") == 0) updatePolicy = args[++i].toString();     
-                    if (args[i].compareTo("-el") == 0) evaluationsLimit = Integer.parseInt(args[++i]);                    
-                    if (args[i].compareTo("-m") == 0) mutac = Double.parseDouble(args[++i]);
-                    if (args[i].compareTo("-c") == 0) cross = Double.parseDouble(args[++i]);
-                    if (args[i].compareTo("-f") == 0) instanceName= args[++i].toString();
-                }                
+                try
+                {// Capturar parametros AG Distribuido
+                    br = new BufferedReader(new FileReader(params));                                         
+                    st = new StringTokenizer(br.readLine());            
+
+                    dX= (new Integer(st.nextToken())).intValue();            
+                    dY= (new Double(st.nextToken())).intValue();                        
+                    neigh= (new Double(st.nextToken())).toString();                                            
+                    updatePolicy= (new Double(st.nextToken())).toString();                                            
+                    cross= (new Double(st.nextToken())).doubleValue();                    
+                    mutac= (new Double(st.nextToken())).doubleValue();                                                                                                   
+                    System.out.println("Pop size="+popSize+" mutac="+mutac+" cross="+cross);                    
+                }
+                catch (Exception e)
+                {
+                    System.err.println("ERROR: "+e);
+                }                               
                 pop = new PopGrid(dX, dY);                
                 neighborhood = new Linear5(dX,dY);                                       
 			
@@ -273,14 +274,30 @@ public class JCellIslands implements GenerationListener {
         start = (new Date()).getTime();
         // generation cycles        
         ea.experiment();
-        end = (new Date()).getTime();
+        end = (new Date()).getTime();        
+        
+          Double best = (Double) ((Statistic) ea.getParam(CellularGA.PARAM_STATISTIC)).getStat(0);
+          int evals = ((Problem) (ea.getParam(CellularGA.PARAM_PROBLEM))).getNEvals();
+//        // Writes: best found solution, number of generations, elapsed time (mseconds)
+//        System.out.println("Solution: Best  Generations  Evaluations  Time (ms)  Problem");
+//        System.out.println(best + " " + (Integer) ea.getParam(CellularGA.PARAM_GENERATION_NUMBER) + " " + evals + " " + (end - start) + " "
+//                + ((Problem) ea.getParam(CellularGA.PARAM_PROBLEM)));
+        
+        if (verbose)
+        {
+            System.out.println("Solution: Best  Generations  Evaluations  Time (ms)  Problem");
+            /////////////////// Codigo agregado /////////////////
+            if(prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CSP"))                                
+            {
+//                int pos = ((Integer)((Statistic)ea.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MAX_FIT_POS)).intValue();
+//                BinaryIndividual bestInd = (BinaryIndividual) ((Population) ea.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);                                    
+//                prob.exportarIndividuo(bestInd,1);
+                
+                System.out.println("TIMEOUT,"+(end-start)+"," +evals+","+best+","+seed);                
 
-        Double best = (Double) ((Statistic) ea.getParam(CellularGA.PARAM_STATISTIC)).getStat(0);
-        int evals = ((Problem) (ea.getParam(CellularGA.PARAM_PROBLEM))).getNEvals();
-        // Writes: best found solution, number of generations, elapsed time (mseconds)
-        System.out.println("Solution: Best  Generations  Evaluations  Time (ms)  Problem");
-        System.out.println(best + " " + (Integer) ea.getParam(CellularGA.PARAM_GENERATION_NUMBER) + " " + evals + " " + (end - start) + " "
-                + ((Problem) ea.getParam(CellularGA.PARAM_PROBLEM)));
+            }
+            /////////////////////////////////////////////////////
+        }        
     }
 
     private static void writeLine(String line) {
