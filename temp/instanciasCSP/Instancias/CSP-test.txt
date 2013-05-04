@@ -1,0 +1,6 @@
+1432L F:\JCell\dist\instanciasCSP\A2s.txt 3535
+2314L	F:\JCell\dist\instanciasCSP\ATP31.txt 823976
+3214L	F:\JCell\dist\instanciasCSP\CHL2s.txt 3279
+3412L	F:\JCell\dist\instanciasCSP\CU2.txt 26100
+3421L	F:\JCell\dist\instanciasCSP\Hchl6s.txt 61002
+2134L	F:\JCell\dist\instanciasCSP\STS4s.txt 9770

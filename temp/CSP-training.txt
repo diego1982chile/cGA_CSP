@@ -1,0 +1,8 @@
+F:\JCell\dist\instanciasCSP\A1s.txt
+F:\JCell\dist\instanciasCSP\ATP30.txt
+F:\JCell\dist\instanciasCSP\CHL1s.txt
+F:\JCell\dist\instanciasCSP\CU1.txt
+F:\JCell\dist\instanciasCSP\Hchl3s.txt
+F:\JCell\dist\instanciasCSP\STS2s.txt
+
+
