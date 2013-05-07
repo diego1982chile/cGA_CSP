@@ -1,7 +1,7 @@
 algo = ruby csp_wrapper.rb
 execdir = .
 deterministic = 0
-run_obj = runtime
+run_obj = approx
 overall_obj = mean
 cutoff_time = 240
 cutoff_length = 150000

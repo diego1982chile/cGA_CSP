@@ -50,8 +50,8 @@ File.open(filename){|file|
 		if line =~ /Steps_Mean = (\d+)/
 			runlength = $1.to_i
 		end
-		if line =~ /BestSolution_Mean = (\d+)/
-			best_sol = $1.to_i
+		if line =~ /BestSolution_Mean = (.*)$/
+			best_sol = $1.to_f
 		end
 	end
 }

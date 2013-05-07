@@ -77,7 +77,7 @@ public class JCellIslands implements GenerationListener {
         String instanceName="";     
         float cutOffTime=60;
         int cutOffLength=100000;
-        long seed=3816L;                
+        long seed=3816L;                 
         float target=0;                            
         
         // Input parametros AG
