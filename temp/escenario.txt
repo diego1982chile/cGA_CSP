@@ -1,0 +1,12 @@
+algo = ruby csp_wrapper.rb
+execdir = .
+deterministic = 0
+run_obj = approx
+overall_obj = mean
+cutoff_time = 60
+cutoff_length = 150000
+tunerTimeout = 3600
+paramfile = params.txt
+outdir = salida
+instance_file = CSP-training.txt
+test_instance_file = CSP-test.txt
