@@ -51,11 +51,10 @@ File.open(filename){|file|
 			runlength = $1.to_i
 		end
 		if line =~ /BestSolution_Mean = (.*)$/
-			# best_sol = $1.to_f
-			qual= qual/($1.to_f)
+			best_sol = $1.to_f			
+			qual=qual[1...qual.length-1].to_f/best_sol
 		end
 	end
 }
 File.delete(filename)
-# puts "Result for ParamILS: #{solved}, #{runtime}, #{runlength}, #{best_sol}, #{seed}"
 puts "Result for ParamILS: #{solved}, #{runtime}, #{runlength}, #{qual}, #{seed}"

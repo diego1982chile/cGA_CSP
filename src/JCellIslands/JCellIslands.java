@@ -96,7 +96,7 @@ public class JCellIslands implements GenerationListener {
         int dY=20; // Alto de grilla
         String neigh="";  //Tipo de vecindad
         String updatePolicy=""; // Política de actualiacion   
-        Neighborhood neighborhood = new Linear5(dX,dY); //              
+        Neighborhood neighborhood = new Linear5(dX,dY);              
         
         // Operadores geneticos
         String mutacOp="";
@@ -118,9 +118,9 @@ public class JCellIslands implements GenerationListener {
                 if (args[i].equals("-inst"))
                     instanceName= args[++i].toString(); // Capturar nombre del archivo con la instancia        
                 if (args[i].equals("-cutoff"))
-                    cutOffLength= Integer.parseInt(args[++i]); // Capturar cutoff time
+                    cutOffLength= Integer.parseInt(args[++i]); // Capturar cutoff length (Ej: Limite de evaluaciones)
                 if (args[i].equals("-timeout"))
-                    cutOffTime= Float.parseFloat(args[++i]); // Capturar cutoff length (Ej: Limite de evaluaciones)
+                    cutOffTime= Float.parseFloat(args[++i]); // Capturar cutoff time
                 if (args[i].equals("-target"))                
                     target=  Float.parseFloat(args[++i]); // Capturar target
                 if (args[i].equals("-seed"))
@@ -164,14 +164,14 @@ public class JCellIslands implements GenerationListener {
                 
                 if(paramils)
                 {
-                    // Capturar parametros del AG
+                    // Capturar parametros del AG Distribuido
                     for (int i = 0; i < args.length; ++i) {                    
                         if (args[i].equals("-isl"))
-                            islands= Integer.parseInt(args[++i]); // Capturar tamaño poblacion
+                            islands= Integer.parseInt(args[++i]); // Capturar numero de islas
                         if (args[i].equals("-islSize"))
-                            islandSize= Integer.parseInt(args[++i]); // Capturar probabilidad mutacion
+                            islandSize= Integer.parseInt(args[++i]); // Capturar tamaño de islas
                         if (args[i].equals("-migFreq"))                
-                            migrationFreq= Integer.parseInt(args[++i]); // Capturar probabilidad cruzamiento
+                            migrationFreq= Integer.parseInt(args[++i]); // Capturar frecuencia de migracion
                         if (args[i].equals("-pMutac"))
                             mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion
                         if (args[i].equals("-pCross"))                
@@ -185,16 +185,16 @@ public class JCellIslands implements GenerationListener {
                 
                 if(paramils)
                 {
-                    // Capturar parametros del AG
+                    // Capturar parametros del AG Celular
                     for (int i = 0; i < args.length; ++i) {                    
                         if (args[i].equals("-dx"))
-                            islands= Integer.parseInt(args[++i]); // Capturar tamaño poblacion
+                            islands= Integer.parseInt(args[++i]); // Capturar ancho de grilla
                         if (args[i].equals("-dy"))
-                            islandSize= Integer.parseInt(args[++i]); // Capturar probabilidad mutacion
+                            islandSize= Integer.parseInt(args[++i]); // Capturar alto de grilla
                         if (args[i].equals("-neigh"))                
-                            neigh= args[++i].toString(); // Capturar probabilidad cruzamiento
+                            neigh= args[++i].toString(); // Capturar tipo de vecindad
                         if (args[i].equals("-updPol"))
-                            mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion
+                            mutac= Double.parseDouble(args[++i]); // Capturar politica de actualizacion
                         if (args[i].equals("-pMutac"))
                             mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion                        
                         if (args[i].equals("-pCross"))                
@@ -222,11 +222,11 @@ public class JCellIslands implements GenerationListener {
                     else if (updatePolicy.contains("uc"))
                         cu = new UniformChoice(r,(PopGrid)pop);
                     else if (updatePolicy.contains("ss"))
-                        cu = new SpiralSweep((PopGrid)pop);			                        
-                    break;
+                        cu = new SpiralSweep((PopGrid)pop);			                                            
                 }                
+            break;
         }                                                                                 
-        System.out.println("Instance name="+instanceName);
+//        System.out.println("Instance name="+instanceName);
         //Problem prob = new MMDP();
 //        Problem prob = new MTTP();
         Problem prob = new CSP(instanceName);                
@@ -242,6 +242,7 @@ public class JCellIslands implements GenerationListener {
         ind.setNumberOfFuncts(prob.numberOfObjectives());
         ind.setRandomValues(r);        
 
+        // Generar poblacion inicial
         pop.setRandomPop(r, ind);        
 
 //        mutac = new Double(1.0); // probability of individual mutation
@@ -304,7 +305,7 @@ public class JCellIslands implements GenerationListener {
             if(paramils)
             {
                 System.out.println("SuccessfulRuns = 1");
-                System.out.println("CPUTime_Mean = "+(end-start));
+                System.out.println("CPUTime_Mean = "+(end-start)/1000);
                 System.out.println("Steps_Mean = "+evals);
                 System.out.println("BestSolution_Mean = "+best);                                           
             }
@@ -331,50 +332,6 @@ public class JCellIslands implements GenerationListener {
             System.out.println(line);
         }
     }
-
-//    @Override
-//    public void generation(EvolutionaryAlg ea) {
-//        //CellularGA cea = (CellularGA) ea;
-//        verbose = ((Boolean) ea.getParam(CellularGA.PARAM_VERBOSE)).booleanValue();
-//
-//        //writeLine("Generation: " + (Integer) ea.getParam(CellularGA.PARAM_GENERATION_NUMBER));
-//
-//        // Migration occurs here:
-//        int evals = ((Problem) (ea.getParam(CellularGA.PARAM_PROBLEM))).getNEvals();
-//
-//        PopIsland pop = (PopIsland) (ea.getParam(CellularGA.PARAM_POPULATION));
-//
-//        //if (evals >= ea.getParam(ea.PARAM_MIGRATION_FREQUENCY))
-//        Individual ind0, ind1;
-//        int j;
-//        int migrFreq = ((Integer) ea.getParam(EvolutionaryAlg.PARAM_MIGRATION_FREQUENCY)).intValue();
-//        if (((double) evals / migrFreq >= 1) && (evals % (migrFreq * islands) == 0)) {
-//            System.out.println("Evaluaciones: " + evals);
-//            for (int i = 0; i < islands; i++) {
-//                ind0 = pop.getIndividual(i, ((DistributedGA) ea).bestInds[i]);
-//                if (i == islands - 1) {
-//                    j = 0;
-//                } else {
-//                    j = i + 1;
-//                }
-//
-//                ind1 = pop.getIndividual(j, ((DistributedGA) ea).worstInds[j]);
-//                if (Target.isBetter(ind0, ind1)) {
-//                    pop.setIndividual(j, ((DistributedGA) ea).worstInds[j], ind0);
-//
-//                    if (Target.isBetter(ind0, pop.getIndividual(j, ((DistributedGA) ea).bestInds[j]))) {
-//                        ((DistributedGA) ea).bestInds[j] = ((DistributedGA) ea).worstInds[j];
-//                    }
-//
-//                    for (int k = 0; k < islandSize; k++) {
-//                        if (Target.isWorse(pop.getIndividual(j, k), pop.getIndividual(j, ((DistributedGA) ea).worstInds[j]))) {
-//                            ((DistributedGA) ea).worstInds[j] = k;
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
     
     @Override
     public void generation(EvolutionaryAlg ea)

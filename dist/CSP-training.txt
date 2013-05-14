@@ -1,8 +1,6 @@
-D:\diego\JCell\dist\instanciasCSP\A1s.txt 2950
-D:\diego\JCell\dist\instanciasCSP\ATP30.txt 140904
-D:\diego\JCell\dist\instanciasCSP\CHL1s.txt 13099
-D:\diego\JCell\dist\instanciasCSP\CU1.txt 12330
-D:\diego\JCell\dist\instanciasCSP\Hchl3s.txt 12215
-D:\diego\JCell\dist\instanciasCSP\STS2s.txt 4653
-
-
+C:\JCell\dist\instanciasCSP\A1s.txt 2950
+C:\JCell\dist\instanciasCSP\ATP30.txt 140904
+C:\JCell\dist\instanciasCSP\CHL1s.txt 13099
+C:\JCell\dist\instanciasCSP\CU1.txt 12330
+C:\JCell\dist\instanciasCSP\Hchl3s.txt 12215
+C:\JCell\dist\instanciasCSP\STS2s.txt 4653
