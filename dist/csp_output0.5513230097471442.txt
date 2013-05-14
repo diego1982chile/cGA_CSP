@@ -1,0 +1,6 @@
+Instance name=D:/diego/JCell/dist/instanciasCSP/CU1.txt
+longit crom=56
+SuccessfulRuns = 1
+CPUTime_Mean = 5289
+Steps_Mean = 150018
+BestSolution_Mean = 12200.0

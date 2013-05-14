@@ -1,0 +1,378 @@
+Call: /usr/bin/ruby ../scripts/param_ils_2_3_run.rb "-scenariofile" "escenario.txt" "-numRun" "0" "-validN" "100"
+
+
+seed: 1234
+algo: ruby csp_wrapper.rb
+tunerTimeout: 3600.0
+maxEvals: 100000000
+run_obj: approx
+overall_obj: mean
+instance_file: CSP-training.txt
+test_instance_file: CSP-test.txt
+N: 2000
+cutoff_time: 60.0
+cutoff_length: 150000
+R: 10
+pertubation_strength_basic: 
+pertubation_strength_scaling: false
+p_restart: 0.01
+Run 1
+Level 
+========================================================
+Starting ILS for level 1, i.e. a limit of N=2000, and cutoff time=60.0.
+Current CPU time = 0, this run goes until 3600.0 
+========================================================
+New Incumbent: 0, 100000000 [0, 0]. With state pCross=1.0, pMutac=1.0, popSize=30
+1/100000000, 60.00000000000001/3600.0
+ Same incumbent, new precision:
+New Incumbent: 60.00000000000001, 1.0 [1, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+2/100000000, 120.00000000000001/3600.0
+          -> Take improving step to random pCross=0.7 pMutac=0.4 popSize=800 (1.0 [based on 1 runs with cutoff 60.0])
+
+3/100000000, 180.00000000000003/3600.0
+          -> Take improving step to random pCross=0.6 pMutac=0.6 popSize=2000 (1.0 [based on 1 runs with cutoff 60.0])
+
+4/100000000, 240.00000000000003/3600.0
+          -> Take improving step to random pCross=0.9 pMutac=0.9 popSize=1600 (1.0 [based on 1 runs with cutoff 60.0])
+
+5/100000000, 300.00000000000006/3600.0
+          -> Take improving step to random pCross=0.9 pMutac=0.4 popSize=2800 (1.0 [based on 1 runs with cutoff 60.0])
+
+6/100000000, 360.00000000000006/3600.0
+          -> Take improving step to random pCross=1.0 pMutac=1.0 popSize=3600 (1.0 [based on 1 runs with cutoff 60.0])
+
+7/100000000, 420.00000000000006/3600.0
+          -> Take improving step to random pCross=1.0 pMutac=0.1 popSize=1200 (1.0 [based on 1 runs with cutoff 60.0])
+
+8/100000000, 480.00000000000006/3600.0
+          -> Take improving step to random pCross=0.8 pMutac=1.0 popSize=3200 (1.0 [based on 1 runs with cutoff 60.0])
+
+9/100000000, 540.0000000000001/3600.0
+          -> Take improving step to random pCross=0.6 pMutac=0.5 popSize=100 (1.0 [based on 1 runs with cutoff 60.0])
+
+10/100000000, 600.0000000000001/3600.0
+          -> Take improving step to random pCross=0.8 pMutac=0.7 popSize=1600 (1.0 [based on 1 runs with cutoff 60.0])
+
+11/100000000, 660.0000000000001/3600.0
+          -> Take improving step to random pCross=0.7 pMutac=1.0 popSize=2400 (1.0 [based on 1 runs with cutoff 60.0])
+
+   BLS in iteration 1, start with pCross=0.7 pMutac=1.0 popSize=2400 (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pMutac: 1.0->0.2"], evaluating ...
+12/100000000, 720.0000000000001/3600.0
+          -> Take improving step to neighbour pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 1 runs with cutoff 60.0]) with flip 1
+
+          
+============= Performing 1 bonus runs of state: pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 1 runs with cutoff 60.0]) ============ 
+
+State wants more detail (1+1) than incumbent (1), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 1 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 1 runs with cutoff 60.0])
+13/100000000, 780.0000000000001/3600.0
+ Same incumbent, new precision:
+New Incumbent: 780.0000000000001, 1.0 [2, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+14/100000000, 840.0000000000001/3600.0
+          -> After 1 bonus runs: pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 2 runs with cutoff 60.0])
+
+    Changing ["popSize: 2400->200"], evaluating ...
+15/100000000, 900.0000000000001/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pCross: 0.7->0.6"], evaluating ...
+16/100000000, 960.0000000000001/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pCross: 0.7->0.8"], evaluating ...
+17/100000000, 1020.0000000000001/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->2800"], evaluating ...
+18/100000000, 1080.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->50"], evaluating ...
+19/100000000, 1140.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pCross: 0.7->0.9"], evaluating ...
+20/100000000, 1200.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->100"], evaluating ...
+21/100000000, 1260.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->400"], evaluating ...
+22/100000000, 1320.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->4000"], evaluating ...
+23/100000000, 1380.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->2000"], evaluating ...
+24/100000000, 1440.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pMutac: 0.2->0.8"], evaluating ...
+25/100000000, 1500.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pMutac: 0.2->0.3"], evaluating ...
+26/100000000, 1560.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->3200"], evaluating ...
+27/100000000, 1620.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->1200"], evaluating ...
+28/100000000, 1680.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->3600"], evaluating ...
+29/100000000, 1740.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->30"], evaluating ...
+30/100000000, 1800.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pMutac: 0.2->0.5"], evaluating ...
+31/100000000, 1860.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pCross: 0.7->1.0"], evaluating ...
+32/100000000, 1920.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pMutac: 0.2->0.1"], evaluating ...
+33/100000000, 1980.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->1600"], evaluating ...
+34/100000000, 2040.0000000000002/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pMutac: 0.2->0.7"], evaluating ...
+35/100000000, 2100.0000000000005/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["popSize: 2400->800"], evaluating ...
+36/100000000, 2160.0000000000005/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pMutac: 0.2->0.6"], evaluating ...
+37/100000000, 2220.0000000000005/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pMutac: 0.2->0.4"], evaluating ...
+38/100000000, 2280.0000000000005/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+    Changing ["pMutac: 0.2->0.9"], evaluating ...
+39/100000000, 2340.0000000000005/3600.0
+        -> worse: (1.0 [based on 1 runs with cutoff 60.0])
+          
+============= Performing 25 bonus runs of state: pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 2 runs with cutoff 60.0]) ============ 
+
+State wants more detail (2+1) than incumbent (2), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 2 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 2 runs with cutoff 60.0])
+40/100000000, 2400.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 2400.0000000000005, 1.0 [3, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+41/100000000, 2460.0000000000005/3600.0
+State wants more detail (3+1) than incumbent (3), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 3 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 3 runs with cutoff 60.0])
+42/100000000, 2520.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 2520.0000000000005, 1.0 [4, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+43/100000000, 2580.0000000000005/3600.0
+State wants more detail (4+1) than incumbent (4), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 4 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 4 runs with cutoff 60.0])
+44/100000000, 2640.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 2640.0000000000005, 1.0 [5, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+45/100000000, 2700.0000000000005/3600.0
+State wants more detail (5+1) than incumbent (5), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 5 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 5 runs with cutoff 60.0])
+46/100000000, 2760.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 2760.0000000000005, 1.0 [6, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+47/100000000, 2820.0000000000005/3600.0
+State wants more detail (6+1) than incumbent (6), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 6 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 6 runs with cutoff 60.0])
+48/100000000, 2880.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 2880.0000000000005, 1.0 [7, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+49/100000000, 2940.0000000000005/3600.0
+State wants more detail (7+1) than incumbent (7), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 7 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 7 runs with cutoff 60.0])
+50/100000000, 3000.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 3000.0000000000005, 1.0 [8, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+51/100000000, 3060.0000000000005/3600.0
+State wants more detail (8+1) than incumbent (8), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 8 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 8 runs with cutoff 60.0])
+52/100000000, 3120.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 3120.0000000000005, 1.0 [9, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+53/100000000, 3180.0000000000005/3600.0
+State wants more detail (9+1) than incumbent (9), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 9 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 9 runs with cutoff 60.0])
+54/100000000, 3240.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 3240.0000000000005, 1.0 [10, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+55/100000000, 3300.0000000000005/3600.0
+State wants more detail (10+1) than incumbent (10), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 10 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 10 runs with cutoff 60.0])
+56/100000000, 3360.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 3360.0000000000005, 1.0 [11, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+57/100000000, 3420.0000000000005/3600.0
+State wants more detail (11+1) than incumbent (11), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 11 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 11 runs with cutoff 60.0])
+58/100000000, 3480.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 3480.0000000000005, 1.0 [12, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+59/100000000, 3540.0000000000005/3600.0
+State wants more detail (12+1) than incumbent (12), doing incumbent first:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 12 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 12 runs with cutoff 60.0])
+60/100000000, 3600.0000000000005/3600.0
+ Same incumbent, new precision:
+New Incumbent: 3600.0000000000005, 1.0 [13, 60.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+61/100000000, 3660.0000000000005/3600.0
+          -> After 25 bonus runs for LM: pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 13 runs with cutoff 60.0])
+
+   LM for iteration 1: pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 13 runs with cutoff 60.0])
+
+========== DETAILED RESULTS (iteration 1): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 1): pCross=1.0, pMutac=1.0, popSize=30
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0, based on 13 runs with cutoff 60.0
+==================================================================
+
+Comparing LM against incumbent:
+pCross=0.7 pMutac=0.2 popSize=2400 (1.0 [based on 13 runs with cutoff 60.0])
+pCross=1.0 pMutac=1.0 popSize=30 (1.0 [based on 13 runs with cutoff 60.0])
+LM better, change incumbent
+New Incumbent: 3660.0000000000005, 1.0 [13, 60.0]. With state pCross=0.7, pMutac=0.2, popSize=2400
+Final solution for depth 1 with limit N=2000, and cutoff time=60.0.
+New Incumbent: 3660.0000000000005, 1.0 [13, 60.0]. With state pCross=0.7, pMutac=0.2, popSize=2400
+
+==================================================================
+ParamILS is finished.
+==================================================================
+
+Final best parameter configuration found: pCross=0.7, pMutac=0.2, popSize=2400
+==================================================================
+Active parameters: pCross=0.7, pMutac=0.2, popSize=2400
+
+==================================================================
+Training quality of this final best found parameter configuration: 1.0, based on 13 runs with cutoff 60.0
+==================================================================
+
+
+==================================================================
+Computing validation result on independent data -- 100 runs with cutoff time 60.0...
+==================================================================
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CU2.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/STS4s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/Hchl6s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/CHL2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/A2s.txt: 1.0
+D:/diego/JCell/dist/instanciasCSP/ATP31.txt: 1.0
+Combined result: 1.0
+
+================================================================
+Final best parameter configuration: pCross=0.7, pMutac=0.2, popSize=2400
+==================================================================
+Active parameters: pCross=0.7, pMutac=0.2, popSize=2400
+
+================================================================
+Training quality of this final best found parameter configuration: 1.0, based on 13 runs with cutoff 60.0
+Test quality of this final best found parameter configuration: 1.0, based on 100 independent runs with cutoff 60.0
+==================================================================

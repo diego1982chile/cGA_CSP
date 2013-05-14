@@ -1,0 +1,1 @@
+A1s.txt 20 20 linear5 frs 10000 1.0 1.0
