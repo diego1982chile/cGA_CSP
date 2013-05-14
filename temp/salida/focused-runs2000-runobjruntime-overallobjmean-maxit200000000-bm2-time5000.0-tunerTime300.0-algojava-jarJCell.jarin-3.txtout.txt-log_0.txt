@@ -1,0 +1,25 @@
+Call: /usr/bin/ruby ../scripts/param_ils_2_3_run.rb "-numRun" "0" "-scenariofile" "escenario.txt" "-validN" "100"
+
+
+seed: 1234
+algo: java -jar JCell.jar in-3.txt out.txt
+tunerTimeout: 300.0
+maxEvals: 100000000
+run_obj: runtime
+overall_obj: mean
+instance_file: in-3.txt
+test_instance_file: in-3.txt
+N: 2000
+cutoff_time: 5000.0
+cutoff_length: 200000
+R: 10
+pertubation_strength_basic: 
+pertubation_strength_scaling: false
+p_restart: 0.01
+Run 1
+Level 
+========================================================
+Starting ILS for level 1, i.e. a limit of N=2000, and cutoff time=5000.0.
+Current CPU time = 0, this run goes until 300.0 
+========================================================
+New Incumbent: 0, 100000000 [0, 0]. With state c=0.9, g=20, m=0.1, po=30, pr=1
