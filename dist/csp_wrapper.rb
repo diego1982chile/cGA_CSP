@@ -52,7 +52,8 @@ File.open(filename){|file|
 		end
 		if line =~ /BestSolution_Mean = (.*)$/
 			best_sol = $1.to_f			
-			qual=qual[1...qual.length-1].to_f/best_sol
+			#qual=qual[1...qual.length-1].to_f/best_sol
+			qual=qual.gsub('[','').gsub(']','').to_f/best_sol
 		end
 	end
 }
