@@ -1,0 +1,6 @@
+Final best parameter configuration: pCross=0.7, pMutac=0.6, popSize=3600
+==================================================================
+Active parameters: pCross=0.7, pMutac=0.6, popSize=3600
+==================================================================
+Training quality of this final best found parameter configuration: 1.0109455749279512, based on 333 runs with cutoff 30.0
+Test quality of this final best found parameter configuration: 1.0051531964870684, based on 100 independent runs with cutoff 30.0

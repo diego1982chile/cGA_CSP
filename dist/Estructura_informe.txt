@@ -1,0 +1,47 @@
+Modelamiento problema
+
+	Representación
+		Cromosoma unico
+		Diversidad genética
+		
+	Función constructora
+			
+	Heurística colocación
+		Scheduling de piezas
+		Heuristica selección pérdida
+
+	Función de fitness
+		Maximizar área utilizada
+		¿Penalización?
+
+Calibración
+	Motivación
+		Por qué calibrar
+	Paramils
+		Características principales
+	Diseño de escenarios
+		Parámetros
+			Tamaño población
+		Cutoff time
+		Cutoff length
+		Instancias entrenamiento y test
+
+Experimento
+	Tablas OUTPUT	
+
+Diseño experimental
+	ANOVA
+	Tablas output
+
+Estado Arte
+
+New graph theoretical
+Branch and price
+Improved best first fit
+Simple heuristic 
+Arc flow 
+
+
+
+
+
