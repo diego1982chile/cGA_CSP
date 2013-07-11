@@ -1,0 +1,33 @@
+Call: /usr/bin/ruby ../scripts/param_ils_2_3_run.rb "-scenariofile" "escenarioGAss.txt" "-numRun" "0" "-validN" "100"
+
+
+seed: 1234
+algo: ruby csp_wrapper.rb
+tunerTimeout: 21600.0
+maxEvals: 100000000
+run_obj: qual
+overall_obj: mean
+instance_file: CSP-training.txt
+test_instance_file: CSP-test.txt
+N: 2000
+cutoff_time: 30.0
+cutoff_length: 150000
+R: 10
+pertubation_strength_basic: 
+pertubation_strength_scaling: false
+p_restart: 0.01
+Run 1
+Level 
+========================================================
+Starting ILS for level 1, i.e. a limit of N=2000, and cutoff time=30.0.
+Current CPU time = 0, this run goes until 21600.0 
+========================================================
+New Incumbent: 0, 100000000 [0, 0]. With state pCross=1.0, pMutac=1.0, popSize=30
+ Same incumbent, new precision:
+New Incumbent: 5.0, 1.0070904443894797 [1, 30.0]. With state pCross=1.0, pMutac=1.0, popSize=30
+2/100000000, 35.0/21600.0
+          -> Take improving step to random pCross=0.7 pMutac=0.4 popSize=800 (1.0070904443894797 [based on 1 runs with cutoff 30.0])
+
+3/100000000, 65.0/21600.0
+          -> Take improving step to random pCross=0.6 pMutac=0.6 popSize=2000 (1.0070904443894797 [based on 1 runs with cutoff 30.0])
+
