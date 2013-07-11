@@ -23,10 +23,11 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jcell.*;
+import org.apache.commons.lang3.ArrayUtils;
 import problems.Combinatorial.Resources.*;
 
 public class CSP extends Problem implements Utilities {
-
+    
     public static int longitCrom = 0;
     public static double maxFitness = Double.MAX_VALUE;
     
@@ -64,6 +65,7 @@ public class CSP extends Problem implements Utilities {
         readInst(filename);
     }
 
+    // REPRESENTACION SIMPLIFICADA
     public void readInst(String filename)
     {		        
         BufferedReader br = null;
@@ -86,11 +88,12 @@ public class CSP extends Problem implements Utilities {
             int num= (new Integer(st.nextToken())).intValue();  
             
             // Se fija el tamaño del arreglo de tipos de piezas (se duplica para incluir las piezas rotadas)
-            piezas= new Pieza[2*num+1];                        
+            piezas= new Pieza[num+1];                        
+            
             
             // Calcular tamaño del segmento del cromosoma destinado a obtener orden de las piezas
-            int alelosReservados= (int)(Math.floor(Math.log(2*num)/Math.log(2))+1);
-            bitSalto=(int)(Math.floor(Math.log(2*num)/Math.log(2)));
+            int alelosReservados= (int)(Math.floor(Math.log(num)/Math.log(2))+1);
+            bitSalto=(int)(Math.floor(Math.log(num)/Math.log(2)));
             
             int ancho;
             int alto;
@@ -107,7 +110,7 @@ public class CSP extends Problem implements Utilities {
                 // Insertar pieza
                 piezas[i-1]= new Pieza(id,ancho,alto,cantidad);                    
                 // Insertar pieza rotada
-                piezas[num+i-1]= new Pieza(id+num,alto,ancho,cantidad);                    
+//                piezas[num+i-1]= new Pieza(id+num,alto,ancho,cantidad);                    
                 //Incremento id++ si quiero que sólo cada tipo pieza tenga id distinto
                 id++;
                 numPie = numPie + cantidad;
@@ -116,7 +119,7 @@ public class CSP extends Problem implements Utilities {
             //Establece la cantidad máxima de tipos de piezas distintos del problema
             id--;
             // (se duplica para incluir las piezas rotadas)
-            cantidadtipospiezas = 2*id;                        
+            cantidadtipospiezas = id;                        
             
             fenotipo=new ArrayList<>(cantidadtipospiezas);                                                        
             perdidaInterna=new HashMap<>();
@@ -147,6 +150,109 @@ public class CSP extends Problem implements Utilities {
             System.err.println("ERROR: "+e);
         }        
     }
+   
+//    public void readInst(String filename)
+//    {		        
+//        BufferedReader br = null;
+//        StringTokenizer st;                                
+//
+//        //Inicialización de variables globales
+//        numPie = 0;
+//        cantidadtipospiezas = 0;        
+//
+//        try
+//        {            
+//            br = new BufferedReader(new FileReader(filename)); 
+//            st = new StringTokenizer(br.readLine());
+//
+//            anchoPl= (new Integer(st.nextToken())).intValue();
+//            altoPl= (new Integer(st.nextToken())).intValue();                                       
+//            
+//            st = new StringTokenizer(br.readLine());            
+//            
+//            int num= (new Integer(st.nextToken())).intValue();  
+//                        
+//            //Se crea arreglo temporal para almacenar los tipos de piezas
+//            Pieza[] piezas_;                           
+//            piezas_ = new Pieza[num+1];
+//            
+//            int ancho;
+//            int alto;
+//            int cantidad;
+//            int id=1;                        
+//            
+//            for (int i = 0; i < num; i++) {                                 
+//                // Lee ancho, alto y restricciones para cada tipo de pieza
+//                st = new StringTokenizer(br.readLine());                                            
+//                ancho= (new Integer(st.nextToken())).intValue();            
+//                alto= (new Integer(st.nextToken())).intValue();                         
+//                cantidad= (new Integer(st.nextToken())).intValue();                                                         
+//                // Insertar pieza
+//                piezas_[i]= new Pieza(id,ancho,alto,cantidad);                    
+//                // Insertar pieza rotada
+//                // piezas[num+i-1]= new Pieza(id+num,alto,ancho,cantidad);                    
+//                //Incremento id++ si quiero que sólo cada tipo pieza tenga id distinto
+//                id++;
+//                numPie = numPie + cantidad;
+//            }//End for                                                                                                                                                                           
+//            
+//            // Se fija el tamaño del arreglo de tipos de piezas (se duplica para incluir las piezas rotadas)
+//            piezas= new Pieza[numPie+1];               
+//            int cont=0;                        
+//                                   
+//            for (int i=0;i<piezas_.length-1;++i)  
+//            {                
+//                for(int j=0;j<piezas_[i].getCantidad();++j)
+//                {
+//                    piezas[cont]=new Pieza(cont,piezas_[i].getAncho(),piezas_[i].getAlto(),1);
+//                    ++cont;
+//                }                               
+//            }                                  
+//                 
+////            for (int k=0;k<piezas.length-1;++k)                  
+////                piezas[k].mostrar();             
+//            
+////            Utilidades utilidades= new Utilidades();
+////            
+////            utilidades.mostrar(piezas);
+//            
+//            // Calcular tamaño del segmento del cromosoma destinado a obtener orden de las piezas
+//            int alelosReservados= (int)(Math.floor(Math.log(numPie)/Math.log(2))+1);
+//            bitSalto=(int)(Math.floor(Math.log(numPie)/Math.log(2)));            
+//            
+//            //Establece la cantidad máxima de tipos de piezas distintos del problema
+//            id--;
+//            // (se duplica para incluir las piezas rotadas)
+//            cantidadtipospiezas = numPie;                        
+//            
+//            fenotipo=new ArrayList<>(numPie);                                                        
+//            perdidaInterna=new HashMap<>();
+//            layout2=new HashMap<>();                    
+//            
+////            fenotipo= new PiezaFenotipo[cantidadtipospiezas];                                            
+//            
+//            if (numPie == 0) 
+//                System.out.println("ERROR: No se registraron piezas en el archivo de entrada");                                    
+//                        
+//            longitCrom = alelosReservados + numPie; //Define el largo del cromosoma
+//            variables = longitCrom;            
+//            System.out.println("longit crom="+longitCrom);                        
+//            maxFitness = (float) (altoPl * anchoPl);
+////            fitness_inicial = (float) (AltoPl * AnchoPl); //Obtiene el fitness_inicial
+//            // Establece valor en variables utilizadas en función evaluación
+//            peso_func_obj = (float) 0.85; // Uso en función evaluación - Factor de la pérdida
+//            peso_uni = (float) 0.15; // Uso en función evaluación - Factor unificación de pérdidas
+//            peso_perdida = (float) 1.0; //0.6;	/*Factor de la componente perdida*/
+//            peso_distancia = (float) 0.2; //0.2;	/*Factor de la componente distancia*/
+//            peso_digregacion = (float) 1.0; //0.2;	/*Factor de la componente digregacion*/
+//            //Ordena las piezas y determina arreglo piezasproblema[]
+////            app_ordena_piezas_problema_cp();            
+//        }
+//        catch (Exception e)
+//        {
+//            System.err.println("ERROR: "+e);
+//        }        
+//    }
     
     // Función que interpreta cromosoma y lo convierte en una secuencia ordenada de piezas
     public void funcionConstructora(BinaryIndividual genotipo)
@@ -157,7 +263,14 @@ public class CSP extends Problem implements Utilities {
         // Obtener string correspondiente a las rotaciones
 //        boolean[] rotaciong= Arrays.copyOfRange(genotipo.alleles,cantidadtipospiezas+1+bitSalto,2*cantidadtipospiezas+1+bitSalto);                          
         // Obtener parametros para recorrer el string de piezas y rotaciones de los bits reservados        
-        boolean sentidog=genotipo.getBooleanAllele(0);
+        boolean sentidog=genotipo.getBooleanAllele(0);                               
+
+        Utilidades utilidades=new Utilidades();                                
+        
+        // Si el bit de sentido esta seteado invertir arreglo de piezas
+        if(sentidog)                    
+            utilidades.arrayReverse(piezas);                    
+                        
         long saltog=(long)(genotipo.binaryToDecimal(1,bitSalto)%piezasg.length+1);                         
         
         int desplazamiento=(int)saltog;
@@ -212,6 +325,10 @@ public class CSP extends Problem implements Utilities {
         }
         // Fijar el largo del fenotipo
         cantPiezasFenotipo=cont;
+        
+        // Si el bit de sentido esta seteado invertir arreglo de piezas nuevamente para dejarlo en el sentido original
+        if(sentidog)                    
+            utilidades.arrayReverse(piezas);   
     }                               
     
     public void actualizarPerdidasInternas(PiezaLayout pieza, PiezaLayout perdida, int idPadre, int caso)
@@ -473,20 +590,21 @@ public class CSP extends Problem implements Utilities {
                             
                             Iterator it1 = layout2.entrySet().iterator();                                                                                    
                             
-                            while(it1.hasNext()) 
-                            {                    
-                                Map.Entry pairs = (Map.Entry)it1.next();                        
-                                PiezaLayout piezaLayout=(PiezaLayout)pairs.getValue();                               
-                                Integer idPieza=(Integer)pairs.getKey();
-                                Point posicion=new Point((int)piezaLayout.getPosicion().getX()+piezaLayout.getAncho(),(int)piezaLayout.getPosicion().getY());                                
-                                int ancho=pieza.getAncho()-((int)piezaLayout.getPosicion().getX()+piezaLayout.getAncho());                                
-                                                                
-                                if(piezaLayout.posicion.getX()+piezaLayout.getAncho()==anchoPatron)
-                                {
-                                   perdidaH=new PiezaLayout(0,ancho,piezaLayout.getAlto(),1,posicion,1);
-                                   perdidaInterna.put(idPieza,new Pair(null,perdidaH));
-                                }                                                                                                                                                                                              
-                            }                            
+//                            while(it1.hasNext()) 
+//                            {                    
+//                                Map.Entry pairs = (Map.Entry)it1.next();                        
+//                                PiezaLayout piezaLayout=(PiezaLayout)pairs.getValue();                               
+//                                Integer idPieza=(Integer)pairs.getKey();
+//                                Point posicion=new Point((int)piezaLayout.getPosicion().getX()+piezaLayout.getAncho(),(int)piezaLayout.getPosicion().getY());                                
+//                                int ancho=pieza.getAncho()-((int)piezaLayout.getPosicion().getX()+piezaLayout.getAncho());                                
+//                                                                
+//                                if(piezaLayout.posicion.getX()+piezaLayout.getAncho()==anchoPatron)
+//                                {
+//                                   perdidaH=new PiezaLayout(0,ancho,piezaLayout.getAlto(),1,posicion,1);
+//                                   //perdidaInterna.put(idPieza,new Pair(null,perdidaH));
+//                                   perdidaInterna.get(idPieza).setSecond(perdidaH);
+//                                }                                                                                                                                                                                              
+//                            }                            
 
                             Iterator it2 = perdidaInterna.entrySet().iterator();                                                        
                             
@@ -539,22 +657,23 @@ public class CSP extends Problem implements Utilities {
                             
                             // Buscar piezas en el extremo inferior del patron
                             
-                            Iterator it1 = layout2.entrySet().iterator();                                                                                    
-                            
-                            while(it1.hasNext()) 
-                            {                    
-                                Map.Entry pairs = (Map.Entry)it1.next();                        
-                                PiezaLayout piezaLayout=(PiezaLayout)pairs.getValue();                               
-                                Integer idPieza=(Integer)pairs.getKey();
-                                Point posicion=new Point((int)piezaLayout.getPosicion().getX(),(int)piezaLayout.getPosicion().getY()+piezaLayout.getAlto());                                
-                                int alto=pieza.getAlto()-((int)piezaLayout.getPosicion().getY()+piezaLayout.getAlto());                                
-                                
-                                if(piezaLayout.posicion.getY()+piezaLayout.getAlto()==altoPatron)
-                                {
-                                   perdidaV=new PiezaLayout(0,piezaLayout.getAncho(),alto,1,posicion,0);
-                                   perdidaInterna.put(idPieza,new Pair(perdidaV,null));
-                                }                                                                                                                                                                                              
-                            }                            
+//                            Iterator it1 = layout2.entrySet().iterator();                                                                                    
+//                            
+//                            while(it1.hasNext()) 
+//                            {                    
+//                                Map.Entry pairs = (Map.Entry)it1.next();                        
+//                                PiezaLayout piezaLayout=(PiezaLayout)pairs.getValue();                               
+//                                Integer idPieza=(Integer)pairs.getKey();
+//                                Point posicion=new Point((int)piezaLayout.getPosicion().getX(),(int)piezaLayout.getPosicion().getY()+piezaLayout.getAlto());                                
+//                                int alto=pieza.getAlto()-((int)piezaLayout.getPosicion().getY()+piezaLayout.getAlto());                                
+//                                
+//                                if(piezaLayout.posicion.getY()+piezaLayout.getAlto()==altoPatron)
+//                                {
+//                                   perdidaV=new PiezaLayout(0,piezaLayout.getAncho(),alto,1,posicion,0);
+//                                   //perdidaInterna.put(idPieza,new Pair(perdidaV,null));
+//                                   perdidaInterna.get(idPieza).setFirst(perdidaV);
+//                                }                                                                                                                                                                                              
+//                            }                            
 
                             Iterator it2 = perdidaInterna.entrySet().iterator();                                                        
                             
@@ -686,7 +805,7 @@ public class CSP extends Problem implements Utilities {
         }
         // Sino esta vacia, intentar insertar la pieza en alguna perdida interna (first fit o best fit)
         PiezaLayout perdida=null;
-        int idPiezaLayout=pieza.firstFit(perdidaInterna);  
+        int idPiezaLayout=pieza.bestFit(perdidaInterna);  
         
         if(idPiezaLayout>0) // Si es posible insertar en la perdida interna vertical asociada a la pieza
         {
@@ -909,7 +1028,8 @@ public class CSP extends Problem implements Utilities {
         
 //        return (areaOcup*peso_func_obj+unifPerd*peso_uni);
         
-        return areaOcup;
+//        return areaOcup;
+        return gananciaTotal;
     }
     
 @Override
@@ -918,8 +1038,20 @@ public class CSP extends Problem implements Utilities {
         funcionConstructora(bi);        
         heuristicaColocacion2(fenotipo,true);      
         evaluarLayout(true);        
-        System.out.println("Genotipo="+ind.toString());                
-        System.out.println("Fenotipo="+fenotipo.toString());                        
+        System.out.println("Genotipo="+ind.toString());           
+        Iterator it = fenotipo.iterator();        
+        System.out.print("Fenotipo=");
+        while(it.hasNext())
+        {
+            Pieza p=(Pieza)it.next();
+            System.out.print("(");
+            System.out.print(p.getAncho());
+            System.out.print(",");
+            System.out.print(p.getAlto());
+            System.out.print(")");
+        }
+        System.out.print("\n");
+//        System.out.println("Fenotipo="+fenotipo.toString());                        
         System.out.println("Perdida total="+perdidaTotal);        
         System.out.println("Perdida total2="+(anchoPl*altoPl-gananciaTotal));                
         System.out.println("Ganancia total="+gananciaTotal);
