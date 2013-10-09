@@ -1,8 +1,28 @@
-C:\JCell\dist\instanciasCSP\A1s.txt 2950
-C:\JCell\dist\instanciasCSP\ATP30.txt 140904
-C:\JCell\dist\instanciasCSP\CHL1s.txt 13099
-C:\JCell\dist\instanciasCSP\CU1.txt 12330
-C:\JCell\dist\instanciasCSP\Hchl3s.txt 12215
-C:\JCell\dist\instanciasCSP\STS2s.txt 4653
+C:\JCell\temp\instanciasCSP\2s.txt 2778
+C:\JCell\temp\instanciasCSP\A1s.txt 2950
+C:\JCell\temp\instanciasCSP\A3.txt 5451
+C:\JCell\temp\instanciasCSP\A5.txt 12985
+C:\JCell\temp\instanciasCSP\ATP31.txt 823976
+C:\JCell\temp\instanciasCSP\ATP33.txt 236611
+C:\JCell\temp\instanciasCSP\ATP35.txt 621021
+C:\JCell\temp\instanciasCSP\ATP37.txt 387276
+C:\JCell\temp\instanciasCSP\ATP39.txt 268750
+C:\JCell\temp\instanciasCSP\CHL2s.txt 3279
+C:\JCell\temp\instanciasCSP\CHL4s.txt 13932
+C:\JCell\temp\instanciasCSP\CHL6.txt 16869
+C:\JCell\temp\instanciasCSP\CU1.txt 12330
+C:\JCell\temp\instanciasCSP\CU3.txt 16679
+C:\JCell\temp\instanciasCSP\CU5.txt 173364
+C:\JCell\temp\instanciasCSP\CU7.txt 247150
+C:\JCell\temp\instanciasCSP\CU9.txt 657055
+C:\JCell\temp\instanciasCSP\CU11.txt 924696
+C:\JCell\temp\instanciasCSP\Hchl4s.txt 12006
+C:\JCell\temp\instanciasCSP\Hchl6s.txt 61040
+C:\JCell\temp\instanciasCSP\Hchl8s.txt 911
+C:\JCell\temp\instanciasCSP\OF2.txt 2690
+C:\JCell\temp\instanciasCSP\STS4s.txt 9770
+C:\JCell\temp\instanciasCSP\wang1.dat 2277
+C:\JCell\temp\instanciasCSP\wang3.dat 2721
+
 
 

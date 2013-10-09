@@ -23,7 +23,7 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jcell.*;
-import org.apache.commons.lang3.ArrayUtils;
+//import org.apache.commons.lang3.ArrayUtils;
 import problems.Combinatorial.Resources.*;
 
 public class CSP extends Problem implements Utilities {
@@ -66,91 +66,6 @@ public class CSP extends Problem implements Utilities {
     }
 
     // REPRESENTACION SIMPLIFICADA
-    public void readInst(String filename)
-    {		        
-        BufferedReader br = null;
-        StringTokenizer st;                                
-
-        //Inicialización de variables globales
-        numPie = 0;
-        cantidadtipospiezas = 0;        
-
-        try
-        {            
-            br = new BufferedReader(new FileReader(filename)); 
-            st = new StringTokenizer(br.readLine());
-
-            anchoPl= (new Integer(st.nextToken())).intValue();
-            altoPl= (new Integer(st.nextToken())).intValue();                                       
-            
-            st = new StringTokenizer(br.readLine());            
-            
-            int num= (new Integer(st.nextToken())).intValue();  
-            
-            // Se fija el tamaño del arreglo de tipos de piezas (se duplica para incluir las piezas rotadas)
-            piezas= new Pieza[num+1];                        
-            
-            
-            // Calcular tamaño del segmento del cromosoma destinado a obtener orden de las piezas
-            int alelosReservados= (int)(Math.floor(Math.log(num)/Math.log(2))+1);
-            bitSalto=(int)(Math.floor(Math.log(num)/Math.log(2)));
-            
-            int ancho;
-            int alto;
-            int cantidad;
-            int id=1;            
-            int cantidadTotal=0;
-            
-            for (int i = 1; i <= num; i++) {                                 
-                // Lee ancho, alto y restricciones para cada tipo de pieza
-                st = new StringTokenizer(br.readLine());                                            
-                ancho= (new Integer(st.nextToken())).intValue();            
-                alto= (new Integer(st.nextToken())).intValue();                         
-                cantidad= (new Integer(st.nextToken())).intValue();                                                         
-                // Insertar pieza
-                piezas[i-1]= new Pieza(id,ancho,alto,cantidad);                    
-                // Insertar pieza rotada
-//                piezas[num+i-1]= new Pieza(id+num,alto,ancho,cantidad);                    
-                //Incremento id++ si quiero que sólo cada tipo pieza tenga id distinto
-                id++;
-                numPie = numPie + cantidad;
-            }//End for                                                                                                            
-                                          
-            //Establece la cantidad máxima de tipos de piezas distintos del problema
-            id--;
-            // (se duplica para incluir las piezas rotadas)
-            cantidadtipospiezas = id;                        
-            
-            fenotipo=new ArrayList<>(cantidadtipospiezas);                                                        
-            perdidaInterna=new HashMap<>();
-            layout2=new HashMap<>();                    
-            
-//            fenotipo= new PiezaFenotipo[cantidadtipospiezas];                                            
-            
-            if (numPie == 0) 
-                System.out.println("ERROR: No se registraron piezas en el archivo de entrada");                                    
-                        
-            longitCrom = alelosReservados + cantidadtipospiezas; //Define el largo del cromosoma
-            variables = longitCrom;            
-            System.out.println("longit crom="+longitCrom);                        
-            maxFitness = (float) (altoPl * anchoPl);
-//            fitness_inicial = (float) (AltoPl * AnchoPl); //Obtiene el fitness_inicial
-            // Establece valor en variables utilizadas en función evaluación
-            peso_func_obj = (float) 0.85; // Uso en función evaluación - Factor de la pérdida
-            peso_uni = (float) 0.15; // Uso en función evaluación - Factor unificación de pérdidas
-            peso_perdida = (float) 1.0; //0.6;	/*Factor de la componente perdida*/
-            peso_distancia = (float) 0.2; //0.2;	/*Factor de la componente distancia*/
-            peso_digregacion = (float) 1.0; //0.2;	/*Factor de la componente digregacion*/
-
-            //Ordena las piezas y determina arreglo piezasproblema[]
-//            app_ordena_piezas_problema_cp();            
-        }
-        catch (Exception e)
-        {
-            System.err.println("ERROR: "+e);
-        }        
-    }
-   
 //    public void readInst(String filename)
 //    {		        
 //        BufferedReader br = null;
@@ -171,61 +86,42 @@ public class CSP extends Problem implements Utilities {
 //            st = new StringTokenizer(br.readLine());            
 //            
 //            int num= (new Integer(st.nextToken())).intValue();  
-//                        
-//            //Se crea arreglo temporal para almacenar los tipos de piezas
-//            Pieza[] piezas_;                           
-//            piezas_ = new Pieza[num+1];
+//            
+//            // Se fija el tamaño del arreglo de tipos de piezas (se duplica para incluir las piezas rotadas)
+//            piezas= new Pieza[num+1];                        
+//            
+//            
+//            // Calcular tamaño del segmento del cromosoma destinado a obtener orden de las piezas
+//            int alelosReservados= (int)(Math.floor(Math.log(num)/Math.log(2))+1);
+//            bitSalto=(int)(Math.floor(Math.log(num)/Math.log(2)));
 //            
 //            int ancho;
 //            int alto;
 //            int cantidad;
-//            int id=1;                        
+//            int id=1;            
+//            int cantidadTotal=0;
 //            
-//            for (int i = 0; i < num; i++) {                                 
+//            for (int i = 1; i <= num; i++) {                                 
 //                // Lee ancho, alto y restricciones para cada tipo de pieza
 //                st = new StringTokenizer(br.readLine());                                            
 //                ancho= (new Integer(st.nextToken())).intValue();            
 //                alto= (new Integer(st.nextToken())).intValue();                         
 //                cantidad= (new Integer(st.nextToken())).intValue();                                                         
 //                // Insertar pieza
-//                piezas_[i]= new Pieza(id,ancho,alto,cantidad);                    
+//                piezas[i-1]= new Pieza(id,ancho,alto,cantidad);                    
 //                // Insertar pieza rotada
-//                // piezas[num+i-1]= new Pieza(id+num,alto,ancho,cantidad);                    
+////                piezas[num+i-1]= new Pieza(id+num,alto,ancho,cantidad);                    
 //                //Incremento id++ si quiero que sólo cada tipo pieza tenga id distinto
 //                id++;
 //                numPie = numPie + cantidad;
-//            }//End for                                                                                                                                                                           
-//            
-//            // Se fija el tamaño del arreglo de tipos de piezas (se duplica para incluir las piezas rotadas)
-//            piezas= new Pieza[numPie+1];               
-//            int cont=0;                        
-//                                   
-//            for (int i=0;i<piezas_.length-1;++i)  
-//            {                
-//                for(int j=0;j<piezas_[i].getCantidad();++j)
-//                {
-//                    piezas[cont]=new Pieza(cont,piezas_[i].getAncho(),piezas_[i].getAlto(),1);
-//                    ++cont;
-//                }                               
-//            }                                  
-//                 
-////            for (int k=0;k<piezas.length-1;++k)                  
-////                piezas[k].mostrar();             
-//            
-////            Utilidades utilidades= new Utilidades();
-////            
-////            utilidades.mostrar(piezas);
-//            
-//            // Calcular tamaño del segmento del cromosoma destinado a obtener orden de las piezas
-//            int alelosReservados= (int)(Math.floor(Math.log(numPie)/Math.log(2))+1);
-//            bitSalto=(int)(Math.floor(Math.log(numPie)/Math.log(2)));            
-//            
+//            }//End for                                                                                                            
+//                                          
 //            //Establece la cantidad máxima de tipos de piezas distintos del problema
 //            id--;
 //            // (se duplica para incluir las piezas rotadas)
-//            cantidadtipospiezas = numPie;                        
+//            cantidadtipospiezas = id;                        
 //            
-//            fenotipo=new ArrayList<>(numPie);                                                        
+//            fenotipo=new ArrayList<>(cantidadtipospiezas);                                                        
 //            perdidaInterna=new HashMap<>();
 //            layout2=new HashMap<>();                    
 //            
@@ -234,7 +130,7 @@ public class CSP extends Problem implements Utilities {
 //            if (numPie == 0) 
 //                System.out.println("ERROR: No se registraron piezas en el archivo de entrada");                                    
 //                        
-//            longitCrom = alelosReservados + numPie; //Define el largo del cromosoma
+//            longitCrom = alelosReservados + cantidadtipospiezas; //Define el largo del cromosoma
 //            variables = longitCrom;            
 //            System.out.println("longit crom="+longitCrom);                        
 //            maxFitness = (float) (altoPl * anchoPl);
@@ -245,6 +141,7 @@ public class CSP extends Problem implements Utilities {
 //            peso_perdida = (float) 1.0; //0.6;	/*Factor de la componente perdida*/
 //            peso_distancia = (float) 0.2; //0.2;	/*Factor de la componente distancia*/
 //            peso_digregacion = (float) 1.0; //0.2;	/*Factor de la componente digregacion*/
+//
 //            //Ordena las piezas y determina arreglo piezasproblema[]
 ////            app_ordena_piezas_problema_cp();            
 //        }
@@ -253,6 +150,109 @@ public class CSP extends Problem implements Utilities {
 //            System.err.println("ERROR: "+e);
 //        }        
 //    }
+   
+    public void readInst(String filename)
+    {		        
+        BufferedReader br = null;
+        StringTokenizer st;                                
+
+        //Inicialización de variables globales
+        numPie = 0;
+        cantidadtipospiezas = 0;        
+
+        try
+        {            
+            br = new BufferedReader(new FileReader(filename)); 
+            st = new StringTokenizer(br.readLine());
+
+            anchoPl= (new Integer(st.nextToken())).intValue();
+            altoPl= (new Integer(st.nextToken())).intValue();                                       
+            
+            st = new StringTokenizer(br.readLine());            
+            
+            int num= (new Integer(st.nextToken())).intValue();  
+                        
+            //Se crea arreglo temporal para almacenar los tipos de piezas
+            Pieza[] piezas_;                           
+            piezas_ = new Pieza[num+1];
+            
+            int ancho;
+            int alto;
+            int cantidad;
+            int id=1;                        
+            
+            for (int i = 0; i < num; i++) {                                 
+                // Lee ancho, alto y restricciones para cada tipo de pieza
+                st = new StringTokenizer(br.readLine());                                            
+                ancho= (new Integer(st.nextToken())).intValue();            
+                alto= (new Integer(st.nextToken())).intValue();                         
+                cantidad= (new Integer(st.nextToken())).intValue();                                                         
+                // Insertar pieza
+                piezas_[i]= new Pieza(id,ancho,alto,cantidad);                    
+                // Insertar pieza rotada
+                // piezas[num+i-1]= new Pieza(id+num,alto,ancho,cantidad);                    
+                //Incremento id++ si quiero que sólo cada tipo pieza tenga id distinto
+                id++;
+                numPie = numPie + cantidad;
+            }//End for                                                                                                                                                                           
+            
+            // Se fija el tamaño del arreglo de tipos de piezas (se duplica para incluir las piezas rotadas)
+            piezas= new Pieza[numPie+1];               
+            int cont=0;                        
+                                   
+            for (int i=0;i<piezas_.length-1;++i)  
+            {                
+                for(int j=0;j<piezas_[i].getCantidad();++j)
+                {
+                    piezas[cont]=new Pieza(cont,piezas_[i].getAncho(),piezas_[i].getAlto(),1);
+                    ++cont;
+                }                               
+            }                                  
+                 
+//            for (int k=0;k<piezas.length-1;++k)                  
+//                piezas[k].mostrar();             
+            
+//            Utilidades utilidades= new Utilidades();
+//            
+//            utilidades.mostrar(piezas);
+            
+            // Calcular tamaño del segmento del cromosoma destinado a obtener orden de las piezas
+            int alelosReservados= (int)(Math.floor(Math.log(numPie)/Math.log(2))+1);
+            bitSalto=(int)(Math.floor(Math.log(numPie)/Math.log(2)));            
+            
+            //Establece la cantidad máxima de tipos de piezas distintos del problema
+            id--;
+            // (se duplica para incluir las piezas rotadas)
+            cantidadtipospiezas = numPie;                        
+            
+            fenotipo=new ArrayList<>(numPie);                                                        
+            perdidaInterna=new HashMap<>();
+            layout2=new HashMap<>();                    
+            
+//            fenotipo= new PiezaFenotipo[cantidadtipospiezas];                                            
+            
+            if (numPie == 0) 
+                System.out.println("ERROR: No se registraron piezas en el archivo de entrada");                                    
+                        
+            longitCrom = alelosReservados + numPie; //Define el largo del cromosoma
+            variables = longitCrom;            
+            System.out.println("longit crom="+longitCrom);                        
+            maxFitness = (float) (altoPl * anchoPl);
+//            fitness_inicial = (float) (AltoPl * AnchoPl); //Obtiene el fitness_inicial
+            // Establece valor en variables utilizadas en función evaluación
+            peso_func_obj = (float) 0.85; // Uso en función evaluación - Factor de la pérdida
+            peso_uni = (float) 0.15; // Uso en función evaluación - Factor unificación de pérdidas
+            peso_perdida = (float) 1.0; //0.6;	/*Factor de la componente perdida*/
+            peso_distancia = (float) 0.2; //0.2;	/*Factor de la componente distancia*/
+            peso_digregacion = (float) 1.0; //0.2;	/*Factor de la componente digregacion*/
+            //Ordena las piezas y determina arreglo piezasproblema[]
+//            app_ordena_piezas_problema_cp();            
+        }
+        catch (Exception e)
+        {
+            System.err.println("ERROR: "+e);
+        }        
+    }
     
     // Función que interpreta cromosoma y lo convierte en una secuencia ordenada de piezas
     public void funcionConstructora(BinaryIndividual genotipo)
@@ -805,7 +805,7 @@ public class CSP extends Problem implements Utilities {
         }
         // Sino esta vacia, intentar insertar la pieza en alguna perdida interna (first fit o best fit)
         PiezaLayout perdida=null;
-        int idPiezaLayout=pieza.bestFit(perdidaInterna);  
+        int idPiezaLayout=pieza.firstFit(perdidaInterna);  
         
         if(idPiezaLayout>0) // Si es posible insertar en la perdida interna vertical asociada a la pieza
         {

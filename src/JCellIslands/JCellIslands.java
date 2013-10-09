@@ -19,8 +19,14 @@ import java.util.Random;
 import java.util.StringTokenizer;
 import jcell.*;
 import jcell.neighborhoods.Linear5;
+import jcell.neighborhoods.Compact9;
+import jcell.neighborhoods.Compact13;
 import operators.mutation.BinaryMutation;
+import operators.mutation.OneGeneMutation;
 import operators.recombination.Dpx;
+import operators.recombination.Spx;
+import operators.recombination.Px;
+import operators.recombination.UX;
 import operators.replacement.ReplaceIfBetter;
 import operators.replacement.ReplaceIfNonWorse;
 import operators.selection.TournamentSelection;
@@ -67,11 +73,7 @@ public class JCellIslands implements GenerationListener {
 //        2: AG-Distribuido
 //        3: AG-Celular                
         
-        // TIPO DE ALGORITMO EVOLUTIVO                                                                   
-        
-         // Lee archivo en infp con parámetros (todos ya chequeados)                        
-        BufferedReader br = null;
-        StringTokenizer st;                                            
+        // TIPO DE ALGORITMO EVOLUTIVO                                                                                                                              
         
         // Input PARAMILS                
         String instanceName="";     
@@ -101,7 +103,8 @@ public class JCellIslands implements GenerationListener {
         // Operadores geneticos
         String mutacOp="";
         String crossOp="";
-        String selecOp="";
+        String selecOp1="";
+        String selecOp2="";
         
         // Parametros AG Celular adicionales (no considerados)
         Class c;
@@ -155,6 +158,24 @@ public class JCellIslands implements GenerationListener {
                             mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion
                         if (args[i].equals("-pCross"))                
                             cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento
+                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
+                        {
+                            if(args[++i].toString().equals("BinaryMutation"))
+                                ea.setParam("mutation", new BinaryMutation(r, ea));
+                            if(args[++i].toString().equals("OneGeneMutation"))
+                                ea.setParam("mutation", new OneGeneMutation(r));                            
+                        }
+                        if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
+                        {
+                            if(args[++i].toString().contains("Dpx"))
+                                ea.setParam("crossover", new Dpx(r));
+                            else if(args[++i].toString().contains("Spx"))
+                                ea.setParam("crossover", new Spx(r));  
+                            else if(args[++i].toString().contains("Px"))
+                                ea.setParam("crossover", new Px(r));  
+                            else if(args[++i].toString().contains("Ux"))
+                                ea.setParam("crossover", new UX(r));                            
+                        }                                                       
                     }                                              
                 }
                 pop = new Population(popSize);                                     
@@ -175,7 +196,25 @@ public class JCellIslands implements GenerationListener {
                         if (args[i].equals("-pMutac"))
                             mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion
                         if (args[i].equals("-pCross"))                
-                            cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento                        
+                            cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento
+                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
+                        {
+                            if(args[++i].toString().equals("BinaryMutation"))
+                                ea.setParam("mutation", new BinaryMutation(r, ea));
+                            if(args[++i].toString().equals("OneGeneMutation"))
+                                ea.setParam("mutation", new OneGeneMutation(r));                            
+                        }
+                        if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
+                        {
+                            if(args[++i].toString().contains("Dpx"))
+                                ea.setParam("crossover", new Dpx(r));
+                            else if(args[++i].toString().contains("Spx"))
+                                ea.setParam("crossover", new Spx(r));  
+                            else if(args[++i].toString().contains("Px"))
+                                ea.setParam("crossover", new Px(r));  
+                            else if(args[++i].toString().contains("Ux"))
+                                ea.setParam("crossover", new UX(r));                            
+                        }                         
                     }                                              
                 }                                                                
                 pop = new PopIsland(islands, islandSize);   
@@ -187,28 +226,46 @@ public class JCellIslands implements GenerationListener {
                 {
                     // Capturar parametros del AG Celular
                     for (int i = 0; i < args.length; ++i) {                    
-                        if (args[i].equals("-dx"))
-                            islands= Integer.parseInt(args[++i]); // Capturar ancho de grilla
-                        if (args[i].equals("-dy"))
-                            islandSize= Integer.parseInt(args[++i]); // Capturar alto de grilla
-                        if (args[i].equals("-neigh"))                
-                            neigh= args[++i].toString(); // Capturar tipo de vecindad
+                        if (args[i].equals("-grid"))
+                        {
+                            String[] dims=args[++i].toString().split("x");
+                            dX= Integer.parseInt(dims[0]); // Capturar ancho de grilla
+                            dY= Integer.parseInt(dims[1]); // Capturar alto de grilla                        
+                        }
+                        if (args[i].equals("-neigh")) // Capturar topologia de vecindad                
+                        {
+                            neigh= args[++i].toString();                            
+                            c = Class.forName(neigh);
+                            neighborhood = (Neighborhood) c.newInstance(); // Constructor called
+                        }                       
                         if (args[i].equals("-updPol"))
-                            mutac= Double.parseDouble(args[++i]); // Capturar politica de actualizacion
+                            updatePolicy= args[++i].toString(); // Capturar politica de actualizacion
                         if (args[i].equals("-pMutac"))
                             mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion                        
                         if (args[i].equals("-pCross"))                
-                            cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento                        
+                            cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento   
+                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
+                        {
+                            if(args[++i].toString().contains("BinaryMutation"))
+                                ea.setParam("mutation", new BinaryMutation(r, ea));
+                            else if(args[++i].toString().contains("OneGeneMutation"))
+                                ea.setParam("mutation", new OneGeneMutation(r));                            
+                        }
+                        if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
+                        {
+                            if(args[++i].toString().equals("Dpx"))
+                                ea.setParam("crossover", new Dpx(r));
+                            if(args[++i].toString().equals("Spx"))
+                                ea.setParam("crossover", new Spx(r));  
+                            if(args[++i].toString().equals("Px"))
+                                ea.setParam("crossover", new Px(r));  
+                            if(args[++i].toString().equals("Ux"))
+                                ea.setParam("crossover", new UX(r));                            
+                        }                                                
                     }                                              
                 }                                     
                 pop = new PopGrid(dX, dY);                
-                neighborhood = new Linear5(dX,dY);                                       
-			
-                if ((neigh!=null) && (!neigh.toLowerCase().contains("linear5")))
-                {
-                        c = Class.forName(neigh);
-                        neighborhood = (Neighborhood) c.newInstance(); // Constructor called
-                }                         		
+                           		
                 if (!updatePolicy.contains("synchronous"))
                 {
                     synchronousUpdate = false;                
@@ -282,8 +339,8 @@ public class JCellIslands implements GenerationListener {
         
         ea.setParam("selection1", new TournamentSelection(r)); // selection of one parent
         ea.setParam("selection2", new TournamentSelection(r)); // selection of one parent
-        ea.setParam("crossover", new Dpx(r));
-        ea.setParam("mutation", new BinaryMutation(r, ea));
+//        ea.setParam("crossover", new Dpx(r));
+//        ea.setParam("mutation", new BinaryMutation(r, ea));
 //        ea.setParam("replacement", new ReplaceIfBetter());
         ea.setParam("replacement", new ReplaceIfNonWorse());                        
 	ea.setParam("swap", new Swap());                	               
@@ -302,7 +359,7 @@ public class JCellIslands implements GenerationListener {
         
         if (verbose)
         {
-            if(paramils)
+            if(paramils) // Generar salida para PARAMILS
             {
                 System.out.println("SuccessfulRuns = 1");
                 System.out.println("CPUTime_Mean = "+(end-start)/1000);
