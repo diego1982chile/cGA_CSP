@@ -271,7 +271,7 @@ public class CSP extends Problem implements Utilities {
         if(sentidog)                    
             utilidades.arrayReverse(piezas);                    
                         
-        long saltog=(long)(genotipo.binaryToDecimal(1,bitSalto)%piezasg.length+1);                         
+        long saltog=(long)(genotipo.binaryToDecimal(1,bitSalto)%piezasg.length+1);         
         
         int desplazamiento=(int)saltog;
         int origen=desplazamiento;

@@ -30,6 +30,8 @@ import operators.recombination.UX;
 import operators.replacement.ReplaceIfBetter;
 import operators.replacement.ReplaceIfNonWorse;
 import operators.selection.TournamentSelection;
+import operators.selection.RouletteWheelSelection;
+import operators.selection.LinearRankSelection;
 import problems.Combinatorial.CSP;
 import ssEA.SSGA;
 
@@ -103,8 +105,7 @@ public class JCellIslands implements GenerationListener {
         // Operadores geneticos
         String mutacOp="";
         String crossOp="";
-        String selecOp1="";
-        String selecOp2="";
+        String selecOp="";        
         
         // Parametros AG Celular adicionales (no considerados)
         Class c;
@@ -166,16 +167,36 @@ public class JCellIslands implements GenerationListener {
                                 ea.setParam("mutation", new OneGeneMutation(r));                            
                         }
                         if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
-                        {
-                            if(args[++i].toString().contains("Dpx"))
+                        {   
+                            crossOp= args[++i].toString();
+                            if(crossOp.contains("Dpx"))
                                 ea.setParam("crossover", new Dpx(r));
-                            else if(args[++i].toString().contains("Spx"))
+                            else if(crossOp.contains("Spx"))
                                 ea.setParam("crossover", new Spx(r));  
-                            else if(args[++i].toString().contains("Px"))
+                            else if(crossOp.contains("Px"))
                                 ea.setParam("crossover", new Px(r));  
-                            else if(args[++i].toString().contains("Ux"))
+                            else if(crossOp.contains("Ux"))
                                 ea.setParam("crossover", new UX(r));                            
-                        }                                                       
+                        }       
+                        if (args[i].equals("-selecOp")) // Capturar operador de cruzamiento
+                        {
+                            selecOp= args[++i].toString();      
+                            if(selecOp.contains("BinaryTournament"))
+                            {
+                                ea.setParam("selection1", new TournamentSelection(r));
+                                ea.setParam("selection2", new TournamentSelection(r));
+                            }
+                            else if(selecOp.contains("RouletteWheel"))
+                            {
+                                ea.setParam("selection1", new RouletteWheelSelection(r));
+                                ea.setParam("selection2", new RouletteWheelSelection(r));
+                            }
+                            else if(selecOp.contains("LinearRank"))
+                            {
+                                ea.setParam("selection1", new LinearRankSelection(r));
+                                ea.setParam("selection2", new LinearRankSelection(r));
+                            }                                                        
+                        }       
                     }                                              
                 }
                 pop = new Population(popSize);                                     
@@ -337,8 +358,8 @@ public class JCellIslands implements GenerationListener {
         ea.setParam(EvolutionaryAlg.PARAM_LOCAL_SEARCH_STEPS, 100);        
         ea.setParam(EvolutionaryAlg.PARAM_LOCAL_SEARCH_PROB, 0.0);                
         
-        ea.setParam("selection1", new TournamentSelection(r)); // selection of one parent
-        ea.setParam("selection2", new TournamentSelection(r)); // selection of one parent
+//        ea.setParam("selection1", new TournamentSelection(r)); // selection of one parent
+//        ea.setParam("selection2", new TournamentSelection(r)); // selection of one parent
 //        ea.setParam("crossover", new Dpx(r));
 //        ea.setParam("mutation", new BinaryMutation(r, ea));
 //        ea.setParam("replacement", new ReplaceIfBetter());

@@ -1,0 +1,6 @@
+Final best parameter configuration: crossOp=Ux, pCross=1.0, pMutac=0.1, popSize=450, selecOp=RouletteWheel
+==================================================================
+Active parameters: crossOp=Ux, pCross=1.0, pMutac=0.1, popSize=450, selecOp=RouletteWheel
+==================================================================
+Training quality of this final best found parameter configuration: 1.040646540400882, based on 277 runs with cutoff 260.0
+Test quality of this final best found parameter configuration: 1.0340697768035698, based on 100 independent runs with cutoff 260.0
