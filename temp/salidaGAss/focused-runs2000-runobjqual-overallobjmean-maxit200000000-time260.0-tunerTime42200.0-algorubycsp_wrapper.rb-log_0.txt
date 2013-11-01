@@ -1,0 +1,2403 @@
+Call: /usr/bin/ruby ../scripts/param_ils_2_3_run.rb "-numRun" "0" "-scenariofile" "escenarioGAss.txt" "-validN" "100"
+
+
+seed: 1234
+algo: ruby csp_wrapper.rb
+tunerTimeout: 42200.0
+maxEvals: 100000000
+run_obj: qual
+overall_obj: mean
+instance_file: CSP-training.txt
+test_instance_file: CSP-test.txt
+N: 2000
+cutoff_time: 260.0
+cutoff_length: 150000
+R: 10
+pertubation_strength_basic: 
+pertubation_strength_scaling: false
+p_restart: 0.01
+Run 1
+Level 
+========================================================
+Starting ILS for level 1, i.e. a limit of N=2000, and cutoff time=260.0.
+Current CPU time = 0, this run goes until 42200.0 
+========================================================
+New Incumbent: 0, 100000000 [0, 0]. With state crossOp=Dpx, pCross=1.0, pMutac=1.0, popSize=50, selecOp=BinaryTournament
+ Same incumbent, new precision:
+New Incumbent: 9.0, 1.1172338348039925 [1, 260.0]. With state crossOp=Dpx, pCross=1.0, pMutac=1.0, popSize=50, selecOp=BinaryTournament
+2/100000000, 30.0/42200.0
+New inc: 1.0321699582788675
+New Incumbent: 30.0, 1.0321699582788675 [1, 260.0]. With state crossOp=Ux, pCross=0.7, pMutac=0.4, popSize=300, selecOp=LinearRank
+          -> Take improving step to random crossOp=Ux pCross=0.7 pMutac=0.4 popSize=300 selecOp=LinearRank (1.0321699582788675 [based on 1 runs with cutoff 260.0])
+
+3/100000000, 41.0/42200.0
+        -> Worse random: crossOp=Dpx pCross=1.0 pMutac=0.1 popSize=100 selecOp=RouletteWheel (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+4/100000000, 77.0/42200.0
+        -> Worse random: crossOp=Px pCross=0.7 pMutac=0.4 popSize=450 selecOp=LinearRank (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+5/100000000, 98.0/42200.0
+        -> Worse random: crossOp=Dpx pCross=1.0 pMutac=0.1 popSize=350 selecOp=BinaryTournament (1.0525934727705588 [based on 1 runs with cutoff 260.0])
+6/100000000, 118.0/42200.0
+New inc: 1.0245493889598223
+New Incumbent: 118.0, 1.0245493889598223 [1, 260.0]. With state crossOp=Ux, pCross=0.8, pMutac=1.0, popSize=300, selecOp=BinaryTournament
+          -> Take improving step to random crossOp=Ux pCross=0.8 pMutac=1.0 popSize=300 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+
+7/100000000, 143.0/42200.0
+        -> Worse random: crossOp=Px pCross=0.8 pMutac=0.7 popSize=400 selecOp=LinearRank (1.037116300539225 [based on 1 runs with cutoff 260.0])
+8/100000000, 156.0/42200.0
+        -> Worse random: crossOp=Spx pCross=0.7 pMutac=1.0 popSize=200 selecOp=BinaryTournament (1.0772067155982497 [based on 1 runs with cutoff 260.0])
+9/100000000, 170.0/42200.0
+        -> Worse random: crossOp=Ux pCross=0.6 pMutac=0.9 popSize=200 selecOp=BinaryTournament (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+        -> Worse random: crossOp=Spx pCross=0.7 pMutac=0.3 popSize=100 selecOp=RouletteWheel (1.0608070116703794 [based on 1 runs with cutoff 260.0])
+11/100000000, 187.0/42200.0
+        -> Worse random: crossOp=Dpx pCross=1.0 pMutac=0.5 popSize=100 selecOp=RouletteWheel (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+   BLS in iteration 1, start with crossOp=Ux pCross=0.8 pMutac=1.0 popSize=300 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->LinearRank"], evaluating ...
+12/100000000, 211.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->RouletteWheel"], evaluating ...
+13/100000000, 227.0/42200.0
+        -> worse: (1.0507408115978998 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->250"], evaluating ...
+14/100000000, 243.0/42200.0
+        -> worse: (1.0707895204301354 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 1.0->0.3"], evaluating ...
+15/100000000, 265.0/42200.0
+          -> Take improving step to neighbour crossOp=Ux pCross=0.8 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0]) with flip 1
+
+          
+============= Performing 4 bonus runs of state: crossOp=Ux pCross=0.8 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0]) ============ 
+
+State wants more detail (1+1) than incumbent (1), doing incumbent first:
+crossOp=Ux pCross=0.8 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+crossOp=Ux pCross=0.8 pMutac=1.0 popSize=300 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+16/100000000, 312.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 312.0, 1.0437896405856044 [2, 260.0]. With state crossOp=Ux, pCross=0.8, pMutac=1.0, popSize=300, selecOp=BinaryTournament
+17/100000000, 356.0/42200.0
+State wants more detail (2+1) than incumbent (2), doing incumbent first:
+crossOp=Ux pCross=0.8 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0437896405856044 [based on 2 runs with cutoff 260.0])
+crossOp=Ux pCross=0.8 pMutac=1.0 popSize=300 selecOp=BinaryTournament (1.0437896405856044 [based on 2 runs with cutoff 260.0])
+18/100000000, 387.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 387.0, 1.0471815086789757 [3, 260.0]. With state crossOp=Ux, pCross=0.8, pMutac=1.0, popSize=300, selecOp=BinaryTournament
+19/100000000, 416.0/42200.0
+State wants more detail (3+1) than incumbent (3), doing incumbent first:
+crossOp=Ux pCross=0.8 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0471815086789757 [based on 3 runs with cutoff 260.0])
+crossOp=Ux pCross=0.8 pMutac=1.0 popSize=300 selecOp=BinaryTournament (1.0471815086789757 [based on 3 runs with cutoff 260.0])
+20/100000000, 432.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 432.0, 1.0618437164774552 [4, 260.0]. With state crossOp=Ux, pCross=0.8, pMutac=1.0, popSize=300, selecOp=BinaryTournament
+21/100000000, 447.0/42200.0
+State wants more detail (4+1) than incumbent (4), doing incumbent first:
+crossOp=Ux pCross=0.8 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0618437164774552 [based on 4 runs with cutoff 260.0])
+crossOp=Ux pCross=0.8 pMutac=1.0 popSize=300 selecOp=BinaryTournament (1.0618437164774552 [based on 4 runs with cutoff 260.0])
+22/100000000, 466.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 466.0, 1.0494749731819641 [5, 260.0]. With state crossOp=Ux, pCross=0.8, pMutac=1.0, popSize=300, selecOp=BinaryTournament
+23/100000000, 484.0/42200.0
+          -> After 4 bonus runs: crossOp=Ux pCross=0.8 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0494749731819641 [based on 5 runs with cutoff 260.0])
+
+    Changing ["popSize: 300->50"], evaluating ...
+        -> worse: (1.1172338348039925 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.8"], evaluating ...
+25/100000000, 512.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.9"], evaluating ...
+26/100000000, 532.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.2"], evaluating ...
+27/100000000, 551.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.6"], evaluating ...
+28/100000000, 566.0/42200.0
+        -> worse: (1.0817139355742298 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->100"], evaluating ...
+        -> worse: (1.0865169033279114 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->LinearRank"], evaluating ...
+30/100000000, 598.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->350"], evaluating ...
+31/100000000, 619.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->500"], evaluating ...
+32/100000000, 650.0/42200.0
+        -> worse: (1.0563907042747172 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->250"], evaluating ...
+33/100000000, 667.0/42200.0
+        -> worse: (1.0707895204301354 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Ux->Px"], evaluating ...
+34/100000000, 682.0/42200.0
+        -> worse: (1.0703489731752316 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->450"], evaluating ...
+35/100000000, 711.0/42200.0
+36/100000000, 771.0/42200.0
+37/100000000, 860.0/42200.0
+        -> worse: (1.051004928745243 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.6"], evaluating ...
+38/100000000, 880.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.4"], evaluating ...
+39/100000000, 900.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.7"], evaluating ...
+40/100000000, 915.0/42200.0
+41/100000000, 956.0/42200.0
+        -> worse: (1.060532706447633 [based on 2 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.9"], evaluating ...
+42/100000000, 973.0/42200.0
+43/100000000, 1013.0/42200.0
+44/100000000, 1081.0/42200.0
+45/100000000, 1097.0/42200.0
+46/100000000, 1116.0/42200.0
+New inc: 1.044827313702774
+New Incumbent: 1116.0, 1.044827313702774 [5, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+          -> Take improving step to neighbour crossOp=Ux pCross=0.9 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.044827313702774 [based on 5 runs with cutoff 260.0]) with flip 2
+
+          
+============= Performing 16 bonus runs of state: crossOp=Ux pCross=0.9 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.044827313702774 [based on 5 runs with cutoff 260.0]) ============ 
+
+47/100000000, 1158.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1158.0, 1.043232124849051 [6, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+48/100000000, 1247.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1247.0, 1.0452600310242157 [7, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+49/100000000, 1260.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1260.0, 1.0396025271461888 [8, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+50/100000000, 1374.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1374.0, 1.0395008891068112 [9, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+51/100000000, 1406.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1406.0, 1.043179990140264 [10, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+52/100000000, 1443.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1443.0, 1.0420666971330361 [11, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+53/100000000, 1460.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1460.0, 1.045303157678315 [12, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+54/100000000, 1482.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1482.0, 1.0463363214686563 [13, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+55/100000000, 1493.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1493.0, 1.0456695769018385 [14, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+56/100000000, 1517.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1517.0, 1.0444751565928951 [15, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+57/100000000, 1709.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1709.0, 1.0438225688463334 [16, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+58/100000000, 1721.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1721.0, 1.0461295316008146 [17, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+59/100000000, 1754.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1754.0, 1.0463181157639734 [18, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+60/100000000, 1771.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1771.0, 1.0493485979992865 [19, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+61/100000000, 1784.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1784.0, 1.0546124735492588 [20, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+62/100000000, 1803.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 1803.0, 1.0576423439507565 [21, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+          -> After 16 bonus runs: crossOp=Ux pCross=0.9 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0576423439507565 [based on 21 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.3->0.1"], evaluating ...
+63/100000000, 1821.0/42200.0
+        -> worse: (1.0178111808915886 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->100"], evaluating ...
+64/100000000, 1832.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->LinearRank"], evaluating ...
+65/100000000, 1852.0/42200.0
+        -> worse: (1.0703489731752316 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->450"], evaluating ...
+66/100000000, 1884.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->150"], evaluating ...
+        -> worse: (1.0657748914388716 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->200"], evaluating ...
+68/100000000, 1902.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Ux->Px"], evaluating ...
+69/100000000, 1921.0/42200.0
+        -> worse: (1.0178111808915886 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.5"], evaluating ...
+70/100000000, 1939.0/42200.0
+        -> worse: (1.0178111808915886 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.7"], evaluating ...
+71/100000000, 1957.0/42200.0
+        -> worse: (1.0178111808915886 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.2"], evaluating ...
+72/100000000, 1975.0/42200.0
+        -> worse: (1.0178111808915886 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.6"], evaluating ...
+73/100000000, 1993.0/42200.0
+        -> worse: (1.0178111808915886 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->400"], evaluating ...
+74/100000000, 2021.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.4"], evaluating ...
+75/100000000, 2039.0/42200.0
+        -> worse: (1.0178111808915886 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->1.0"], evaluating ...
+76/100000000, 2062.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->500"], evaluating ...
+77/100000000, 2092.0/42200.0
+        -> worse: (1.050772082582225 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->250"], evaluating ...
+78/100000000, 2105.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.9"], evaluating ...
+79/100000000, 2123.0/42200.0
+        -> worse: (1.0178111808915886 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Ux->Spx"], evaluating ...
+80/100000000, 2139.0/42200.0
+        -> worse: (1.0803757600660946 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Ux->Dpx"], evaluating ...
+81/100000000, 2154.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->1.0"], evaluating ...
+82/100000000, 2172.0/42200.0
+        -> worse: (1.0178111808915886 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->50"], evaluating ...
+        -> worse: (1.0595200329237866 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.8"], evaluating ...
+84/100000000, 2197.0/42200.0
+        -> worse: (1.0178111808915886 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->RouletteWheel"], evaluating ...
+85/100000000, 2222.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->350"], evaluating ...
+86/100000000, 2244.0/42200.0
+        -> worse: (1.026076414980757 [based on 1 runs with cutoff 260.0])
+          
+============= Performing 24 bonus runs of state: crossOp=Ux pCross=0.9 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0576423439507565 [based on 21 runs with cutoff 260.0]) ============ 
+
+87/100000000, 2261.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2261.0, 1.0572844427947456 [22, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+88/100000000, 2274.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2274.0, 1.0576900669589986 [23, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+89/100000000, 2300.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2300.0, 1.0552863141690403 [24, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+90/100000000, 2436.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2436.0, 1.0548129236743844 [25, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+91/100000000, 2455.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2455.0, 1.0527047343022926 [26, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+92/100000000, 2470.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2470.0, 1.0533194622902184 [27, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+93/100000000, 2492.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2492.0, 1.0547207600718325 [28, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+94/100000000, 2525.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2525.0, 1.0542571220165549 [29, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+95/100000000, 2537.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2537.0, 1.055992955902343 [30, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+96/100000000, 2608.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2608.0, 1.056769160721934 [31, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+97/100000000, 2623.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2623.0, 1.0559425226394188 [32, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+98/100000000, 2744.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2744.0, 1.055668974149803 [33, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+99/100000000, 2756.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2756.0, 1.058579478115948 [34, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+100/100000000, 2788.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2788.0, 1.0578764031821677 [35, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+101/100000000, 2822.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2822.0, 1.0568529879489508 [36, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+102/100000000, 2833.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2833.0, 1.0563164719917686 [37, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+103/100000000, 2855.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2855.0, 1.0561377239535028 [38, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+104/100000000, 2877.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2877.0, 1.056204302491945 [39, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+105/100000000, 2891.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2891.0, 1.0559556248720647 [40, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+106/100000000, 2912.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2912.0, 1.055562194254108 [41, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+107/100000000, 2965.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2965.0, 1.055520984318359 [42, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+108/100000000, 2981.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 2981.0, 1.0564028828912069 [43, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+109/100000000, 3025.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 3025.0, 1.0567701517652854 [44, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+110/100000000, 3039.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 3039.0, 1.0563388550475294 [45, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+          -> After 24 bonus runs for LM: crossOp=Ux pCross=0.9 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0563388550475294 [based on 45 runs with cutoff 260.0])
+
+   LM for iteration 1: crossOp=Ux pCross=0.9 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0563388550475294 [based on 45 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 1): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 1): crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0563388550475294, based on 45 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+crossOp=Ux pCross=0.9 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0563388550475294 [based on 45 runs with cutoff 260.0])
+crossOp=Ux pCross=0.9 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0563388550475294 [based on 45 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 3039.0, 1.0563388550475294 [45, 260.0]. With state crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+110/100000000, 3039.0/42200.0
+iteration 2, flip 4, evaluation count 110
+    perturb to ---> crossOp=Ux pCross=0.9 pMutac=0.3 popSize=150 selecOp=BinaryTournament (1.0657748914388716 [based on 1 runs with cutoff 260.0])
+    perturb to ---> crossOp=Ux pCross=0.9 pMutac=0.3 popSize=150 selecOp=LinearRank (100000000 [based on 0 runs with cutoff 0])
+    perturb to ---> crossOp=Ux pCross=0.9 pMutac=0.3 popSize=100 selecOp=LinearRank (100000000 [based on 0 runs with cutoff 0])
+   BLS in iteration 2, start with crossOp=Ux pCross=0.9 pMutac=0.3 popSize=100 selecOp=LinearRank (1.0657748914388716 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 100->350"], evaluating ...
+112/100000000, 3071.0/42200.0
+          -> Take improving step to neighbour crossOp=Ux pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0245493889598223 [based on 1 runs with cutoff 260.0]) with flip 4
+
+          
+============= Performing 1 bonus runs of state: crossOp=Ux pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0245493889598223 [based on 1 runs with cutoff 260.0]) ============ 
+
+113/100000000, 3152.0/42200.0
+          -> After 1 bonus runs: crossOp=Ux pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0405487343891973 [based on 2 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.3->1.0"], evaluating ...
+114/100000000, 3177.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.8"], evaluating ...
+115/100000000, 3200.0/42200.0
+        -> worse: (1.057398581293265 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->RouletteWheel"], evaluating ...
+116/100000000, 3227.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.8"], evaluating ...
+117/100000000, 3252.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->250"], evaluating ...
+118/100000000, 3271.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->500"], evaluating ...
+119/100000000, 3317.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Ux->Dpx"], evaluating ...
+120/100000000, 3344.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.4"], evaluating ...
+121/100000000, 3368.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->BinaryTournament"], evaluating ...
+122/100000000, 3432.0/42200.0
+        -> worse: (1.0425653838502198 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.2"], evaluating ...
+123/100000000, 3457.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Ux->Px"], evaluating ...
+124/100000000, 3479.0/42200.0
+125/100000000, 3536.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0344960146597335 [based on 2 runs with cutoff 260.0]) with flip 5
+
+          
+============= Performing 11 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0344960146597335 [based on 2 runs with cutoff 260.0]) ============ 
+
+126/100000000, 3582.0/42200.0
+127/100000000, 3603.0/42200.0
+128/100000000, 3627.0/42200.0
+129/100000000, 3680.0/42200.0
+130/100000000, 3786.0/42200.0
+131/100000000, 3806.0/42200.0
+132/100000000, 3949.0/42200.0
+133/100000000, 3990.0/42200.0
+134/100000000, 4033.0/42200.0
+135/100000000, 4057.0/42200.0
+136/100000000, 4088.0/42200.0
+          -> After 11 bonus runs: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0413881399882123 [based on 13 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.3->0.2"], evaluating ...
+137/100000000, 4110.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->1.0"], evaluating ...
+138/100000000, 4135.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.4"], evaluating ...
+139/100000000, 4157.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->500"], evaluating ...
+140/100000000, 4202.0/42200.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.7"], evaluating ...
+141/100000000, 4224.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->100"], evaluating ...
+142/100000000, 4236.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->RouletteWheel"], evaluating ...
+143/100000000, 4262.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.6"], evaluating ...
+144/100000000, 4289.0/42200.0
+        -> worse: (1.0464431939910492 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->1.0"], evaluating ...
+145/100000000, 4311.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Spx"], evaluating ...
+146/100000000, 4334.0/42200.0
+        -> worse: (1.0803757600660946 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.5"], evaluating ...
+147/100000000, 4356.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->150"], evaluating ...
+148/100000000, 4370.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.8"], evaluating ...
+149/100000000, 4392.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->250"], evaluating ...
+150/100000000, 4413.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.8"], evaluating ...
+151/100000000, 4436.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->400"], evaluating ...
+152/100000000, 4467.0/42200.0
+        -> worse: (1.044541462569365 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->BinaryTournament"], evaluating ...
+153/100000000, 4491.0/42200.0
+        -> worse: (1.0561424200468352 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->450"], evaluating ...
+154/100000000, 4533.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.9"], evaluating ...
+155/100000000, 4555.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->50"], evaluating ...
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.1"], evaluating ...
+157/100000000, 4587.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->200"], evaluating ...
+158/100000000, 4600.0/42200.0
+        -> worse: (1.0443781481356276 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->300"], evaluating ...
+159/100000000, 4623.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.7"], evaluating ...
+160/100000000, 4645.0/42200.0
+        -> worse: (1.0597199235063588 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.6"], evaluating ...
+161/100000000, 4667.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+          
+============= Performing 25 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0413881399882123 [based on 13 runs with cutoff 260.0]) ============ 
+
+162/100000000, 4684.0/42200.0
+163/100000000, 4720.0/42200.0
+164/100000000, 4926.0/42200.0
+165/100000000, 4945.0/42200.0
+166/100000000, 4971.0/42200.0
+167/100000000, 4996.0/42200.0
+168/100000000, 5014.0/42200.0
+169/100000000, 5035.0/42200.0
+170/100000000, 5057.0/42200.0
+171/100000000, 5074.0/42200.0
+172/100000000, 5109.0/42200.0
+173/100000000, 5217.0/42200.0
+174/100000000, 5241.0/42200.0
+175/100000000, 5269.0/42200.0
+176/100000000, 5291.0/42200.0
+177/100000000, 5350.0/42200.0
+178/100000000, 5369.0/42200.0
+179/100000000, 5462.0/42200.0
+180/100000000, 5483.0/42200.0
+181/100000000, 5624.0/42200.0
+182/100000000, 5642.0/42200.0
+183/100000000, 5691.0/42200.0
+184/100000000, 5729.0/42200.0
+185/100000000, 5747.0/42200.0
+186/100000000, 5773.0/42200.0
+          -> After 25 bonus runs for LM: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0482112580900973 [based on 38 runs with cutoff 260.0])
+
+   LM for iteration 2: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0482112580900973 [based on 38 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 2): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 2): crossOp=Ux, pCross=0.9, pMutac=0.3, popSize=300, selecOp=BinaryTournament
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0563388550475294, based on 45 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0482112580900973 [based on 38 runs with cutoff 260.0])
+crossOp=Ux pCross=0.9 pMutac=0.3 popSize=300 selecOp=BinaryTournament (1.0563388550475294 [based on 45 runs with cutoff 260.0])
+187/100000000, 5803.0/42200.0
+188/100000000, 5826.0/42200.0
+189/100000000, 5852.0/42200.0
+190/100000000, 5940.0/42200.0
+191/100000000, 5962.0/42200.0
+192/100000000, 6038.0/42200.0
+193/100000000, 6059.0/42200.0
+New inc: 1.048831708605953
+New Incumbent: 6059.0, 1.048831708605953 [45, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+LM better, change incumbent
+New Incumbent: 6059.0, 1.048831708605953 [45, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+   Accepting new better local optimum: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.048831708605953 [based on 45 runs with cutoff 260.0])
+193/100000000, 6059.0/42200.0
+iteration 3, flip 7, evaluation count 193
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.3 popSize=450 selecOp=LinearRank (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    perturb to ---> crossOp=Px pCross=0.8 pMutac=0.3 popSize=450 selecOp=LinearRank (100000000 [based on 0 runs with cutoff 0])
+    perturb to ---> crossOp=Px pCross=0.8 pMutac=0.3 popSize=500 selecOp=LinearRank (100000000 [based on 0 runs with cutoff 0])
+194/100000000, 6095.0/42200.0
+   BLS in iteration 3, start with crossOp=Px pCross=0.8 pMutac=0.3 popSize=500 selecOp=LinearRank (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Spx"], evaluating ...
+195/100000000, 6127.0/42200.0
+        -> worse: (1.0693023899762906 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->BinaryTournament"], evaluating ...
+196/100000000, 6159.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0]) with flip 7
+
+          
+============= Performing 2 bonus runs of state: crossOp=Px pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0]) ============ 
+
+197/100000000, 6221.0/42200.0
+198/100000000, 6292.0/42200.0
+          -> After 2 bonus runs: crossOp=Px pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0449014577473137 [based on 3 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.3->0.7"], evaluating ...
+199/100000000, 6324.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Ux"], evaluating ...
+200/100000000, 6439.0/42200.0
+        -> worse: (1.0591277439026276 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.1"], evaluating ...
+201/100000000, 6472.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->400"], evaluating ...
+202/100000000, 6500.0/42200.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.9"], evaluating ...
+203/100000000, 6536.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->350"], evaluating ...
+204/100000000, 6559.0/42200.0
+        -> worse: (1.0749718371731916 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->50"], evaluating ...
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->1.0"], evaluating ...
+206/100000000, 6600.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->RouletteWheel"], evaluating ...
+207/100000000, 6635.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->450"], evaluating ...
+208/100000000, 6667.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.5"], evaluating ...
+209/100000000, 6700.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->250"], evaluating ...
+210/100000000, 6718.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->150"], evaluating ...
+211/100000000, 6731.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.6"], evaluating ...
+212/100000000, 6763.0/42200.0
+        -> worse: (1.0563907042747172 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Dpx"], evaluating ...
+213/100000000, 6796.0/42200.0
+214/100000000, 6846.0/42200.0
+215/100000000, 6888.0/42200.0
+          -> Take improving step to neighbour crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0377226566785247 [based on 3 runs with cutoff 260.0]) with flip 8
+
+          
+============= Performing 15 bonus runs of state: crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0377226566785247 [based on 3 runs with cutoff 260.0]) ============ 
+
+216/100000000, 6917.0/42200.0
+217/100000000, 6950.0/42200.0
+218/100000000, 7015.0/42200.0
+219/100000000, 7106.0/42200.0
+220/100000000, 7134.0/42200.0
+221/100000000, 7254.0/42200.0
+222/100000000, 7293.0/42200.0
+223/100000000, 7342.0/42200.0
+224/100000000, 7373.0/42200.0
+225/100000000, 7407.0/42200.0
+226/100000000, 7432.0/42200.0
+227/100000000, 7471.0/42200.0
+228/100000000, 7668.0/42200.0
+229/100000000, 7694.0/42200.0
+230/100000000, 7729.0/42200.0
+          -> After 15 bonus runs: crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0461802243177276 [based on 18 runs with cutoff 260.0])
+
+    Changing ["crossOp: Dpx->Spx"], evaluating ...
+231/100000000, 7764.0/42200.0
+        -> worse: (1.0766295375045196 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->150"], evaluating ...
+        -> worse: (1.0693023899762906 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->350"], evaluating ...
+233/100000000, 7791.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->250"], evaluating ...
+234/100000000, 7807.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->450"], evaluating ...
+235/100000000, 7839.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.6"], evaluating ...
+236/100000000, 7872.0/42200.0
+        -> worse: (1.0143773574064117 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.7"], evaluating ...
+237/100000000, 7904.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->1.0"], evaluating ...
+238/100000000, 7937.0/42200.0
+        -> worse: (1.0143773574064117 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->1.0"], evaluating ...
+239/100000000, 7973.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->100"], evaluating ...
+        -> worse: (1.1138050536960842 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->LinearRank"], evaluating ...
+241/100000000, 8014.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->400"], evaluating ...
+242/100000000, 8036.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.9"], evaluating ...
+243/100000000, 8073.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.4"], evaluating ...
+244/100000000, 8106.0/42200.0
+        -> worse: (1.0143773574064117 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.9"], evaluating ...
+245/100000000, 8139.0/42200.0
+        -> worse: (1.0143773574064117 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->300"], evaluating ...
+246/100000000, 8156.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->200"], evaluating ...
+247/100000000, 8170.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->50"], evaluating ...
+        -> worse: (1.1172338348039925 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.2"], evaluating ...
+249/100000000, 8211.0/42200.0
+        -> worse: (1.0143773574064117 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.1"], evaluating ...
+250/100000000, 8244.0/42200.0
+        -> worse: (1.0143773574064117 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.6"], evaluating ...
+251/100000000, 8275.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.8"], evaluating ...
+252/100000000, 8308.0/42200.0
+        -> worse: (1.0143773574064117 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.5"], evaluating ...
+253/100000000, 8341.0/42200.0
+        -> worse: (1.0143773574064117 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->RouletteWheel"], evaluating ...
+254/100000000, 8372.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.7"], evaluating ...
+255/100000000, 8405.0/42200.0
+        -> worse: (1.0143773574064117 [based on 1 runs with cutoff 260.0])
+          
+============= Performing 25 bonus runs of state: crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0461802243177276 [based on 18 runs with cutoff 260.0]) ============ 
+
+256/100000000, 8438.0/42200.0
+257/100000000, 8464.0/42200.0
+258/100000000, 8496.0/42200.0
+259/100000000, 8525.0/42200.0
+260/100000000, 8552.0/42200.0
+261/100000000, 8588.0/42200.0
+262/100000000, 8709.0/42200.0
+263/100000000, 8741.0/42200.0
+264/100000000, 8774.0/42200.0
+265/100000000, 8808.0/42200.0
+266/100000000, 8874.0/42200.0
+267/100000000, 8900.0/42200.0
+268/100000000, 9015.0/42200.0
+269/100000000, 9043.0/42200.0
+270/100000000, 9195.0/42200.0
+271/100000000, 9220.0/42200.0
+272/100000000, 9289.0/42200.0
+273/100000000, 9338.0/42200.0
+274/100000000, 9364.0/42200.0
+275/100000000, 9396.0/42200.0
+276/100000000, 9430.0/42200.0
+277/100000000, 9460.0/42200.0
+278/100000000, 9494.0/42200.0
+279/100000000, 9686.0/42200.0
+280/100000000, 9716.0/42200.0
+          -> After 25 bonus runs for LM: crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0523922144833973 [based on 43 runs with cutoff 260.0])
+
+   LM for iteration 3: crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0523922144833973 [based on 43 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 3): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 3): crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+==================================================================
+Training quality of this incumbent parameter configuration: 1.048831708605953, based on 45 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0523922144833973 [based on 43 runs with cutoff 260.0])
+crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.048831708605953 [based on 45 runs with cutoff 260.0])
+Incumbent better, keeping it
+rejecting worse crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0523922144833973 [based on 43 runs with cutoff 260.0]), going back to crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.048831708605953 [based on 45 runs with cutoff 260.0])
+280/100000000, 9716.0/42200.0
+iteration 4, flip 10, evaluation count 280
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.3 popSize=400 selecOp=LinearRank (1.044541462569365 [based on 1 runs with cutoff 260.0])
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.4 popSize=400 selecOp=LinearRank (100000000 [based on 0 runs with cutoff 0])
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.4 popSize=200 selecOp=LinearRank (100000000 [based on 0 runs with cutoff 0])
+281/100000000, 9729.0/42200.0
+   BLS in iteration 4, start with crossOp=Px pCross=0.9 pMutac=0.4 popSize=200 selecOp=LinearRank (1.0443781481356276 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.8"], evaluating ...
+282/100000000, 9742.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=0.8 popSize=200 selecOp=LinearRank (1.0443781481356276 [based on 1 runs with cutoff 260.0]) with flip 10
+
+          
+============= Performing 1 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.8 popSize=200 selecOp=LinearRank (1.0443781481356276 [based on 1 runs with cutoff 260.0]) ============ 
+
+283/100000000, 9789.0/42200.0
+          -> After 1 bonus runs: crossOp=Px pCross=0.9 pMutac=0.8 popSize=200 selecOp=LinearRank (1.0539188240690982 [based on 2 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.8->0.1"], evaluating ...
+284/100000000, 9802.0/42200.0
+        -> worse: (1.0443781481356276 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.8"], evaluating ...
+285/100000000, 9817.0/42200.0
+        -> worse: (1.053580639523235 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.8->0.9"], evaluating ...
+286/100000000, 9830.0/42200.0
+        -> worse: (1.0443781481356276 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.8->0.7"], evaluating ...
+287/100000000, 9843.0/42200.0
+        -> worse: (1.0443781481356276 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 200->350"], evaluating ...
+288/100000000, 9900.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=0.8 popSize=350 selecOp=LinearRank (1.0344960146597335 [based on 2 runs with cutoff 260.0]) with flip 11
+
+          
+============= Performing 5 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.8 popSize=350 selecOp=LinearRank (1.0344960146597335 [based on 2 runs with cutoff 260.0]) ============ 
+
+289/100000000, 9945.0/42200.0
+290/100000000, 9966.0/42200.0
+291/100000000, 9990.0/42200.0
+292/100000000, 10042.0/42200.0
+293/100000000, 10148.0/42200.0
+          -> After 5 bonus runs: crossOp=Px pCross=0.9 pMutac=0.8 popSize=350 selecOp=LinearRank (1.039504365784684 [based on 7 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.8->1.0"], evaluating ...
+294/100000000, 10205.0/42200.0
+        -> worse: (1.0344960146597335 [based on 2 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.7"], evaluating ...
+295/100000000, 10227.0/42200.0
+        -> worse: (1.0597199235063588 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Ux"], evaluating ...
+296/100000000, 10307.0/42200.0
+        -> worse: (1.0405487343891973 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->400"], evaluating ...
+297/100000000, 10337.0/42200.0
+        -> worse: (1.044541462569365 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.8->0.7"], evaluating ...
+298/100000000, 10393.0/42200.0
+        -> worse: (1.0344960146597335 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.8->0.4"], evaluating ...
+299/100000000, 10450.0/42200.0
+        -> worse: (1.0344960146597335 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->500"], evaluating ...
+300/100000000, 10493.0/42200.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.8->0.2"], evaluating ...
+301/100000000, 10549.0/42200.0
+        -> worse: (1.0344960146597335 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->450"], evaluating ...
+302/100000000, 10590.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->100"], evaluating ...
+303/100000000, 10602.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->250"], evaluating ...
+304/100000000, 10624.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.8"], evaluating ...
+305/100000000, 10647.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->150"], evaluating ...
+306/100000000, 10661.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.8->0.9"], evaluating ...
+307/100000000, 10717.0/42200.0
+        -> worse: (1.0344960146597335 [based on 2 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->RouletteWheel"], evaluating ...
+308/100000000, 10744.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->300"], evaluating ...
+309/100000000, 10766.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.8->0.1"], evaluating ...
+310/100000000, 10822.0/42200.0
+        -> worse: (1.0344960146597335 [based on 2 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->1.0"], evaluating ...
+311/100000000, 10847.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Dpx"], evaluating ...
+312/100000000, 10874.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.6"], evaluating ...
+313/100000000, 10902.0/42200.0
+        -> worse: (1.0464431939910492 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.8->0.6"], evaluating ...
+314/100000000, 10959.0/42200.0
+        -> worse: (1.0344960146597335 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->50"], evaluating ...
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.8->0.3"], evaluating ...
+316/100000000, 10989.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.048831708605953 [based on 45 runs with cutoff 260.0]) with flip 12
+
+          
+============= Performing 23 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.048831708605953 [based on 45 runs with cutoff 260.0]) ============ 
+
+317/100000000, 11007.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11007.0, 1.048644422563593 [46, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+318/100000000, 11059.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11059.0, 1.0483085697211765 [47, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+319/100000000, 11176.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11176.0, 1.048495591026167 [48, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+320/100000000, 11210.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11210.0, 1.0475058850868575 [49, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+321/100000000, 11233.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11233.0, 1.0480879786445516 [50, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+322/100000000, 11310.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11310.0, 1.0481454321942365 [51, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+323/100000000, 11331.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11331.0, 1.0472195584981936 [52, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+324/100000000, 11363.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11363.0, 1.0474266497476605 [53, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+325/100000000, 11382.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11382.0, 1.0494118249189766 [54, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+326/100000000, 11405.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11405.0, 1.0485134281022679 [55, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+327/100000000, 11424.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11424.0, 1.0490848565094266 [56, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+328/100000000, 11445.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11445.0, 1.04957246290339 [57, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+329/100000000, 11471.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11471.0, 1.0497432000715883 [58, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+330/100000000, 11500.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11500.0, 1.0495100687859011 [59, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+331/100000000, 11550.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11550.0, 1.0493031194941251 [60, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+332/100000000, 11762.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11762.0, 1.0489471431664195 [61, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+333/100000000, 11779.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11779.0, 1.0486912422354164 [62, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+334/100000000, 11832.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11832.0, 1.048249660417547 [63, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+335/100000000, 11856.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11856.0, 1.048834457604181 [64, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+336/100000000, 11874.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11874.0, 1.0491079859267716 [65, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+337/100000000, 11962.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11962.0, 1.048920473157164 [66, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+338/100000000, 11995.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 11995.0, 1.0484500129444834 [67, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+339/100000000, 12041.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 12041.0, 1.0486087004236746 [68, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+          -> After 23 bonus runs: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0486087004236746 [based on 68 runs with cutoff 260.0])
+
+    Changing ["pCross: 0.9->0.8"], evaluating ...
+340/100000000, 12090.0/42200.0
+        -> worse: (1.0407240501508914 [based on 2 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->1.0"], evaluating ...
+341/100000000, 12149.0/42200.0
+342/100000000, 12207.0/42200.0
+343/100000000, 12229.0/42200.0
+344/100000000, 12254.0/42200.0
+345/100000000, 12327.0/42200.0
+346/100000000, 12379.0/42200.0
+347/100000000, 12399.0/42200.0
+348/100000000, 12514.0/42200.0
+349/100000000, 12561.0/42200.0
+350/100000000, 12626.0/42200.0
+351/100000000, 12653.0/42200.0
+352/100000000, 12683.0/42200.0
+353/100000000, 12701.0/42200.0
+        -> worse: (1.0399033387255998 [based on 14 runs with cutoff 260.0])
+    Changing ["popSize: 350->250"], evaluating ...
+354/100000000, 12795.0/42200.0
+        -> worse: (1.047716222049505 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->150"], evaluating ...
+355/100000000, 12859.0/42200.0
+        -> worse: (1.0536086770897004 [based on 2 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Dpx"], evaluating ...
+356/100000000, 12906.0/42200.0
+        -> worse: (1.0557589138468775 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->100"], evaluating ...
+357/100000000, 12985.0/42200.0
+        -> worse: (1.0551231686638687 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->450"], evaluating ...
+358/100000000, 13036.0/42200.0
+        -> worse: (1.0564234761207563 [based on 2 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.6"], evaluating ...
+359/100000000, 13105.0/42200.0
+        -> worse: (1.0681958059320973 [based on 2 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->BinaryTournament"], evaluating ...
+360/100000000, 13158.0/42200.0
+        -> worse: (1.054744932692011 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->50"], evaluating ...
+361/100000000, 13175.0/42200.0
+        -> worse: (1.0634922685766108 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->500"], evaluating ...
+362/100000000, 13240.0/42200.0
+        -> worse: (1.0428329158437988 [based on 2 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.7"], evaluating ...
+363/100000000, 13317.0/42200.0
+        -> worse: (1.060001003526198 [based on 2 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Ux"], evaluating ...
+364/100000000, 13361.0/42200.0
+        -> worse: (1.0339896854960096 [based on 3 runs with cutoff 260.0])
+    Changing ["popSize: 350->300"], evaluating ...
+365/100000000, 13420.0/42200.0
+        -> worse: (1.053754021071269 [based on 2 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Spx"], evaluating ...
+366/100000000, 13459.0/42200.0
+        -> worse: (1.0831200341681095 [based on 2 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->RouletteWheel"], evaluating ...
+367/100000000, 13564.0/42200.0
+        -> worse: (1.0371713668658704 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.5"], evaluating ...
+368/100000000, 13621.0/42200.0
+        -> worse: (1.0344960146597335 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->200"], evaluating ...
+369/100000000, 13666.0/42200.0
+        -> worse: (1.0539188240690982 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 350->400"], evaluating ...
+370/100000000, 13750.0/42200.0
+        -> worse: (1.0529780778718625 [based on 2 runs with cutoff 260.0])
+          
+============= Performing 19 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0486087004236746 [based on 68 runs with cutoff 260.0]) ============ 
+
+371/100000000, 13815.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 13815.0, 1.0486262292553532 [69, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+372/100000000, 13836.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 13836.0, 1.0492664634510027 [70, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+373/100000000, 13866.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 13866.0, 1.049399813077788 [71, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+374/100000000, 13890.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 13890.0, 1.0487137045628188 [72, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+375/100000000, 13925.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 13925.0, 1.0480463935414102 [73, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+376/100000000, 14044.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14044.0, 1.0483138796277884 [74, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+377/100000000, 14084.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14084.0, 1.048128164384284 [75, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+378/100000000, 14102.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14102.0, 1.0479817661362432 [76, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+379/100000000, 14146.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14146.0, 1.0475122557054866 [77, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+380/100000000, 14168.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14168.0, 1.0481011065676062 [78, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+381/100000000, 14190.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14190.0, 1.0480777659489875 [79, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+382/100000000, 14214.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14214.0, 1.0487146404716723 [80, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+383/100000000, 14320.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14320.0, 1.0488629235317053 [81, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+384/100000000, 14443.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14443.0, 1.0489998954947797 [82, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+385/100000000, 14474.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14474.0, 1.0484095353080956 [83, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+386/100000000, 14499.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14499.0, 1.0483513060787377 [84, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+387/100000000, 14535.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14535.0, 1.0482188567281565 [85, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+388/100000000, 14697.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14697.0, 1.0481413967188171 [86, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+389/100000000, 14913.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 14913.0, 1.0479080745301153 [87, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+          -> After 19 bonus runs for LM: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0479080745301153 [based on 87 runs with cutoff 260.0])
+
+   LM for iteration 4: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0479080745301153 [based on 87 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 4): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 4): crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0479080745301153, based on 87 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0479080745301153 [based on 87 runs with cutoff 260.0])
+crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0479080745301153 [based on 87 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 14913.0, 1.0479080745301153 [87, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+same state as last ILS: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0479080745301153 [based on 87 runs with cutoff 260.0])
+389/100000000, 14913.0/42200.0
+iteration 5, flip 14, evaluation count 389
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.3 popSize=500 selecOp=LinearRank (1.0428329158437988 [based on 2 runs with cutoff 260.0])
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.2 popSize=500 selecOp=LinearRank (100000000 [based on 0 runs with cutoff 0])
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.2 popSize=100 selecOp=LinearRank (100000000 [based on 0 runs with cutoff 0])
+390/100000000, 14925.0/42200.0
+   BLS in iteration 5, start with crossOp=Px pCross=0.9 pMutac=0.2 popSize=100 selecOp=LinearRank (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->1.0"], evaluating ...
+391/100000000, 14936.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.2->1.0"], evaluating ...
+392/100000000, 14948.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=1.0 popSize=100 selecOp=LinearRank (1.0401016745152996 [based on 1 runs with cutoff 260.0]) with flip 14
+
+          
+============= Performing 2 bonus runs of state: crossOp=Px pCross=0.9 pMutac=1.0 popSize=100 selecOp=LinearRank (1.0401016745152996 [based on 1 runs with cutoff 260.0]) ============ 
+
+393/100000000, 15026.0/42200.0
+394/100000000, 15104.0/42200.0
+          -> After 2 bonus runs: crossOp=Px pCross=0.9 pMutac=1.0 popSize=100 selecOp=LinearRank (1.0638943841579824 [based on 3 runs with cutoff 260.0])
+
+    Changing ["pMutac: 1.0->0.8"], evaluating ...
+395/100000000, 15182.0/42200.0
+        -> worse: (1.0551231686638687 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 1.0->0.6"], evaluating ...
+396/100000000, 15194.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Spx"], evaluating ...
+        -> worse: (1.0803757600660946 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.6"], evaluating ...
+398/100000000, 15211.0/42200.0
+        -> worse: (1.0887569272517423 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 100->150"], evaluating ...
+399/100000000, 15225.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->RouletteWheel"], evaluating ...
+        -> worse: (1.059025174076058 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 100->400"], evaluating ...
+401/100000000, 15265.0/42200.0
+        -> worse: (1.044541462569365 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Ux"], evaluating ...
+        -> worse: (1.0657748914388716 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->1.0"], evaluating ...
+403/100000000, 15283.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.7"], evaluating ...
+        -> worse: (1.0887569272517423 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 100->350"], evaluating ...
+405/100000000, 15338.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=1.0 popSize=350 selecOp=LinearRank (1.0299545390097002 [based on 3 runs with cutoff 260.0]) with flip 15
+
+          
+============= Performing 11 bonus runs of state: crossOp=Px pCross=0.9 pMutac=1.0 popSize=350 selecOp=LinearRank (1.0299545390097002 [based on 3 runs with cutoff 260.0]) ============ 
+
+406/100000000, 15359.0/42200.0
+407/100000000, 15383.0/42200.0
+408/100000000, 15436.0/42200.0
+409/100000000, 15542.0/42200.0
+410/100000000, 15563.0/42200.0
+411/100000000, 15704.0/42200.0
+412/100000000, 15747.0/42200.0
+413/100000000, 15801.0/42200.0
+414/100000000, 15831.0/42200.0
+415/100000000, 15867.0/42200.0
+416/100000000, 15887.0/42200.0
+          -> After 11 bonus runs: crossOp=Px pCross=0.9 pMutac=1.0 popSize=350 selecOp=LinearRank (1.039380987838251 [based on 14 runs with cutoff 260.0])
+
+    Changing ["pMutac: 1.0->0.3"], evaluating ...
+417/100000000, 15932.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0479080745301153 [based on 87 runs with cutoff 260.0]) with flip 16
+
+          
+============= Performing 1 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0479080745301153 [based on 87 runs with cutoff 260.0]) ============ 
+
+418/100000000, 15982.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 15982.0, 1.047600841725337 [88, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+          -> After 1 bonus runs: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.047600841725337 [based on 88 runs with cutoff 260.0])
+
+    Changing ["popSize: 350->250"], evaluating ...
+419/100000000, 16048.0/42200.0
+        -> worse: (1.049688262583435 [based on 3 runs with cutoff 260.0])
+    Changing ["popSize: 350->150"], evaluating ...
+420/100000000, 16108.0/42200.0
+        -> worse: (1.0569085371760407 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.2"], evaluating ...
+421/100000000, 16161.0/42200.0
+        -> worse: (1.0299545390097002 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.4"], evaluating ...
+422/100000000, 16211.0/42200.0
+        -> worse: (1.0299545390097002 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.1"], evaluating ...
+423/100000000, 16261.0/42200.0
+        -> worse: (1.0299545390097002 [based on 3 runs with cutoff 260.0])
+    Changing ["popSize: 350->200"], evaluating ...
+424/100000000, 16308.0/42200.0
+        -> worse: (1.0575906279559961 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.6"], evaluating ...
+425/100000000, 16358.0/42200.0
+        -> worse: (1.0299545390097002 [based on 3 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Spx"], evaluating ...
+426/100000000, 16399.0/42200.0
+        -> worse: (1.0782862418117143 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.7"], evaluating ...
+427/100000000, 16446.0/42200.0
+        -> worse: (1.0299545390097002 [based on 3 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Dpx"], evaluating ...
+428/100000000, 16554.0/42200.0
+        -> worse: (1.0592030768993033 [based on 3 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->BinaryTournament"], evaluating ...
+429/100000000, 16619.0/42200.0
+        -> worse: (1.0550854727040717 [based on 3 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.8"], evaluating ...
+430/100000000, 16665.0/42200.0
+        -> worse: (1.0341065626704722 [based on 3 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->1.0"], evaluating ...
+431/100000000, 16724.0/42200.0
+432/100000000, 16984.0/42200.0
+433/100000000, 17008.0/42200.0
+434/100000000, 17064.0/42200.0
+435/100000000, 17095.0/42200.0
+436/100000000, 17118.0/42200.0
+        -> worse: (1.048021626009716 [based on 20 runs with cutoff 260.0])
+    Changing ["popSize: 350->500"], evaluating ...
+437/100000000, 17207.0/42200.0
+        -> worse: (1.0483736091862594 [based on 3 runs with cutoff 260.0])
+    Changing ["popSize: 350->400"], evaluating ...
+438/100000000, 17259.0/42200.0
+        -> worse: (1.0569634638245056 [based on 3 runs with cutoff 260.0])
+    Changing ["selecOp: LinearRank->RouletteWheel"], evaluating ...
+439/100000000, 17310.0/42200.0
+        -> worse: (1.031738107147125 [based on 3 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.6"], evaluating ...
+440/100000000, 17346.0/42200.0
+        -> worse: (1.069619391883401 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.5"], evaluating ...
+441/100000000, 17401.0/42200.0
+        -> worse: (1.0299545390097002 [based on 3 runs with cutoff 260.0])
+    Changing ["popSize: 350->450"], evaluating ...
+442/100000000, 17487.0/42200.0
+        -> worse: (1.044572846650382 [based on 3 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Ux"], evaluating ...
+443/100000000, 17518.0/42200.0
+        -> worse: (1.048852919859712 [based on 4 runs with cutoff 260.0])
+    Changing ["popSize: 350->300"], evaluating ...
+444/100000000, 17602.0/42200.0
+        -> worse: (1.048877776762193 [based on 3 runs with cutoff 260.0])
+    Changing ["popSize: 350->100"], evaluating ...
+445/100000000, 17706.0/42200.0
+        -> worse: (1.0638943841579824 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.9"], evaluating ...
+446/100000000, 17765.0/42200.0
+        -> worse: (1.0299545390097002 [based on 3 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.7"], evaluating ...
+447/100000000, 17806.0/42200.0
+        -> worse: (1.064156190279468 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.8"], evaluating ...
+448/100000000, 17989.0/42200.0
+        -> worse: (1.040682206331135 [based on 9 runs with cutoff 260.0])
+    Changing ["popSize: 350->50"], evaluating ...
+449/100000000, 18030.0/42200.0
+        -> worse: (1.0747864548148303 [based on 3 runs with cutoff 260.0])
+          
+============= Performing 26 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.047600841725337 [based on 88 runs with cutoff 260.0]) ============ 
+
+450/100000000, 18061.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18061.0, 1.047926793649452 [89, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+451/100000000, 18100.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18100.0, 1.0480468769083775 [90, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+452/100000000, 18145.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18145.0, 1.0482094330576714 [91, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+453/100000000, 18165.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18165.0, 1.0485105277763134 [92, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+454/100000000, 18192.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18192.0, 1.0479889091980734 [93, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+455/100000000, 18214.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18214.0, 1.0478758548392242 [94, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+456/100000000, 18258.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18258.0, 1.0478644111690678 [95, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+457/100000000, 18303.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18303.0, 1.0476549201388452 [96, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+458/100000000, 18325.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18325.0, 1.0471636323023623 [97, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+459/100000000, 18347.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18347.0, 1.0481273096260633 [98, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+460/100000000, 18466.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18466.0, 1.0484612297181783 [99, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+461/100000000, 18488.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18488.0, 1.0486427554067221 [100, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+462/100000000, 18526.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18526.0, 1.0481611439670515 [101, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+463/100000000, 18551.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18551.0, 1.0486050800355198 [102, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+464/100000000, 18644.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18644.0, 1.0485214208533464 [103, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+465/100000000, 18663.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18663.0, 1.0484106562060374 [104, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+466/100000000, 18694.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18694.0, 1.0481834060417876 [105, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+467/100000000, 18717.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18717.0, 1.0483553621032846 [106, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+468/100000000, 18737.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18737.0, 1.0485260016964553 [107, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+469/100000000, 18765.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18765.0, 1.0491004395453447 [108, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+470/100000000, 18785.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18785.0, 1.0500685649531738 [109, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+471/100000000, 18822.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18822.0, 1.0497906577945642 [110, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+472/100000000, 18948.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18948.0, 1.0500910082921846 [111, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+473/100000000, 18975.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 18975.0, 1.0499866531641877 [112, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+474/100000000, 19030.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 19030.0, 1.0498381675703656 [113, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+475/100000000, 19258.0/42200.0
+ Same incumbent, new precision:
+New Incumbent: 19258.0, 1.0496854055377902 [114, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+          -> After 26 bonus runs for LM: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0496854055377902 [based on 114 runs with cutoff 260.0])
+
+   LM for iteration 5: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0496854055377902 [based on 114 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 5): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 5): crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0496854055377902, based on 114 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0496854055377902 [based on 114 runs with cutoff 260.0])
+crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0496854055377902 [based on 114 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 19258.0, 1.0496854055377902 [114, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+same state as last ILS: crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0496854055377902 [based on 114 runs with cutoff 260.0])
+475/100000000, 19258.0/42200.0
+iteration 6, flip 18, evaluation count 475
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.3 popSize=100 selecOp=LinearRank (1.0638943841579824 [based on 3 runs with cutoff 260.0])
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.2 popSize=100 selecOp=LinearRank (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.2 popSize=100 selecOp=RouletteWheel (100000000 [based on 0 runs with cutoff 0])
+   BLS in iteration 6, start with crossOp=Px pCross=0.9 pMutac=0.2 popSize=100 selecOp=RouletteWheel (1.059025174076058 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.8"], evaluating ...
+477/100000000, 19276.0/42200.0
+        -> worse: (1.0865169033279114 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.2->0.1"], evaluating ...
+478/100000000, 19288.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=0.1 popSize=100 selecOp=RouletteWheel (1.059025174076058 [based on 1 runs with cutoff 260.0]) with flip 18
+
+          
+============= Performing 2 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.1 popSize=100 selecOp=RouletteWheel (1.059025174076058 [based on 1 runs with cutoff 260.0]) ============ 
+
+479/100000000, 19325.0/42200.0
+480/100000000, 19386.0/42200.0
+          -> After 2 bonus runs: crossOp=Px pCross=0.9 pMutac=0.1 popSize=100 selecOp=RouletteWheel (1.0581301572746542 [based on 3 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.1->0.6"], evaluating ...
+481/100000000, 19398.0/42200.0
+        -> worse: (1.059025174076058 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.6"], evaluating ...
+482/100000000, 19411.0/42200.0
+        -> worse: (1.0837630674244019 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: RouletteWheel->LinearRank"], evaluating ...
+483/100000000, 19428.0/42200.0
+484/100000000, 19526.0/42200.0
+485/100000000, 19622.0/42200.0
+        -> worse: (1.0638943841579824 [based on 3 runs with cutoff 260.0])
+    Changing ["popSize: 100->300"], evaluating ...
+486/100000000, 19645.0/42200.0
+487/100000000, 19694.0/42200.0
+488/100000000, 19727.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=0.1 popSize=300 selecOp=RouletteWheel (1.043888852441908 [based on 3 runs with cutoff 260.0]) with flip 19
+
+          
+============= Performing 4 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.1 popSize=300 selecOp=RouletteWheel (1.043888852441908 [based on 3 runs with cutoff 260.0]) ============ 
+
+489/100000000, 19745.0/42200.0
+490/100000000, 19767.0/42200.0
+491/100000000, 19816.0/42200.0
+492/100000000, 19850.0/42200.0
+          -> After 4 bonus runs: crossOp=Px pCross=0.9 pMutac=0.1 popSize=300 selecOp=RouletteWheel (1.044614177751077 [based on 7 runs with cutoff 260.0])
+
+    Changing ["popSize: 300->50"], evaluating ...
+493/100000000, 19862.0/42200.0
+        -> worse: (1.070205294084534 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->1.0"], evaluating ...
+494/100000000, 19882.0/42200.0
+        -> worse: (1.0443472565549006 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->150"], evaluating ...
+495/100000000, 19897.0/42200.0
+        -> worse: (1.051201129674368 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Ux"], evaluating ...
+496/100000000, 19929.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.7"], evaluating ...
+497/100000000, 19946.0/42200.0
+        -> worse: (1.0443472565549006 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->200"], evaluating ...
+498/100000000, 19958.0/42200.0
+        -> worse: (1.0482006913077593 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: RouletteWheel->BinaryTournament"], evaluating ...
+499/100000000, 19977.0/42200.0
+500/100000000, 20020.0/42200.0
+501/100000000, 20142.0/42200.0
+        -> worse: (1.0461383816582706 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.6"], evaluating ...
+502/100000000, 20165.0/42200.0
+        -> worse: (1.0443472565549006 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->250"], evaluating ...
+503/100000000, 20186.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->1.0"], evaluating ...
+504/100000000, 20215.0/42200.0
+505/100000000, 20294.0/42200.0
+506/100000000, 20352.0/42200.0
+507/100000000, 20373.0/42200.0
+508/100000000, 20393.0/42200.0
+509/100000000, 20454.0/42200.0
+        -> worse: (1.045080711388451 [based on 6 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.5"], evaluating ...
+510/100000000, 20475.0/42200.0
+        -> worse: (1.0443472565549006 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.4"], evaluating ...
+511/100000000, 20495.0/42200.0
+        -> worse: (1.0443472565549006 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 300->350"], evaluating ...
+512/100000000, 20526.0/42200.0
+513/100000000, 20645.0/42200.0
+514/100000000, 20692.0/42200.0
+515/100000000, 20712.0/42200.0
+516/100000000, 20744.0/42200.0
+517/100000000, 20817.0/42200.0
+518/100000000, 20872.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=0.1 popSize=350 selecOp=RouletteWheel (1.0401523287771195 [based on 7 runs with cutoff 260.0]) with flip 20
+
+          
+============= Performing 13 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.1 popSize=350 selecOp=RouletteWheel (1.0401523287771195 [based on 7 runs with cutoff 260.0]) ============ 
+
+519/100000000, 20894.0/42200.0
+520/100000000, 20984.0/42200.0
+521/100000000, 21026.0/42200.0
+522/100000000, 21072.0/42200.0
+523/100000000, 21094.0/42200.0
+524/100000000, 21130.0/42200.0
+525/100000000, 21151.0/42200.0
+526/100000000, 21187.0/42200.0
+527/100000000, 21447.0/42200.0
+528/100000000, 21472.0/42200.0
+529/100000000, 21520.0/42200.0
+530/100000000, 21556.0/42200.0
+531/100000000, 21580.0/42200.0
+          -> After 13 bonus runs: crossOp=Px pCross=0.9 pMutac=0.1 popSize=350 selecOp=RouletteWheel (1.0457234406390579 [based on 20 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.1->0.5"], evaluating ...
+532/100000000, 21616.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Dpx"], evaluating ...
+533/100000000, 21646.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.6"], evaluating ...
+534/100000000, 21675.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 350->400"], evaluating ...
+535/100000000, 21710.0/42200.0
+536/100000000, 21813.0/42200.0
+537/100000000, 21886.0/42200.0
+538/100000000, 21916.0/42200.0
+539/100000000, 21952.0/42200.0
+540/100000000, 22025.0/42200.0
+541/100000000, 22164.0/42200.0
+542/100000000, 22196.0/42200.0
+543/100000000, 22397.0/42200.0
+544/100000000, 22449.0/42200.0
+545/100000000, 22516.0/42200.0
+546/100000000, 22540.0/42200.0
+547/100000000, 22573.0/42200.0
+548/100000000, 22596.0/42200.0
+549/100000000, 22634.0/42200.0
+550/100000000, 22856.0/42200.0
+551/100000000, 22879.0/42200.0
+552/100000000, 22927.0/42200.0
+553/100000000, 22961.0/42200.0
+554/100000000, 22985.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.041765718589283 [based on 20 runs with cutoff 260.0]) with flip 21
+
+          
+============= Performing 4 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.041765718589283 [based on 20 runs with cutoff 260.0]) ============ 
+
+555/100000000, 23017.0/42200.0
+556/100000000, 23045.0/42200.0
+557/100000000, 23067.0/42200.0
+558/100000000, 23110.0/42200.0
+          -> After 4 bonus runs: crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.039574234341642 [based on 24 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.1->0.5"], evaluating ...
+559/100000000, 23139.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.7"], evaluating ...
+560/100000000, 23171.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: RouletteWheel->BinaryTournament"], evaluating ...
+561/100000000, 23201.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.8"], evaluating ...
+562/100000000, 23232.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.7"], evaluating ...
+563/100000000, 23263.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 400->500"], evaluating ...
+564/100000000, 23302.0/42200.0
+        -> worse: (1.0216144939877068 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.8"], evaluating ...
+565/100000000, 23329.0/42200.0
+        -> worse: (1.044007569741311 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 400->450"], evaluating ...
+566/100000000, 23363.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Spx"], evaluating ...
+567/100000000, 23393.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Dpx"], evaluating ...
+568/100000000, 23423.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->1.0"], evaluating ...
+569/100000000, 23453.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.4"], evaluating ...
+570/100000000, 23481.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->0.6"], evaluating ...
+571/100000000, 23510.0/42200.0
+        -> worse: (1.037116300539225 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.9"], evaluating ...
+572/100000000, 23546.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.2"], evaluating ...
+573/100000000, 23574.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.3"], evaluating ...
+574/100000000, 23607.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: RouletteWheel->LinearRank"], evaluating ...
+575/100000000, 23644.0/42200.0
+        -> worse: (1.044541462569365 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.9->1.0"], evaluating ...
+576/100000000, 23681.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Ux"], evaluating ...
+577/100000000, 23711.0/42200.0
+        -> worse: (1.0240866506171868 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.1->0.6"], evaluating ...
+578/100000000, 23747.0/42200.0
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+          
+============= Performing 20 bonus runs of state: crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.039574234341642 [based on 24 runs with cutoff 260.0]) ============ 
+
+579/100000000, 23943.0/42200.0
+580/100000000, 23976.0/42200.0
+581/100000000, 24015.0/42200.0
+582/100000000, 24042.0/42200.0
+583/100000000, 24131.0/42200.0
+584/100000000, 24150.0/42200.0
+585/100000000, 24237.0/42200.0
+586/100000000, 24260.0/42200.0
+587/100000000, 24451.0/42200.0
+588/100000000, 24473.0/42200.0
+589/100000000, 24540.0/42200.0
+590/100000000, 24591.0/42200.0
+591/100000000, 24610.0/42200.0
+592/100000000, 24638.0/42200.0
+593/100000000, 24676.0/42200.0
+594/100000000, 24702.0/42200.0
+595/100000000, 24741.0/42200.0
+596/100000000, 25001.0/42200.0
+597/100000000, 25030.0/42200.0
+598/100000000, 25130.0/42200.0
+          -> After 20 bonus runs for LM: crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.0442830561518497 [based on 44 runs with cutoff 260.0])
+
+   LM for iteration 6: crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.0442830561518497 [based on 44 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 6): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 6): crossOp=Px, pCross=0.9, pMutac=0.3, popSize=350, selecOp=LinearRank
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0496854055377902, based on 114 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.0442830561518497 [based on 44 runs with cutoff 260.0])
+crossOp=Px pCross=0.9 pMutac=0.3 popSize=350 selecOp=LinearRank (1.0496854055377902 [based on 114 runs with cutoff 260.0])
+599/100000000, 25156.0/42200.0
+600/100000000, 25176.0/42200.0
+601/100000000, 25233.0/42200.0
+602/100000000, 25418.0/42200.0
+603/100000000, 25463.0/42200.0
+604/100000000, 25490.0/42200.0
+605/100000000, 25686.0/42200.0
+606/100000000, 25713.0/42200.0
+607/100000000, 25737.0/42200.0
+608/100000000, 25756.0/42200.0
+609/100000000, 25782.0/42200.0
+610/100000000, 25806.0/42200.0
+611/100000000, 25834.0/42200.0
+612/100000000, 25860.0/42200.0
+613/100000000, 25896.0/42200.0
+614/100000000, 25952.0/42200.0
+615/100000000, 26206.0/42200.0
+616/100000000, 26226.0/42200.0
+617/100000000, 26291.0/42200.0
+618/100000000, 26329.0/42200.0
+619/100000000, 26355.0/42200.0
+620/100000000, 26419.0/42200.0
+621/100000000, 26453.0/42200.0
+622/100000000, 26565.0/42200.0
+623/100000000, 26649.0/42200.0
+624/100000000, 26673.0/42200.0
+625/100000000, 26706.0/42200.0
+626/100000000, 26731.0/42200.0
+627/100000000, 26769.0/42200.0
+628/100000000, 26910.0/42200.0
+629/100000000, 26960.0/42200.0
+630/100000000, 26979.0/42200.0
+631/100000000, 27022.0/42200.0
+632/100000000, 27045.0/42200.0
+633/100000000, 27070.0/42200.0
+634/100000000, 27098.0/42200.0
+635/100000000, 27204.0/42200.0
+636/100000000, 27262.0/42200.0
+637/100000000, 27300.0/42200.0
+638/100000000, 27328.0/42200.0
+639/100000000, 27381.0/42200.0
+640/100000000, 27475.0/42200.0
+641/100000000, 27705.0/42200.0
+642/100000000, 27766.0/42200.0
+643/100000000, 27790.0/42200.0
+644/100000000, 27823.0/42200.0
+645/100000000, 27872.0/42200.0
+646/100000000, 27892.0/42200.0
+647/100000000, 27918.0/42200.0
+648/100000000, 27942.0/42200.0
+649/100000000, 27970.0/42200.0
+650/100000000, 27998.0/42200.0
+651/100000000, 28019.0/42200.0
+652/100000000, 28038.0/42200.0
+653/100000000, 28108.0/42200.0
+654/100000000, 28128.0/42200.0
+655/100000000, 28166.0/42200.0
+656/100000000, 28191.0/42200.0
+657/100000000, 28367.0/42200.0
+658/100000000, 28386.0/42200.0
+659/100000000, 28413.0/42200.0
+660/100000000, 28433.0/42200.0
+661/100000000, 28453.0/42200.0
+662/100000000, 28484.0/42200.0
+663/100000000, 28503.0/42200.0
+664/100000000, 28575.0/42200.0
+665/100000000, 28641.0/42200.0
+666/100000000, 28684.0/42200.0
+667/100000000, 28749.0/42200.0
+668/100000000, 28985.0/42200.0
+New inc: 1.0449881266633638
+New Incumbent: 28985.0, 1.0449881266633638 [114, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.1, popSize=400, selecOp=RouletteWheel
+LM better, change incumbent
+New Incumbent: 28985.0, 1.0449881266633638 [114, 260.0]. With state crossOp=Px, pCross=0.9, pMutac=0.1, popSize=400, selecOp=RouletteWheel
+   Accepting new better local optimum: crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.0449881266633638 [based on 114 runs with cutoff 260.0])
+668/100000000, 28985.0/42200.0
+iteration 7, flip 23, evaluation count 668
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.6 popSize=400 selecOp=BinaryTournament (100000000 [based on 0 runs with cutoff 0])
+    perturb to ---> crossOp=Px pCross=0.8 pMutac=0.6 popSize=400 selecOp=BinaryTournament (100000000 [based on 0 runs with cutoff 0])
+669/100000000, 29013.0/42200.0
+   BLS in iteration 7, start with crossOp=Px pCross=0.8 pMutac=0.6 popSize=400 selecOp=BinaryTournament (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 400->50"], evaluating ...
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.7"], evaluating ...
+671/100000000, 29049.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 400->500"], evaluating ...
+672/100000000, 29083.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.8 pMutac=0.6 popSize=500 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0]) with flip 23
+
+          
+============= Performing 3 bonus runs of state: crossOp=Px pCross=0.8 pMutac=0.6 popSize=500 selecOp=BinaryTournament (1.0245493889598223 [based on 1 runs with cutoff 260.0]) ============ 
+
+673/100000000, 29144.0/42200.0
+674/100000000, 29215.0/42200.0
+675/100000000, 29245.0/42200.0
+          -> After 3 bonus runs: crossOp=Px pCross=0.8 pMutac=0.6 popSize=500 selecOp=BinaryTournament (1.0583626495473297 [based on 4 runs with cutoff 260.0])
+
+    Changing ["popSize: 500->200"], evaluating ...
+676/100000000, 29260.0/42200.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.6->0.1"], evaluating ...
+677/100000000, 29322.0/42200.0
+        -> worse: (1.0424591856139211 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.6->0.4"], evaluating ...
+678/100000000, 29354.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.6->0.3"], evaluating ...
+679/100000000, 29385.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0583626495473297 [based on 4 runs with cutoff 260.0]) with flip 24
+
+          
+============= Performing 4 bonus runs of state: crossOp=Px pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0583626495473297 [based on 4 runs with cutoff 260.0]) ============ 
+
+680/100000000, 29417.0/42200.0
+681/100000000, 29489.0/42200.0
+682/100000000, 29607.0/42200.0
+683/100000000, 29636.0/42200.0
+          -> After 4 bonus runs: crossOp=Px pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.044431251108994 [based on 8 runs with cutoff 260.0])
+
+    Changing ["crossOp: Px->Spx"], evaluating ...
+684/100000000, 29685.0/42200.0
+        -> worse: (1.070059998619405 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->350"], evaluating ...
+685/100000000, 29730.0/42200.0
+        -> worse: (1.07141460669681 [based on 2 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.7"], evaluating ...
+686/100000000, 29766.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->1.0"], evaluating ...
+687/100000000, 29827.0/42200.0
+        -> worse: (1.0424591856139211 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.5"], evaluating ...
+688/100000000, 29889.0/42200.0
+        -> worse: (1.0424591856139211 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->300"], evaluating ...
+689/100000000, 29930.0/42200.0
+        -> worse: (1.0651282345395545 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->150"], evaluating ...
+690/100000000, 29950.0/42200.0
+        -> worse: (1.0839800501960295 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.8"], evaluating ...
+691/100000000, 29982.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.9"], evaluating ...
+692/100000000, 30041.0/42200.0
+        -> worse: (1.046620955201976 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->450"], evaluating ...
+693/100000000, 30096.0/42200.0
+        -> worse: (1.0435237136817683 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->200"], evaluating ...
+694/100000000, 30111.0/42200.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->250"], evaluating ...
+695/100000000, 30149.0/42200.0
+        -> worse: (1.0481227342386432 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->50"], evaluating ...
+696/100000000, 30168.0/42200.0
+        -> worse: (1.0890391624635427 [based on 2 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Dpx"], evaluating ...
+697/100000000, 30303.0/42200.0
+698/100000000, 30348.0/42200.0
+699/100000000, 30405.0/42200.0
+700/100000000, 30444.0/42200.0
+701/100000000, 30486.0/42200.0
+702/100000000, 30512.0/42200.0
+          -> Take improving step to neighbour crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0523922144833973 [based on 43 runs with cutoff 260.0]) with flip 25
+
+          
+============= Performing 14 bonus runs of state: crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0523922144833973 [based on 43 runs with cutoff 260.0]) ============ 
+
+703/100000000, 30559.0/42200.0
+704/100000000, 30588.0/42200.0
+705/100000000, 30615.0/42200.0
+706/100000000, 30664.0/42200.0
+707/100000000, 30725.0/42200.0
+708/100000000, 30760.0/42200.0
+709/100000000, 30789.0/42200.0
+710/100000000, 30875.0/42200.0
+711/100000000, 30903.0/42200.0
+712/100000000, 30937.0/42200.0
+713/100000000, 30962.0/42200.0
+714/100000000, 30990.0/42200.0
+715/100000000, 31016.0/42200.0
+716/100000000, 31049.0/42200.0
+          -> After 14 bonus runs: crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0535604299790164 [based on 57 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.3->0.5"], evaluating ...
+717/100000000, 31099.0/42200.0
+        -> worse: (1.0339606848987173 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->100"], evaluating ...
+718/100000000, 31118.0/42200.0
+        -> worse: (1.0859677572775501 [based on 2 runs with cutoff 260.0])
+    Changing ["crossOp: Dpx->Ux"], evaluating ...
+719/100000000, 31174.0/42200.0
+        -> worse: (1.0562121647219525 [based on 3 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.9"], evaluating ...
+720/100000000, 31282.0/42200.0
+        -> worse: (1.059859842926628 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->150"], evaluating ...
+721/100000000, 31313.0/42200.0
+        -> worse: (1.0788956322268772 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.8"], evaluating ...
+722/100000000, 31363.0/42200.0
+        -> worse: (1.0339606848987173 [based on 2 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->1.0"], evaluating ...
+723/100000000, 31426.0/42200.0
+        -> worse: (1.0589308997954596 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->1.0"], evaluating ...
+724/100000000, 31475.0/42200.0
+        -> worse: (1.0339606848987173 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->400"], evaluating ...
+725/100000000, 31524.0/42200.0
+        -> worse: (1.0401961990179864 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.6"], evaluating ...
+726/100000000, 31574.0/42200.0
+        -> worse: (1.0339606848987173 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.2"], evaluating ...
+727/100000000, 31623.0/42200.0
+        -> worse: (1.0339606848987173 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->250"], evaluating ...
+728/100000000, 31658.0/42200.0
+        -> worse: (1.0583225327604209 [based on 2 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.6"], evaluating ...
+729/100000000, 31708.0/42200.0
+        -> worse: (1.0449083372620689 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->50"], evaluating ...
+730/100000000, 31789.0/42200.0
+        -> worse: (1.1236879720018467 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->200"], evaluating ...
+731/100000000, 31815.0/42200.0
+        -> worse: (1.0666274292793283 [based on 2 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->LinearRank"], evaluating ...
+732/100000000, 31870.0/42200.0
+        -> worse: (1.0416842654841707 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->350"], evaluating ...
+733/100000000, 31907.0/42200.0
+        -> worse: (1.042033146443278 [based on 2 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->RouletteWheel"], evaluating ...
+734/100000000, 31958.0/42200.0
+        -> worse: (1.0363139206604584 [based on 2 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.7"], evaluating ...
+735/100000000, 32009.0/42200.0
+        -> worse: (1.0390467006754225 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.1"], evaluating ...
+736/100000000, 32059.0/42200.0
+        -> worse: (1.0339606848987173 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->300"], evaluating ...
+737/100000000, 32089.0/42200.0
+        -> worse: (1.0420277236093711 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.9"], evaluating ...
+738/100000000, 32139.0/42200.0
+        -> worse: (1.0339606848987173 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.7"], evaluating ...
+739/100000000, 32188.0/42200.0
+        -> worse: (1.0339606848987173 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->450"], evaluating ...
+740/100000000, 32232.0/42200.0
+        -> worse: (1.0590015448058099 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.3->0.4"], evaluating ...
+741/100000000, 32282.0/42200.0
+        -> worse: (1.0339606848987173 [based on 2 runs with cutoff 260.0])
+          
+============= Performing 25 bonus runs of state: crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.0535604299790164 [based on 57 runs with cutoff 260.0]) ============ 
+
+742/100000000, 32313.0/42200.0
+743/100000000, 32359.0/42200.0
+744/100000000, 32400.0/42200.0
+745/100000000, 32637.0/42200.0
+746/100000000, 32663.0/42200.0
+747/100000000, 32714.0/42200.0
+748/100000000, 32745.0/42200.0
+749/100000000, 32772.0/42200.0
+750/100000000, 32820.0/42200.0
+751/100000000, 32870.0/42200.0
+752/100000000, 32912.0/42200.0
+753/100000000, 32972.0/42200.0
+754/100000000, 33003.0/42200.0
+755/100000000, 33035.0/42200.0
+756/100000000, 33067.0/42200.0
+757/100000000, 33103.0/42200.0
+758/100000000, 33237.0/42200.0
+759/100000000, 33305.0/42200.0
+760/100000000, 33331.0/42200.0
+761/100000000, 33383.0/42200.0
+762/100000000, 33413.0/42200.0
+763/100000000, 33445.0/42200.0
+764/100000000, 33477.0/42200.0
+765/100000000, 33545.0/42200.0
+766/100000000, 33632.0/42200.0
+          -> After 25 bonus runs for LM: crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.052955916208808 [based on 82 runs with cutoff 260.0])
+
+   LM for iteration 7: crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.052955916208808 [based on 82 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 7): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 7): crossOp=Px, pCross=0.9, pMutac=0.1, popSize=400, selecOp=RouletteWheel
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0449881266633638, based on 114 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.052955916208808 [based on 82 runs with cutoff 260.0])
+crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.0449881266633638 [based on 114 runs with cutoff 260.0])
+Incumbent better, keeping it
+rejecting worse crossOp=Dpx pCross=0.8 pMutac=0.3 popSize=500 selecOp=BinaryTournament (1.052955916208808 [based on 82 runs with cutoff 260.0]), going back to crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.0449881266633638 [based on 114 runs with cutoff 260.0])
+766/100000000, 33632.0/42200.0
+iteration 8, flip 27, evaluation count 766
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.1 popSize=150 selecOp=RouletteWheel (1.051201129674368 [based on 1 runs with cutoff 260.0])
+    perturb to ---> crossOp=Px pCross=0.9 pMutac=0.4 popSize=150 selecOp=RouletteWheel (100000000 [based on 0 runs with cutoff 0])
+    perturb to ---> crossOp=Px pCross=0.8 pMutac=0.4 popSize=150 selecOp=RouletteWheel (100000000 [based on 0 runs with cutoff 0])
+   BLS in iteration 8, start with crossOp=Px pCross=0.8 pMutac=0.4 popSize=150 selecOp=RouletteWheel (1.0657748914388716 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: RouletteWheel->BinaryTournament"], evaluating ...
+768/100000000, 33653.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.8 pMutac=0.4 popSize=150 selecOp=BinaryTournament (1.0581953947199412 [based on 1 runs with cutoff 260.0]) with flip 27
+
+          
+============= Performing 1 bonus runs of state: crossOp=Px pCross=0.8 pMutac=0.4 popSize=150 selecOp=BinaryTournament (1.0581953947199412 [based on 1 runs with cutoff 260.0]) ============ 
+
+769/100000000, 33674.0/42200.0
+          -> After 1 bonus runs: crossOp=Px pCross=0.8 pMutac=0.4 popSize=150 selecOp=BinaryTournament (1.0839800501960295 [based on 2 runs with cutoff 260.0])
+
+    Changing ["selecOp: BinaryTournament->LinearRank"], evaluating ...
+770/100000000, 33685.0/42200.0
+        -> worse: (1.0803757600660946 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 150->250"], evaluating ...
+771/100000000, 33703.0/42200.0
+772/100000000, 33742.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.8 pMutac=0.4 popSize=250 selecOp=BinaryTournament (1.0481227342386432 [based on 2 runs with cutoff 260.0]) with flip 28
+
+          
+============= Performing 2 bonus runs of state: crossOp=Px pCross=0.8 pMutac=0.4 popSize=250 selecOp=BinaryTournament (1.0481227342386432 [based on 2 runs with cutoff 260.0]) ============ 
+
+773/100000000, 33775.0/42200.0
+774/100000000, 33787.0/42200.0
+          -> After 2 bonus runs: crossOp=Px pCross=0.8 pMutac=0.4 popSize=250 selecOp=BinaryTournament (1.0728019608000072 [based on 4 runs with cutoff 260.0])
+
+    Changing ["pMutac: 0.4->0.2"], evaluating ...
+775/100000000, 33805.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.6"], evaluating ...
+776/100000000, 33823.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.1"], evaluating ...
+777/100000000, 33841.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.9"], evaluating ...
+778/100000000, 33859.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->LinearRank"], evaluating ...
+779/100000000, 33880.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Spx"], evaluating ...
+780/100000000, 33897.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.9"], evaluating ...
+781/100000000, 33917.0/42200.0
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 250->500"], evaluating ...
+782/100000000, 33979.0/42200.0
+783/100000000, 34052.0/42200.0
+784/100000000, 34082.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=0.8 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.0583626495473297 [based on 4 runs with cutoff 260.0]) with flip 29
+
+          
+============= Performing 8 bonus runs of state: crossOp=Px pCross=0.8 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.0583626495473297 [based on 4 runs with cutoff 260.0]) ============ 
+
+785/100000000, 34115.0/42200.0
+786/100000000, 34190.0/42200.0
+787/100000000, 34311.0/42200.0
+788/100000000, 34341.0/42200.0
+789/100000000, 34476.0/42200.0
+790/100000000, 34521.0/42200.0
+791/100000000, 34578.0/42200.0
+792/100000000, 34617.0/42200.0
+          -> After 8 bonus runs: crossOp=Px pCross=0.8 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.046042053128036 [based on 12 runs with cutoff 260.0])
+
+    Changing ["popSize: 500->200"], evaluating ...
+793/100000000, 34632.0/42200.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->50"], evaluating ...
+        -> worse: (1.0581953947199412 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Ux"], evaluating ...
+795/100000000, 34672.0/42200.0
+        -> worse: (1.0563907042747172 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.2"], evaluating ...
+796/100000000, 34704.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Dpx"], evaluating ...
+797/100000000, 34747.0/42200.0
+798/100000000, 34776.0/42200.0
+799/100000000, 34809.0/42200.0
+800/100000000, 34875.0/42200.0
+801/100000000, 34968.0/42200.0
+802/100000000, 34996.0/42200.0
+803/100000000, 35118.0/42200.0
+        -> worse: (1.0456008862444983 [based on 9 runs with cutoff 260.0])
+    Changing ["popSize: 500->450"], evaluating ...
+804/100000000, 35150.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->1.0"], evaluating ...
+805/100000000, 35222.0/42200.0
+        -> worse: (1.0449014577473137 [based on 3 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->0.9"], evaluating ...
+806/100000000, 35258.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->350"], evaluating ...
+807/100000000, 35282.0/42200.0
+        -> worse: (1.0749718371731916 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.7"], evaluating ...
+808/100000000, 35344.0/42200.0
+        -> worse: (1.0424591856139211 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.6"], evaluating ...
+809/100000000, 35376.0/42200.0
+        -> worse: (1.0466901196378637 [based on 5 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.5"], evaluating ...
+810/100000000, 35448.0/42200.0
+        -> worse: (1.0449014577473137 [based on 3 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.9"], evaluating ...
+811/100000000, 35481.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 0.8->1.0"], evaluating ...
+812/100000000, 35519.0/42200.0
+813/100000000, 35622.0/42200.0
+814/100000000, 35707.0/42200.0
+815/100000000, 35739.0/42200.0
+816/100000000, 35772.0/42200.0
+817/100000000, 35865.0/42200.0
+818/100000000, 35994.0/42200.0
+819/100000000, 36032.0/42200.0
+820/100000000, 36196.0/42200.0
+821/100000000, 36263.0/42200.0
+822/100000000, 36348.0/42200.0
+823/100000000, 36382.0/42200.0
+          -> Take improving step to neighbour crossOp=Px pCross=1.0 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.03432525928625 [based on 12 runs with cutoff 260.0]) with flip 30
+
+          
+============= Performing 14 bonus runs of state: crossOp=Px pCross=1.0 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.03432525928625 [based on 12 runs with cutoff 260.0]) ============ 
+
+824/100000000, 36427.0/42200.0
+825/100000000, 36454.0/42200.0
+826/100000000, 36512.0/42200.0
+827/100000000, 36772.0/42200.0
+828/100000000, 36800.0/42200.0
+829/100000000, 36850.0/42200.0
+830/100000000, 36889.0/42200.0
+831/100000000, 36916.0/42200.0
+832/100000000, 36951.0/42200.0
+833/100000000, 36986.0/42200.0
+834/100000000, 37013.0/42200.0
+835/100000000, 37063.0/42200.0
+836/100000000, 37216.0/42200.0
+837/100000000, 37249.0/42200.0
+          -> After 14 bonus runs: crossOp=Px pCross=1.0 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.0411571378617093 [based on 26 runs with cutoff 260.0])
+
+    Changing ["popSize: 500->50"], evaluating ...
+        -> worse: (1.0817139355742298 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->450"], evaluating ...
+839/100000000, 37288.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->300"], evaluating ...
+840/100000000, 37308.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.7"], evaluating ...
+841/100000000, 37346.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Spx"], evaluating ...
+842/100000000, 37382.0/42200.0
+        -> worse: (1.0766295375045196 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->RouletteWheel"], evaluating ...
+843/100000000, 37428.0/42200.0
+844/100000000, 37522.0/42200.0
+        -> worse: (1.0362190594764038 [based on 2 runs with cutoff 260.0])
+    Changing ["popSize: 500->100"], evaluating ...
+845/100000000, 37534.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.2"], evaluating ...
+846/100000000, 37571.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->150"], evaluating ...
+847/100000000, 37584.0/42200.0
+        -> worse: (1.0401016745152996 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->200"], evaluating ...
+848/100000000, 37595.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.3"], evaluating ...
+849/100000000, 37633.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["selecOp: BinaryTournament->LinearRank"], evaluating ...
+850/100000000, 37676.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->350"], evaluating ...
+851/100000000, 37698.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.6"], evaluating ...
+852/100000000, 37735.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->250"], evaluating ...
+853/100000000, 37752.0/42200.0
+854/100000000, 37800.0/42200.0
+        -> worse: (1.0355793131143878 [based on 2 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.8"], evaluating ...
+855/100000000, 37838.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["popSize: 500->400"], evaluating ...
+856/100000000, 37871.0/42200.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.5"], evaluating ...
+857/100000000, 37910.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->1.0"], evaluating ...
+858/100000000, 37949.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 1.0->0.6"], evaluating ...
+859/100000000, 37981.0/42200.0
+        -> worse: (1.0563907042747172 [based on 1 runs with cutoff 260.0])
+    Changing ["pCross: 1.0->0.7"], evaluating ...
+860/100000000, 38019.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.9"], evaluating ...
+861/100000000, 38057.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["pMutac: 0.4->0.1"], evaluating ...
+862/100000000, 38095.0/42200.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Dpx"], evaluating ...
+863/100000000, 38132.0/42200.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["crossOp: Px->Ux"], evaluating ...
+864/100000000, 38179.0/42200.0
+        -> worse: (1.0561424200468352 [based on 1 runs with cutoff 260.0])
+          
+============= Performing 25 bonus runs of state: crossOp=Px pCross=1.0 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.0411571378617093 [based on 26 runs with cutoff 260.0]) ============ 
+
+865/100000000, 38215.0/42200.0
+866/100000000, 38256.0/42200.0
+867/100000000, 38326.0/42200.0
+868/100000000, 38353.0/42200.0
+869/100000000, 38511.0/42200.0
+870/100000000, 38543.0/42200.0
+871/100000000, 38761.0/42200.0
+872/100000000, 38787.0/42200.0
+873/100000000, 38873.0/42200.0
+874/100000000, 38939.0/42200.0
+875/100000000, 38966.0/42200.0
+876/100000000, 39025.0/42200.0
+877/100000000, 39070.0/42200.0
+878/100000000, 39105.0/42200.0
+879/100000000, 39164.0/42200.0
+880/100000000, 39424.0/42200.0
+881/100000000, 39455.0/42200.0
+882/100000000, 39576.0/42200.0
+883/100000000, 39611.0/42200.0
+884/100000000, 39638.0/42200.0
+885/100000000, 39717.0/42200.0
+886/100000000, 39887.0/42200.0
+887/100000000, 39938.0/42200.0
+888/100000000, 39972.0/42200.0
+889/100000000, 40094.0/42200.0
+          -> After 25 bonus runs for LM: crossOp=Px pCross=1.0 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.0406373956911914 [based on 51 runs with cutoff 260.0])
+
+   LM for iteration 8: crossOp=Px pCross=1.0 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.0406373956911914 [based on 51 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 8): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 8): crossOp=Px, pCross=0.9, pMutac=0.1, popSize=400, selecOp=RouletteWheel
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0449881266633638, based on 114 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+crossOp=Px pCross=1.0 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.0406373956911914 [based on 51 runs with cutoff 260.0])
+crossOp=Px pCross=0.9 pMutac=0.1 popSize=400 selecOp=RouletteWheel (1.0449881266633638 [based on 114 runs with cutoff 260.0])
+890/100000000, 40128.0/42200.0
+891/100000000, 40167.0/42200.0
+892/100000000, 40193.0/42200.0
+893/100000000, 40224.0/42200.0
+894/100000000, 40251.0/42200.0
+895/100000000, 40286.0/42200.0
+896/100000000, 40318.0/42200.0
+897/100000000, 40378.0/42200.0
+898/100000000, 40442.0/42200.0
+899/100000000, 40702.0/42200.0
+900/100000000, 40729.0/42200.0
+901/100000000, 40813.0/42200.0
+902/100000000, 40848.0/42200.0
+903/100000000, 40874.0/42200.0
+904/100000000, 40962.0/42200.0
+905/100000000, 41019.0/42200.0
+906/100000000, 41155.0/42200.0
+907/100000000, 41297.0/42200.0
+908/100000000, 41329.0/42200.0
+909/100000000, 41374.0/42200.0
+910/100000000, 41408.0/42200.0
+911/100000000, 41457.0/42200.0
+912/100000000, 41655.0/42200.0
+913/100000000, 41744.0/42200.0
+914/100000000, 41771.0/42200.0
+915/100000000, 41865.0/42200.0
+916/100000000, 41894.0/42200.0
+917/100000000, 41928.0/42200.0
+918/100000000, 41975.0/42200.0
+919/100000000, 42074.0/42200.0
+920/100000000, 42262.0/42200.0
+921/100000000, 42313.0/42200.0
+922/100000000, 42356.0/42200.0
+923/100000000, 42417.0/42200.0
+924/100000000, 42528.0/42200.0
+925/100000000, 42788.0/42200.0
+926/100000000, 42873.0/42200.0
+927/100000000, 42908.0/42200.0
+928/100000000, 42953.0/42200.0
+929/100000000, 43047.0/42200.0
+930/100000000, 43075.0/42200.0
+931/100000000, 43108.0/42200.0
+932/100000000, 43139.0/42200.0
+933/100000000, 43183.0/42200.0
+934/100000000, 43241.0/42200.0
+935/100000000, 43272.0/42200.0
+936/100000000, 43298.0/42200.0
+937/100000000, 43391.0/42200.0
+938/100000000, 43420.0/42200.0
+939/100000000, 43471.0/42200.0
+940/100000000, 43503.0/42200.0
+941/100000000, 43629.0/42200.0
+942/100000000, 43656.0/42200.0
+943/100000000, 43698.0/42200.0
+944/100000000, 43725.0/42200.0
+945/100000000, 43755.0/42200.0
+946/100000000, 43807.0/42200.0
+947/100000000, 43834.0/42200.0
+948/100000000, 43915.0/42200.0
+949/100000000, 43998.0/42200.0
+950/100000000, 44062.0/42200.0
+951/100000000, 44131.0/42200.0
+952/100000000, 44385.0/42200.0
+New inc: 1.043728218959693
+New Incumbent: 44385.0, 1.043728218959693 [114, 260.0]. With state crossOp=Px, pCross=1.0, pMutac=0.4, popSize=500, selecOp=BinaryTournament
+LM better, change incumbent
+New Incumbent: 44385.0, 1.043728218959693 [114, 260.0]. With state crossOp=Px, pCross=1.0, pMutac=0.4, popSize=500, selecOp=BinaryTournament
+   Accepting new better local optimum: crossOp=Px pCross=1.0 pMutac=0.4 popSize=500 selecOp=BinaryTournament (1.043728218959693 [based on 114 runs with cutoff 260.0])
+Final solution for depth 1 with limit N=2000, and cutoff time=260.0.
+New Incumbent: 44385.0, 1.043728218959693 [114, 260.0]. With state crossOp=Px, pCross=1.0, pMutac=0.4, popSize=500, selecOp=BinaryTournament
+
+==================================================================
+ParamILS is finished.
+==================================================================
+
+Final best parameter configuration found: crossOp=Px, pCross=1.0, pMutac=0.4, popSize=500, selecOp=BinaryTournament
+==================================================================
+Active parameters: crossOp=Px, pCross=1.0, pMutac=0.4, popSize=500, selecOp=BinaryTournament
+
+==================================================================
+Training quality of this final best found parameter configuration: 1.043728218959693, based on 114 runs with cutoff 260.0
+==================================================================
+
+
+==================================================================
+Computing validation result on independent data -- 100 runs with cutoff time 260.0...
+==================================================================
+C:/JCell/temp/instanciasCSP/CU2.txt: 1.0554836622452282
+C:/JCell/temp/instanciasCSP/OF1.txt: 1.0289473684210526
+C:/JCell/temp/instanciasCSP/Hchl3s.txt: 1.0401941582219194
+C:/JCell/temp/instanciasCSP/ATP38.txt: 1.043493013972056
+C:/JCell/temp/instanciasCSP/CU8.txt: 1.0283958304615868
+C:/JCell/temp/instanciasCSP/CHL1s.txt: 1.025281778334377
+C:/JCell/temp/instanciasCSP/ATP34.txt: 1.0480590210714968
+C:/JCell/temp/instanciasCSP/Hchl7s.txt: 1.0351659887153917
+C:/JCell/temp/instanciasCSP/Hchl5s.txt: 1.0602133968387384
+C:/JCell/temp/instanciasCSP/A2s.txt: 1.0354422964264791
+C:/JCell/temp/instanciasCSP/STS2s.txt: 1.0060540540540541
+C:/JCell/temp/instanciasCSP/CHL7.txt: 1.0356441717791411
+C:/JCell/temp/instanciasCSP/ATP32.txt: 1.0214113227797157
+C:/JCell/temp/instanciasCSP/A4.txt: 1.057504706486394
+C:/JCell/temp/instanciasCSP/W.txt: 1.0
+C:/JCell/temp/instanciasCSP/CHL5.txt: 1.0077519379844961
+C:/JCell/temp/instanciasCSP/CHL3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/ATP30.txt: 1.0322637362637364
+C:/JCell/temp/instanciasCSP/CU6.txt: 1.0440061097650901
+C:/JCell/temp/instanciasCSP/ATP36.txt: 1.0553488259462251
+C:/JCell/temp/instanciasCSP/CU10.txt: 1.045386380032911
+C:/JCell/temp/instanciasCSP/wang2.DAT: 1.0
+C:/JCell/temp/instanciasCSP/CU4.txt: 1.0629425985751269
+C:/JCell/temp/instanciasCSP/3s.txt: 1.03736179946626
+C:/JCell/temp/instanciasCSP/CU6.txt: 1.0470876446933128
+C:/JCell/temp/instanciasCSP/STS2s.txt: 1.0060540540540541
+C:/JCell/temp/instanciasCSP/CU10.txt: 1.0668935287766956
+C:/JCell/temp/instanciasCSP/ATP34.txt: 1.0352188322644034
+C:/JCell/temp/instanciasCSP/ATP38.txt: 1.0382252125939841
+C:/JCell/temp/instanciasCSP/CHL5.txt: 1.0077519379844961
+C:/JCell/temp/instanciasCSP/A2s.txt: 1.0354422964264791
+C:/JCell/temp/instanciasCSP/A4.txt: 1.06442721791559
+C:/JCell/temp/instanciasCSP/3s.txt: 1.03736179946626
+C:/JCell/temp/instanciasCSP/Hchl5s.txt: 1.0709400499976416
+C:/JCell/temp/instanciasCSP/ATP36.txt: 1.0584844559585491
+C:/JCell/temp/instanciasCSP/CU8.txt: 1.0184045903213508
+C:/JCell/temp/instanciasCSP/ATP30.txt: 1.041873396381275
+C:/JCell/temp/instanciasCSP/ATP32.txt: 1.0298947596244894
+C:/JCell/temp/instanciasCSP/CHL7.txt: 1.0448102989416352
+C:/JCell/temp/instanciasCSP/W.txt: 1.0
+C:/JCell/temp/instanciasCSP/Hchl7s.txt: 1.054027422883578
+C:/JCell/temp/instanciasCSP/CU2.txt: 1.0554836622452282
+C:/JCell/temp/instanciasCSP/Hchl3s.txt: 1.017407962685324
+C:/JCell/temp/instanciasCSP/CHL1s.txt: 1.025281778334377
+C:/JCell/temp/instanciasCSP/wang2.DAT: 1.0
+C:/JCell/temp/instanciasCSP/OF1.txt: 1.0289473684210526
+C:/JCell/temp/instanciasCSP/CHL3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/CU4.txt: 1.0316773088304003
+C:/JCell/temp/instanciasCSP/wang2.DAT: 1.0
+C:/JCell/temp/instanciasCSP/ATP36.txt: 1.0505154390673084
+C:/JCell/temp/instanciasCSP/CHL7.txt: 1.0521690351533284
+C:/JCell/temp/instanciasCSP/CU8.txt: 1.0283958304615868
+C:/JCell/temp/instanciasCSP/CHL1s.txt: 1.025281778334377
+C:/JCell/temp/instanciasCSP/CHL3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/ATP32.txt: 1.0298947596244894
+C:/JCell/temp/instanciasCSP/3s.txt: 1.03736179946626
+C:/JCell/temp/instanciasCSP/W.txt: 1.0
+C:/JCell/temp/instanciasCSP/ATP30.txt: 1.0419196213997857
+C:/JCell/temp/instanciasCSP/Hchl3s.txt: 1.0255226261439006
+C:/JCell/temp/instanciasCSP/Hchl5s.txt: 1.0524486059285698
+C:/JCell/temp/instanciasCSP/ATP38.txt: 1.0467691297313748
+C:/JCell/temp/instanciasCSP/CU4.txt: 1.032502753590058
+C:/JCell/temp/instanciasCSP/A2s.txt: 1.0360492379835873
+C:/JCell/temp/instanciasCSP/STS2s.txt: 1.0060540540540541
+C:/JCell/temp/instanciasCSP/ATP34.txt: 1.0431522190920426
+C:/JCell/temp/instanciasCSP/A4.txt: 1.0453391981052276
+C:/JCell/temp/instanciasCSP/CU6.txt: 1.0470876446933128
+C:/JCell/temp/instanciasCSP/OF1.txt: 1.06003098373354
+C:/JCell/temp/instanciasCSP/CHL5.txt: 1.0129870129870129
+C:/JCell/temp/instanciasCSP/CU10.txt: 1.0222314992918895
+C:/JCell/temp/instanciasCSP/Hchl7s.txt: 1.0518841980699678
+C:/JCell/temp/instanciasCSP/CU2.txt: 1.0554836622452282
+C:/JCell/temp/instanciasCSP/ATP38.txt: 1.0467691297313748
+C:/JCell/temp/instanciasCSP/ATP32.txt: 1.0298947596244894
+C:/JCell/temp/instanciasCSP/A2s.txt: 1.0354422964264791
+C:/JCell/temp/instanciasCSP/3s.txt: 1.03736179946626
+C:/JCell/temp/instanciasCSP/ATP36.txt: 1.044030982991296
+C:/JCell/temp/instanciasCSP/CU2.txt: 1.0554836622452282
+C:/JCell/temp/instanciasCSP/Hchl7s.txt: 1.0372756557754257
+C:/JCell/temp/instanciasCSP/ATP30.txt: 1.0409805181852434
+C:/JCell/temp/instanciasCSP/W.txt: 1.03736179946626
+C:/JCell/temp/instanciasCSP/Hchl3s.txt: 1.0332431060734224
+C:/JCell/temp/instanciasCSP/CHL5.txt: 1.0103626943005182
+C:/JCell/temp/instanciasCSP/OF1.txt: 1.0289473684210526
+C:/JCell/temp/instanciasCSP/CHL3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/ATP34.txt: 1.0412167379253916
+C:/JCell/temp/instanciasCSP/CHL7.txt: 1.075839653304442
+C:/JCell/temp/instanciasCSP/CU6.txt: 1.0470876446933128
+C:/JCell/temp/instanciasCSP/CU10.txt: 1.0235796954019263
+C:/JCell/temp/instanciasCSP/STS2s.txt: 1.0128428384849804
+C:/JCell/temp/instanciasCSP/Hchl5s.txt: 1.0724069525788777
+C:/JCell/temp/instanciasCSP/CU8.txt: 1.0283958304615868
+C:/JCell/temp/instanciasCSP/CU4.txt: 1.036671500558158
+C:/JCell/temp/instanciasCSP/CHL1s.txt: 1.025281778334377
+C:/JCell/temp/instanciasCSP/wang2.DAT: 1.0
+C:/JCell/temp/instanciasCSP/A4.txt: 1.0453391981052276
+C:/JCell/temp/instanciasCSP/STS2s.txt: 1.0060540540540541
+C:/JCell/temp/instanciasCSP/CHL3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/CHL5.txt: 1.0077519379844961
+C:/JCell/temp/instanciasCSP/CU4.txt: 1.0325671294371934
+Combined result: 1.0331731754982958
+
+================================================================
+Final best parameter configuration: crossOp=Px, pCross=1.0, pMutac=0.4, popSize=500, selecOp=BinaryTournament
+==================================================================
+Active parameters: crossOp=Px, pCross=1.0, pMutac=0.4, popSize=500, selecOp=BinaryTournament
+
+================================================================
+Training quality of this final best found parameter configuration: 1.043728218959693, based on 114 runs with cutoff 260.0
+Test quality of this final best found parameter configuration: 1.0331731754982958, based on 100 independent runs with cutoff 260.0
+==================================================================

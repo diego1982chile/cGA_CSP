@@ -1,0 +1,6 @@
+Final best parameter configuration: isl=5, migfreq=15000
+==================================================================
+Active parameters: isl=5, migfreq=15000
+==================================================================
+Training quality of this final best found parameter configuration: 1.0425509256632568, based on 135 runs with cutoff 260.0
+Test quality of this final best found parameter configuration: 1.033411625207899, based on 100 independent runs with cutoff 260.0

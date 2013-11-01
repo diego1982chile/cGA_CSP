@@ -1,0 +1,6 @@
+Final best parameter configuration: crossOp=Px, pCross=1.0, pMutac=0.4, popSize=500, selecOp=BinaryTournament
+==================================================================
+Active parameters: crossOp=Px, pCross=1.0, pMutac=0.4, popSize=500, selecOp=BinaryTournament
+==================================================================
+Training quality of this final best found parameter configuration: 1.043728218959693, based on 114 runs with cutoff 260.0
+Test quality of this final best found parameter configuration: 1.0331731754982958, based on 100 independent runs with cutoff 260.0

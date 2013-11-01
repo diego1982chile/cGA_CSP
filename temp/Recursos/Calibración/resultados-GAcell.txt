@@ -1,0 +1,9 @@
+================================================================
+Final best parameter configuration: grid=1x400, neigh=Compact9, updPol=uc
+==================================================================
+Active parameters: grid=1x400, neigh=Compact9, updPol=uc
+
+================================================================
+Training quality of this final best found parameter configuration: 1.0309150492481174, based on 220 runs with cutoff 260.0
+Test quality of this final best found parameter configuration: 1.024677143422739, based on 100 independent runs with cutoff 260.0
+==================================================================

@@ -67,7 +67,7 @@ public class JCellIslands implements GenerationListener {
 
         JCellIslands sel = new JCellIslands();
         
-        int idExperimento=0;         
+        int idExperimento=3;         
         
 //        Identificador del experimento: 
 //        0: AG-Generacional
@@ -86,7 +86,7 @@ public class JCellIslands implements GenerationListener {
         
         // Input parametros AG
         // Parametros AG generacional/Steady-State
-        int popSize=100; // Tamaño poblacion       
+        int popSize=400; // Tamaño poblacion       
         Double mutac= new Double(1.0); // Probabilidad de mutacion
         Double cross= new Double(1.0); // Probabilidad de cruzamiento
         
@@ -105,7 +105,8 @@ public class JCellIslands implements GenerationListener {
         // Operadores geneticos
         String mutacOp="";
         String crossOp="";
-        String selecOp="";        
+        String selecOp1="";        
+        String selecOp2="";        
         
         // Parametros AG Celular adicionales (no considerados)
         Class c;
@@ -138,7 +139,7 @@ public class JCellIslands implements GenerationListener {
         
         Random r=new Random(seed);
         EvolutionaryAlg ea= new DistributedGA(r);  
-        Population pop= new PopIsland(islands, islandSize);   ;             
+        Population pop= new PopIsland(islands, islandSize);          
             
         switch(idExperimento)
         {
@@ -153,19 +154,19 @@ public class JCellIslands implements GenerationListener {
                 {
                     // Capturar parametros del AG
                     for (int i = 0; i < args.length; ++i) {                    
-                        if (args[i].equals("-popSize"))
-                            popSize= Integer.parseInt(args[++i]); // Capturar tamaño poblacion
+//                        if (args[i].equals("-popSize"))
+//                            popSize= Integer.parseInt(args[++i]); // Capturar tamaño poblacion
                         if (args[i].equals("-pMutac"))
                             mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion
                         if (args[i].equals("-pCross"))                
                             cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento
-                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
-                        {
-                            if(args[++i].toString().equals("BinaryMutation"))
-                                ea.setParam("mutation", new BinaryMutation(r, ea));
-                            if(args[++i].toString().equals("OneGeneMutation"))
-                                ea.setParam("mutation", new OneGeneMutation(r));                            
-                        }
+//                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
+//                        {
+//                            if(args[++i].toString().equals("BinaryMutation"))
+//                                ea.setParam("mutation", new BinaryMutation(r, ea));
+//                            if(args[++i].toString().equals("OneGeneMutation"))
+//                                ea.setParam("mutation", new OneGeneMutation(r));                            
+//                        }
                         if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
                         {   
                             crossOp= args[++i].toString();
@@ -178,25 +179,26 @@ public class JCellIslands implements GenerationListener {
                             else if(crossOp.contains("Ux"))
                                 ea.setParam("crossover", new UX(r));                            
                         }       
-                        if (args[i].equals("-selecOp")) // Capturar operador de cruzamiento
+                        if (args[i].equals("-selecOp1")) // Capturar operador de seleccion 1
                         {
-                            selecOp= args[++i].toString();      
-                            if(selecOp.contains("BinaryTournament"))
-                            {
-                                ea.setParam("selection1", new TournamentSelection(r));
-                                ea.setParam("selection2", new TournamentSelection(r));
-                            }
-                            else if(selecOp.contains("RouletteWheel"))
-                            {
-                                ea.setParam("selection1", new RouletteWheelSelection(r));
-                                ea.setParam("selection2", new RouletteWheelSelection(r));
-                            }
-                            else if(selecOp.contains("LinearRank"))
-                            {
-                                ea.setParam("selection1", new LinearRankSelection(r));
-                                ea.setParam("selection2", new LinearRankSelection(r));
-                            }                                                        
-                        }       
+                            selecOp1= args[++i].toString();      
+                            if(selecOp1.contains("BinaryTournament"))                            
+                                ea.setParam("selection1", new TournamentSelection(r));                                                            
+                            else if(selecOp1.contains("RouletteWheel"))                            
+                                ea.setParam("selection1", new RouletteWheelSelection(r));                                                            
+                            else if(selecOp1.contains("LinearRank"))                            
+                                ea.setParam("selection1", new LinearRankSelection(r));                                                                              
+                        }
+                        if (args[i].equals("-selecOp2")) // Capturar operador de seleccion 2
+                        {
+                            selecOp2= args[++i].toString();      
+                            if(selecOp2.contains("BinaryTournament"))                                                            
+                                ea.setParam("selection2", new TournamentSelection(r));                            
+                            else if(selecOp2.contains("RouletteWheel"))                            
+                                ea.setParam("selection2", new RouletteWheelSelection(r));                            
+                            else if(selecOp2.contains("LinearRank"))                            
+                                ea.setParam("selection2", new LinearRankSelection(r));                                            
+                        }                        
                     }                                              
                 }
                 pop = new Population(popSize);                                     
@@ -210,34 +212,59 @@ public class JCellIslands implements GenerationListener {
                     for (int i = 0; i < args.length; ++i) {                    
                         if (args[i].equals("-isl"))
                             islands= Integer.parseInt(args[++i]); // Capturar numero de islas
-                        if (args[i].equals("-islSize"))
-                            islandSize= Integer.parseInt(args[++i]); // Capturar tamaño de islas
+//                        if (args[i].equals("-islSize"))
+//                            islandSize= Integer.parseInt(args[++i]); // Capturar tamaño de islas
                         if (args[i].equals("-migFreq"))                
                             migrationFreq= Integer.parseInt(args[++i]); // Capturar frecuencia de migracion
-                        if (args[i].equals("-pMutac"))
-                            mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion
-                        if (args[i].equals("-pCross"))                
-                            cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento
-                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
-                        {
-                            if(args[++i].toString().equals("BinaryMutation"))
-                                ea.setParam("mutation", new BinaryMutation(r, ea));
-                            if(args[++i].toString().equals("OneGeneMutation"))
-                                ea.setParam("mutation", new OneGeneMutation(r));                            
-                        }
-                        if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
-                        {
-                            if(args[++i].toString().contains("Dpx"))
-                                ea.setParam("crossover", new Dpx(r));
-                            else if(args[++i].toString().contains("Spx"))
-                                ea.setParam("crossover", new Spx(r));  
-                            else if(args[++i].toString().contains("Px"))
-                                ea.setParam("crossover", new Px(r));  
-                            else if(args[++i].toString().contains("Ux"))
-                                ea.setParam("crossover", new UX(r));                            
-                        }                         
-                    }                                              
-                }                                                                
+//                        if (args[i].equals("-pMutac"))
+//                            mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion
+//                        if (args[i].equals("-pCross"))                
+//                            cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento
+//                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
+//                        {
+//                            if(args[++i].toString().equals("BinaryMutation"))
+//                                ea.setParam("mutation", new BinaryMutation(r, ea));
+//                            if(args[++i].toString().equals("OneGeneMutation"))
+//                                ea.setParam("mutation", new OneGeneMutation(r));                            
+//                        }
+//                         if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
+//                        {   
+//                            crossOp= args[++i].toString();
+//                            if(crossOp.contains("Dpx"))
+//                                ea.setParam("crossover", new Dpx(r));
+//                            else if(crossOp.contains("Spx"))
+//                                ea.setParam("crossover", new Spx(r));  
+//                            else if(crossOp.contains("Px"))
+//                                ea.setParam("crossover", new Px(r));  
+//                            else if(crossOp.contains("Ux"))
+//                                ea.setParam("crossover", new UX(r));                            
+//                        }       
+//                        if (args[i].equals("-selecOp1")) // Capturar operador de seleccion 1
+//                        {
+//                            selecOp1= args[++i].toString();      
+//                            if(selecOp1.contains("BinaryTournament"))                            
+//                                ea.setParam("selection1", new TournamentSelection(r));                                                            
+//                            else if(selecOp1.contains("RouletteWheel"))                            
+//                                ea.setParam("selection1", new RouletteWheelSelection(r));                                                            
+//                            else if(selecOp1.contains("LinearRank"))                            
+//                                ea.setParam("selection1", new LinearRankSelection(r));                                                                              
+//                        }
+//                        if (args[i].equals("-selecOp2")) // Capturar operador de seleccion 2
+//                        {
+//                            selecOp2= args[++i].toString();      
+//                            if(selecOp2.contains("BinaryTournament"))                                                            
+//                                ea.setParam("selection2", new TournamentSelection(r));                            
+//                            else if(selecOp2.contains("RouletteWheel"))                            
+//                                ea.setParam("selection2", new RouletteWheelSelection(r));                            
+//                            else if(selecOp2.contains("LinearRank"))                            
+//                                ea.setParam("selection2", new LinearRankSelection(r));                                            
+//                        }                        
+//                    }      
+                   }
+                }         
+                mutac=0.9;
+                cross=1.0;
+                islandSize=(int)Math.floor(popSize/islands);
                 pop = new PopIsland(islands, islandSize);   
                 break;
             case 3:
@@ -256,34 +283,39 @@ public class JCellIslands implements GenerationListener {
                         if (args[i].equals("-neigh")) // Capturar topologia de vecindad                
                         {
                             neigh= args[++i].toString();                            
-                            c = Class.forName(neigh);
-                            neighborhood = (Neighborhood) c.newInstance(); // Constructor called
+                            if(neigh.contains("Linear5"))                                                            
+                                neighborhood = new Linear5(dX,dY);                            
+                            else if(neigh.contains("Compact9"))                            
+                                neighborhood = new Compact9();                            
+                            else if(selecOp2.contains("Compact13"))                            
+                                neighborhood = new Compact13(); 
                         }                       
                         if (args[i].equals("-updPol"))
                             updatePolicy= args[++i].toString(); // Capturar politica de actualizacion
-                        if (args[i].equals("-pMutac"))
-                            mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion                        
-                        if (args[i].equals("-pCross"))                
-                            cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento   
-                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
-                        {
-                            if(args[++i].toString().contains("BinaryMutation"))
-                                ea.setParam("mutation", new BinaryMutation(r, ea));
-                            else if(args[++i].toString().contains("OneGeneMutation"))
-                                ea.setParam("mutation", new OneGeneMutation(r));                            
-                        }
-                        if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
-                        {
-                            if(args[++i].toString().equals("Dpx"))
-                                ea.setParam("crossover", new Dpx(r));
-                            if(args[++i].toString().equals("Spx"))
-                                ea.setParam("crossover", new Spx(r));  
-                            if(args[++i].toString().equals("Px"))
-                                ea.setParam("crossover", new Px(r));  
-                            if(args[++i].toString().equals("Ux"))
-                                ea.setParam("crossover", new UX(r));                            
-                        }                                                
-                    }                                              
+//                        if (args[i].equals("-pMutac"))
+//                            mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion                        
+//                        if (args[i].equals("-pCross"))                
+//                            cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento   
+//                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
+//                        {
+//                            if(args[++i].toString().contains("BinaryMutation"))
+//                                ea.setParam("mutation", new BinaryMutation(r, ea));
+//                            else if(args[++i].toString().contains("OneGeneMutation"))
+//                                ea.setParam("mutation", new OneGeneMutation(r));                            
+//                        }
+//                        if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
+//                        {
+//                            if(args[++i].toString().equals("Dpx"))
+//                                ea.setParam("crossover", new Dpx(r));
+//                            if(args[++i].toString().equals("Spx"))
+//                                ea.setParam("crossover", new Spx(r));  
+//                            if(args[++i].toString().equals("Px"))
+//                                ea.setParam("crossover", new Px(r));  
+//                            if(args[++i].toString().equals("Ux"))
+//                                ea.setParam("crossover", new UX(r));                            
+//                        }                                                
+//                    }            
+                   }
                 }                                     
                 pop = new PopGrid(dX, dY);                
                            		
@@ -358,11 +390,11 @@ public class JCellIslands implements GenerationListener {
         ea.setParam(EvolutionaryAlg.PARAM_LOCAL_SEARCH_STEPS, 100);        
         ea.setParam(EvolutionaryAlg.PARAM_LOCAL_SEARCH_PROB, 0.0);                
         
-//        ea.setParam("selection1", new TournamentSelection(r)); // selection of one parent
-//        ea.setParam("selection2", new TournamentSelection(r)); // selection of one parent
-//        ea.setParam("crossover", new Dpx(r));
-//        ea.setParam("mutation", new BinaryMutation(r, ea));
-//        ea.setParam("replacement", new ReplaceIfBetter());
+        ea.setParam("selection1", new RouletteWheelSelection(r)); // selection of one parent
+        ea.setParam("selection2", new RouletteWheelSelection(r)); // selection of one parent
+        ea.setParam("crossover", new Spx(r));
+        ea.setParam("mutation", new BinaryMutation(r, ea));
+        ea.setParam("replacement", new ReplaceIfBetter());
         ea.setParam("replacement", new ReplaceIfNonWorse());                        
 	ea.setParam("swap", new Swap());                	               
         

@@ -1,0 +1,2014 @@
+Call: /usr/bin/ruby ../scripts/param_ils_2_3_run.rb "-numRun" "0" "-scenariofile" "escenarioGAdist.txt" "-validN" "100"
+
+
+seed: 1234
+algo: ruby csp_wrapper.rb
+tunerTimeout: 18000.0
+maxEvals: 100000000
+run_obj: qual
+overall_obj: mean
+instance_file: CSP-training.txt
+test_instance_file: CSP-test.txt
+N: 2000
+cutoff_time: 260.0
+cutoff_length: 150000
+R: 10
+pertubation_strength_basic: 
+pertubation_strength_scaling: false
+p_restart: 0.01
+Run 1
+Level 
+========================================================
+Starting ILS for level 1, i.e. a limit of N=2000, and cutoff time=260.0.
+Current CPU time = 0, this run goes until 18000.0 
+========================================================
+New Incumbent: 0, 100000000 [0, 0]. With state isl=4, migfreq=5000
+1/100000000, 15.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 15.0, 1.042075127228877 [1, 260.0]. With state isl=4, migfreq=5000
+New inc: 1.0235098748100202
+New Incumbent: 23.0, 1.0235098748100202 [1, 260.0]. With state isl=7, migfreq=25000
+          -> Take improving step to random isl=7 migfreq=25000 (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+
+3/100000000, 37.0/18000.0
+        -> Worse random: isl=8 migfreq=5000 (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+4/100000000, 48.0/18000.0
+        -> Worse random: isl=5 migfreq=10000 (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+5/100000000, 59.0/18000.0
+        -> Worse random: isl=5 migfreq=15000 (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+        -> Worse random: isl=10 migfreq=20000 (1.0693023899762906 [based on 1 runs with cutoff 260.0])
+7/100000000, 70.0/18000.0
+        -> Worse random: isl=10 migfreq=25000 (1.0693023899762906 [based on 1 runs with cutoff 260.0])
+8/100000000, 83.0/18000.0
+        -> Worse random: isl=8 migfreq=15000 (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+        -> Worse random: isl=10 migfreq=15000 (1.0693023899762906 [based on 1 runs with cutoff 260.0])
+10/100000000, 127.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 127.0, 1.0329757110014124 [2, 260.0]. With state isl=7, migfreq=25000
+11/100000000, 159.0/18000.0
+        -> Worse random: isl=4 migfreq=5000 (1.0446163608234618 [based on 2 runs with cutoff 260.0])
+12/100000000, 238.0/18000.0
+        -> Worse random: isl=8 migfreq=5000 (1.0543603061547595 [based on 2 runs with cutoff 260.0])
+   BLS in iteration 1, start with isl=7 migfreq=25000 (1.0329757110014124 [based on 2 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->20000"], evaluating ...
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->5000"], evaluating ...
+14/100000000, 254.0/18000.0
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->10000"], evaluating ...
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    Changing ["isl: 7->6"], evaluating ...
+16/100000000, 276.0/18000.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["isl: 7->4"], evaluating ...
+17/100000000, 292.0/18000.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["isl: 7->10"], evaluating ...
+18/100000000, 345.0/18000.0
+        -> worse: (1.0572087627290059 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 7->5"], evaluating ...
+19/100000000, 357.0/18000.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["isl: 7->9"], evaluating ...
+21/100000000, 410.0/18000.0
+        -> worse: (1.0345942981866516 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 7->8"], evaluating ...
+22/100000000, 423.0/18000.0
+        -> worse: (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->15000"], evaluating ...
+        -> worse: (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+          
+============= Performing 10 bonus runs of state: isl=7 migfreq=25000 (1.0329757110014124 [based on 2 runs with cutoff 260.0]) ============ 
+
+24/100000000, 477.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 477.0, 1.0400610464468467 [3, 260.0]. With state isl=7, migfreq=25000
+ Same incumbent, new precision:
+New Incumbent: 486.0, 1.0543307158412576 [4, 260.0]. With state isl=7, migfreq=25000
+26/100000000, 498.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 498.0, 1.043464572673006 [5, 260.0]. With state isl=7, migfreq=25000
+27/100000000, 531.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 531.0, 1.0445416981577376 [6, 260.0]. With state isl=7, migfreq=25000
+28/100000000, 594.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 594.0, 1.0422170942361135 [7, 260.0]. With state isl=7, migfreq=25000
+ Same incumbent, new precision:
+New Incumbent: 603.0, 1.0407295502167804 [8, 260.0]. With state isl=7, migfreq=25000
+30/100000000, 704.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 704.0, 1.040498127884019 [9, 260.0]. With state isl=7, migfreq=25000
+31/100000000, 730.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 730.0, 1.0399139524204473 [10, 260.0]. With state isl=7, migfreq=25000
+32/100000000, 766.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 766.0, 1.0405072789872492 [11, 260.0]. With state isl=7, migfreq=25000
+ Same incumbent, new precision:
+New Incumbent: 776.0, 1.0394735559709283 [12, 260.0]. With state isl=7, migfreq=25000
+          -> After 10 bonus runs for LM: isl=7 migfreq=25000 (1.0394735559709283 [based on 12 runs with cutoff 260.0])
+
+   LM for iteration 1: isl=7 migfreq=25000 (1.0394735559709283 [based on 12 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 1): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 1): isl=7, migfreq=25000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0394735559709283, based on 12 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=7 migfreq=25000 (1.0394735559709283 [based on 12 runs with cutoff 260.0])
+isl=7 migfreq=25000 (1.0394735559709283 [based on 12 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 776.0, 1.0394735559709283 [12, 260.0]. With state isl=7, migfreq=25000
+33/100000000, 776.0/18000.0
+iteration 2, flip 2, evaluation count 33
+    perturb to ---> isl=7 migfreq=5000 (1.0235098748100202 [based on 1 runs with cutoff 260.0])
+    perturb to ---> isl=8 migfreq=5000 (1.0543603061547595 [based on 2 runs with cutoff 260.0])
+    perturb to ---> isl=8 migfreq=15000 (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+34/100000000, 859.0/18000.0
+   BLS in iteration 2, start with isl=8 migfreq=15000 (1.0543603061547595 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 8->4"], evaluating ...
+35/100000000, 876.0/18000.0
+36/100000000, 911.0/18000.0
+          -> Take improving step to neighbour isl=4 migfreq=15000 (1.0446163608234618 [based on 2 runs with cutoff 260.0]) with flip 2
+
+          
+============= Performing 1 bonus runs of state: isl=4 migfreq=15000 (1.0446163608234618 [based on 2 runs with cutoff 260.0]) ============ 
+
+37/100000000, 945.0/18000.0
+          -> After 1 bonus runs: isl=4 migfreq=15000 (1.0385231874855734 [based on 3 runs with cutoff 260.0])
+
+    Changing ["migfreq: 15000->25000"], evaluating ...
+38/100000000, 979.0/18000.0
+        -> worse: (1.0446163608234618 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 4->5"], evaluating ...
+39/100000000, 1007.0/18000.0
+40/100000000, 1093.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0346754885527571 [based on 3 runs with cutoff 260.0]) with flip 3
+
+          
+============= Performing 2 bonus runs of state: isl=5 migfreq=15000 (1.0346754885527571 [based on 3 runs with cutoff 260.0]) ============ 
+
+42/100000000, 1118.0/18000.0
+          -> After 2 bonus runs: isl=5 migfreq=15000 (1.0394739025479187 [based on 5 runs with cutoff 260.0])
+
+    Changing ["isl: 5->7"], evaluating ...
+43/100000000, 1157.0/18000.0
+44/100000000, 1204.0/18000.0
+        -> worse: (1.0400610464468467 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+45/100000000, 1259.0/18000.0
+        -> worse: (1.0572087627290059 [based on 2 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+46/100000000, 1287.0/18000.0
+        -> worse: (1.0388448124242373 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 5->6"], evaluating ...
+47/100000000, 1302.0/18000.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+48/100000000, 1314.0/18000.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+49/100000000, 1342.0/18000.0
+        -> worse: (1.0388448124242373 [based on 2 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+50/100000000, 1355.0/18000.0
+        -> worse: (1.0245493889598223 [based on 1 runs with cutoff 260.0])
+    Changing ["isl: 5->9"], evaluating ...
+52/100000000, 1411.0/18000.0
+53/100000000, 1463.0/18000.0
+        -> worse: (1.0452069404790807 [based on 3 runs with cutoff 260.0])
+          
+============= Performing 8 bonus runs of state: isl=5 migfreq=15000 (1.0394739025479187 [based on 5 runs with cutoff 260.0]) ============ 
+
+54/100000000, 1503.0/18000.0
+55/100000000, 1528.0/18000.0
+56/100000000, 1539.0/18000.0
+57/100000000, 1655.0/18000.0
+58/100000000, 1685.0/18000.0
+59/100000000, 1713.0/18000.0
+60/100000000, 1727.0/18000.0
+New inc: 1.0391681536586879
+New Incumbent: 1727.0, 1.0391681536586879 [12, 260.0]. With state isl=5, migfreq=15000
+61/100000000, 1741.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 1741.0, 1.0405762766519138 [13, 260.0]. With state isl=5, migfreq=15000
+          -> After 8 bonus runs for LM: isl=5 migfreq=15000 (1.0405762766519138 [based on 13 runs with cutoff 260.0])
+
+   LM for iteration 2: isl=5 migfreq=15000 (1.0405762766519138 [based on 13 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 2): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 2): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0405762766519138, based on 13 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0405762766519138 [based on 13 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0405762766519138 [based on 13 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 1741.0, 1.0405762766519138 [13, 260.0]. With state isl=5, migfreq=15000
+   Accepting new better local optimum: isl=5 migfreq=15000 (1.0405762766519138 [based on 13 runs with cutoff 260.0])
+61/100000000, 1741.0/18000.0
+iteration 3, flip 5, evaluation count 61
+    perturb to ---> isl=8 migfreq=15000 (1.0543603061547595 [based on 2 runs with cutoff 260.0])
+    perturb to ---> isl=8 migfreq=10000 (100000000 [based on 0 runs with cutoff 0])
+    perturb to ---> isl=5 migfreq=10000 (1.0388448124242373 [based on 2 runs with cutoff 260.0])
+62/100000000, 1827.0/18000.0
+   BLS in iteration 3, start with isl=5 migfreq=10000 (1.0346754885527571 [based on 3 runs with cutoff 260.0])
+    Changing ["migfreq: 10000->15000"], evaluating ...
+63/100000000, 1838.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0405762766519138 [based on 13 runs with cutoff 260.0]) with flip 5
+
+          
+============= Performing 1 bonus runs of state: isl=5 migfreq=15000 (1.0405762766519138 [based on 13 runs with cutoff 260.0]) ============ 
+
+ Same incumbent, new precision:
+New Incumbent: 1846.0, 1.038448624690957 [14, 260.0]. With state isl=5, migfreq=15000
+          -> After 1 bonus runs: isl=5 migfreq=15000 (1.038448624690957 [based on 14 runs with cutoff 260.0])
+
+    Changing ["isl: 5->9"], evaluating ...
+65/100000000, 1856.0/18000.0
+        -> worse: (1.059626315041471 [based on 4 runs with cutoff 260.0])
+    Changing ["isl: 5->4"], evaluating ...
+66/100000000, 1867.0/18000.0
+        -> worse: (1.0531773216203026 [based on 4 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+67/100000000, 1896.0/18000.0
+        -> worse: (1.0388448124242373 [based on 2 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+68/100000000, 1925.0/18000.0
+        -> worse: (1.0388448124242373 [based on 2 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+69/100000000, 2013.0/18000.0
+        -> worse: (1.0346754885527571 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 5->7"], evaluating ...
+        -> worse: (1.0543307158412576 [based on 4 runs with cutoff 260.0])
+    Changing ["isl: 5->8"], evaluating ...
+71/100000000, 2041.0/18000.0
+        -> worse: (1.0549181830825323 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+72/100000000, 2060.0/18000.0
+        -> worse: (1.0568171541320297 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 5->6"], evaluating ...
+73/100000000, 2126.0/18000.0
+        -> worse: (1.0451917289377066 [based on 2 runs with cutoff 260.0])
+          
+============= Performing 9 bonus runs of state: isl=5 migfreq=15000 (1.038448624690957 [based on 14 runs with cutoff 260.0]) ============ 
+
+74/100000000, 2142.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 2142.0, 1.0377356011960726 [15, 260.0]. With state isl=5, migfreq=15000
+75/100000000, 2186.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 2186.0, 1.0368528817094214 [16, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 2194.0, 1.0385915797594825 [17, 260.0]. With state isl=5, migfreq=15000
+77/100000000, 2209.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 2209.0, 1.0391989390249377 [18, 260.0]. With state isl=5, migfreq=15000
+78/100000000, 2222.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 2222.0, 1.0387863541804812 [19, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 2230.0, 1.0441426339557336 [20, 260.0]. With state isl=5, migfreq=15000
+80/100000000, 2241.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 2241.0, 1.0446721317950738 [21, 260.0]. With state isl=5, migfreq=15000
+81/100000000, 2254.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 2254.0, 1.0450329993756915 [22, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 2260.0, 1.0448235885618522 [23, 260.0]. With state isl=5, migfreq=15000
+          -> After 9 bonus runs for LM: isl=5 migfreq=15000 (1.0448235885618522 [based on 23 runs with cutoff 260.0])
+
+   LM for iteration 3: isl=5 migfreq=15000 (1.0448235885618522 [based on 23 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 3): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 3): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0448235885618522, based on 23 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0448235885618522 [based on 23 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0448235885618522 [based on 23 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 2260.0, 1.0448235885618522 [23, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0448235885618522 [based on 23 runs with cutoff 260.0])
+82/100000000, 2260.0/18000.0
+iteration 4, flip 7, evaluation count 82
+    perturb to ---> isl=9 migfreq=15000 (1.059626315041471 [based on 4 runs with cutoff 260.0])
+    perturb to ---> isl=4 migfreq=15000 (1.0531773216203026 [based on 4 runs with cutoff 260.0])
+    perturb to ---> isl=4 migfreq=25000 (1.0446163608234618 [based on 2 runs with cutoff 260.0])
+83/100000000, 2295.0/18000.0
+   BLS in iteration 4, start with isl=4 migfreq=25000 (1.0385231874855734 [based on 3 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->15000"], evaluating ...
+84/100000000, 2306.0/18000.0
+          -> Take improving step to neighbour isl=4 migfreq=15000 (1.0531773216203026 [based on 4 runs with cutoff 260.0]) with flip 7
+
+          
+============= Performing 1 bonus runs of state: isl=4 migfreq=15000 (1.0531773216203026 [based on 4 runs with cutoff 260.0]) ============ 
+
+85/100000000, 2321.0/18000.0
+          -> After 1 bonus runs: isl=4 migfreq=15000 (1.0425418572962422 [based on 5 runs with cutoff 260.0])
+
+    Changing ["migfreq: 15000->20000"], evaluating ...
+86/100000000, 2341.0/18000.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+87/100000000, 2378.0/18000.0
+        -> worse: (1.0385231874855734 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 4->5"], evaluating ...
+88/100000000, 2483.0/18000.0
+89/100000000, 2743.0/18000.0
+90/100000000, 2800.0/18000.0
+91/100000000, 3060.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0448235885618522 [based on 23 runs with cutoff 260.0]) with flip 8
+
+          
+============= Performing 3 bonus runs of state: isl=5 migfreq=15000 (1.0448235885618522 [based on 23 runs with cutoff 260.0]) ============ 
+
+92/100000000, 3125.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 3125.0, 1.0429559390384417 [24, 260.0]. With state isl=5, migfreq=15000
+93/100000000, 3385.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 3385.0, 1.0422830284794187 [25, 260.0]. With state isl=5, migfreq=15000
+94/100000000, 3450.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 3450.0, 1.040656758153287 [26, 260.0]. With state isl=5, migfreq=15000
+          -> After 3 bonus runs: isl=5 migfreq=15000 (1.040656758153287 [based on 26 runs with cutoff 260.0])
+
+    Changing ["migfreq: 15000->5000"], evaluating ...
+95/100000000, 3710.0/18000.0
+        -> worse: (1.0346754885527571 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 5->8"], evaluating ...
+96/100000000, 3767.0/18000.0
+        -> worse: (1.0655738644807446 [based on 4 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+97/100000000, 3817.0/18000.0
+        -> worse: (1.0493423781848983 [based on 4 runs with cutoff 260.0])
+    Changing ["isl: 5->6"], evaluating ...
+98/100000000, 3950.0/18000.0
+        -> worse: (1.0488057982711636 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 5->9"], evaluating ...
+99/100000000, 4012.0/18000.0
+        -> worse: (1.0477010520331769 [based on 5 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+100/100000000, 4056.0/18000.0
+        -> worse: (1.0572720667276707 [based on 4 runs with cutoff 260.0])
+    Changing ["isl: 5->7"], evaluating ...
+101/100000000, 4118.0/18000.0
+        -> worse: (1.043464572673006 [based on 5 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+102/100000000, 4187.0/18000.0
+        -> worse: (1.0394739025479187 [based on 5 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+103/100000000, 4447.0/18000.0
+        -> worse: (1.0346754885527571 [based on 3 runs with cutoff 260.0])
+          
+============= Performing 9 bonus runs of state: isl=5 migfreq=15000 (1.040656758153287 [based on 26 runs with cutoff 260.0]) ============ 
+
+104/100000000, 4491.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 4491.0, 1.0402441792870787 [27, 260.0]. With state isl=5, migfreq=15000
+105/100000000, 4542.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 4542.0, 1.0403289154019342 [28, 260.0]. With state isl=5, migfreq=15000
+106/100000000, 4744.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 4744.0, 1.040659895063295 [29, 260.0]. With state isl=5, migfreq=15000
+107/100000000, 4785.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 4785.0, 1.041518256846534 [30, 260.0]. With state isl=5, migfreq=15000
+108/100000000, 5045.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 5045.0, 1.0416053745376737 [31, 260.0]. With state isl=5, migfreq=15000
+109/100000000, 5081.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 5081.0, 1.0403052065833713 [32, 260.0]. With state isl=5, migfreq=15000
+110/100000000, 5341.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 5341.0, 1.040315076684251 [33, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 5348.0, 1.0434633145384777 [34, 260.0]. With state isl=5, migfreq=15000
+112/100000000, 5392.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 5392.0, 1.0425805564085295 [35, 260.0]. With state isl=5, migfreq=15000
+          -> After 9 bonus runs for LM: isl=5 migfreq=15000 (1.0425805564085295 [based on 35 runs with cutoff 260.0])
+
+   LM for iteration 4: isl=5 migfreq=15000 (1.0425805564085295 [based on 35 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 4): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 4): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0425805564085295, based on 35 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0425805564085295 [based on 35 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0425805564085295 [based on 35 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 5392.0, 1.0425805564085295 [35, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0425805564085295 [based on 35 runs with cutoff 260.0])
+112/100000000, 5392.0/18000.0
+iteration 5, flip 10, evaluation count 112
+    perturb to ---> isl=9 migfreq=15000 (1.0477010520331769 [based on 5 runs with cutoff 260.0])
+    perturb to ---> isl=7 migfreq=15000 (1.043464572673006 [based on 5 runs with cutoff 260.0])
+    perturb to ---> isl=10 migfreq=15000 (1.0572720667276707 [based on 4 runs with cutoff 260.0])
+113/100000000, 5403.0/18000.0
+   BLS in iteration 5, start with isl=10 migfreq=15000 (1.0458176533821366 [based on 5 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+        -> worse: (1.0693023899762906 [based on 1 runs with cutoff 260.0])
+    Changing ["isl: 10->8"], evaluating ...
+115/100000000, 5419.0/18000.0
+        -> worse: (1.0524590915845957 [based on 5 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+116/100000000, 5469.0/18000.0
+        -> worse: (1.0572087627290059 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 10->6"], evaluating ...
+        -> worse: (1.0623507887584944 [based on 4 runs with cutoff 260.0])
+    Changing ["isl: 10->7"], evaluating ...
+118/100000000, 5512.0/18000.0
+119/100000000, 5542.0/18000.0
+        -> worse: (1.0445416981577376 [based on 6 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+120/100000000, 5558.0/18000.0
+        -> worse: (1.0568171541320297 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 10->4"], evaluating ...
+121/100000000, 5628.0/18000.0
+          -> Take improving step to neighbour isl=4 migfreq=15000 (1.0405987848939984 [based on 9 runs with cutoff 260.0]) with flip 10
+
+          
+============= Performing 8 bonus runs of state: isl=4 migfreq=15000 (1.0405987848939984 [based on 9 runs with cutoff 260.0]) ============ 
+
+122/100000000, 5654.0/18000.0
+123/100000000, 5678.0/18000.0
+124/100000000, 5692.0/18000.0
+125/100000000, 5705.0/18000.0
+127/100000000, 5731.0/18000.0
+128/100000000, 5900.0/18000.0
+          -> After 8 bonus runs: isl=4 migfreq=15000 (1.0381772611801932 [based on 17 runs with cutoff 260.0])
+
+    Changing ["migfreq: 15000->20000"], evaluating ...
+130/100000000, 5938.0/18000.0
+        -> worse: (1.0446163608234618 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 4->9"], evaluating ...
+131/100000000, 5962.0/18000.0
+        -> worse: (1.045412859501608 [based on 6 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+132/100000000, 5980.0/18000.0
+        -> worse: (1.042075127228877 [based on 1 runs with cutoff 260.0])
+    Changing ["isl: 4->5"], evaluating ...
+133/100000000, 6007.0/18000.0
+134/100000000, 6018.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0425805564085295 [based on 35 runs with cutoff 260.0]) with flip 11
+
+          
+============= Performing 4 bonus runs of state: isl=5 migfreq=15000 (1.0425805564085295 [based on 35 runs with cutoff 260.0]) ============ 
+
+135/100000000, 6045.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6045.0, 1.0423604402096343 [36, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 6052.0, 1.042215614731893 [37, 260.0]. With state isl=5, migfreq=15000
+137/100000000, 6063.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6063.0, 1.041837453263103 [38, 260.0]. With state isl=5, migfreq=15000
+138/100000000, 6074.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6074.0, 1.0422707054089915 [39, 260.0]. With state isl=5, migfreq=15000
+          -> After 4 bonus runs: isl=5 migfreq=15000 (1.0422707054089915 [based on 39 runs with cutoff 260.0])
+
+    Changing ["migfreq: 15000->25000"], evaluating ...
+139/100000000, 6087.0/18000.0
+        -> worse: (1.0394739025479187 [based on 5 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+        -> worse: (1.0493423781848983 [based on 4 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+141/100000000, 6105.0/18000.0
+        -> worse: (1.0493423781848983 [based on 4 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+142/100000000, 6143.0/18000.0
+        -> worse: (1.0433931477950071 [based on 6 runs with cutoff 260.0])
+          
+============= Performing 4 bonus runs of state: isl=5 migfreq=15000 (1.0422707054089915 [based on 39 runs with cutoff 260.0]) ============ 
+
+ Same incumbent, new precision:
+New Incumbent: 6153.0, 1.042496483578974 [40, 260.0]. With state isl=5, migfreq=15000
+144/100000000, 6168.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6168.0, 1.0421368930591866 [41, 260.0]. With state isl=5, migfreq=15000
+145/100000000, 6218.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6218.0, 1.041898104014534 [42, 260.0]. With state isl=5, migfreq=15000
+146/100000000, 6229.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6229.0, 1.0422873761191866 [43, 260.0]. With state isl=5, migfreq=15000
+          -> After 4 bonus runs for LM: isl=5 migfreq=15000 (1.0422873761191866 [based on 43 runs with cutoff 260.0])
+
+   LM for iteration 5: isl=5 migfreq=15000 (1.0422873761191866 [based on 43 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 5): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 5): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0422873761191866, based on 43 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0422873761191866 [based on 43 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0422873761191866 [based on 43 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 6229.0, 1.0422873761191866 [43, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0422873761191866 [based on 43 runs with cutoff 260.0])
+146/100000000, 6229.0/18000.0
+iteration 6, flip 13, evaluation count 146
+    perturb to ---> isl=5 migfreq=10000 (1.0433931477950071 [based on 6 runs with cutoff 260.0])
+    perturb to ---> isl=9 migfreq=10000 (100000000 [based on 0 runs with cutoff 0])
+    perturb to ---> isl=9 migfreq=15000 (1.045412859501608 [based on 6 runs with cutoff 260.0])
+147/100000000, 6283.0/18000.0
+   BLS in iteration 6, start with isl=9 migfreq=15000 (1.0429638039594311 [based on 7 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["isl: 9->5"], evaluating ...
+149/100000000, 6297.0/18000.0
+150/100000000, 6378.0/18000.0
+151/100000000, 6395.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0422873761191866 [based on 43 runs with cutoff 260.0]) with flip 13
+
+          
+============= Performing 2 bonus runs of state: isl=5 migfreq=15000 (1.0422873761191866 [based on 43 runs with cutoff 260.0]) ============ 
+
+152/100000000, 6468.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6468.0, 1.0427898686659338 [44, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 6475.0, 1.042669244905941 [45, 260.0]. With state isl=5, migfreq=15000
+          -> After 2 bonus runs: isl=5 migfreq=15000 (1.042669244905941 [based on 45 runs with cutoff 260.0])
+
+    Changing ["isl: 5->4"], evaluating ...
+154/100000000, 6482.0/18000.0
+        -> worse: (1.0443790227088035 [based on 20 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+155/100000000, 6503.0/18000.0
+        -> worse: (1.0450182790404863 [based on 7 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+156/100000000, 6516.0/18000.0
+        -> worse: (1.0394739025479187 [based on 5 runs with cutoff 260.0])
+    Changing ["isl: 5->7"], evaluating ...
+157/100000000, 6576.0/18000.0
+        -> worse: (1.0407295502167804 [based on 8 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+159/100000000, 6592.0/18000.0
+        -> worse: (1.04355385409757 [based on 8 runs with cutoff 260.0])
+    Changing ["isl: 5->8"], evaluating ...
+160/100000000, 6630.0/18000.0
+        -> worse: (1.054541717954913 [based on 6 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+161/100000000, 6644.0/18000.0
+        -> worse: (1.0394739025479187 [based on 5 runs with cutoff 260.0])
+    Changing ["isl: 5->6"], evaluating ...
+162/100000000, 6657.0/18000.0
+        -> worse: (1.0498806310067956 [based on 5 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+163/100000000, 6696.0/18000.0
+        -> worse: (1.0433931477950071 [based on 6 runs with cutoff 260.0])
+          
+============= Performing 9 bonus runs of state: isl=5 migfreq=15000 (1.042669244905941 [based on 45 runs with cutoff 260.0]) ============ 
+
+ Same incumbent, new precision:
+New Incumbent: 6704.0, 1.0431897786813022 [46, 260.0]. With state isl=5, migfreq=15000
+165/100000000, 6739.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6739.0, 1.0429929784550307 [47, 260.0]. With state isl=5, migfreq=15000
+166/100000000, 6812.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6812.0, 1.0435222848941437 [48, 260.0]. With state isl=5, migfreq=15000
+167/100000000, 6826.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6826.0, 1.042634074998345 [49, 260.0]. With state isl=5, migfreq=15000
+168/100000000, 6837.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6837.0, 1.0430682787442795 [50, 260.0]. With state isl=5, migfreq=15000
+169/100000000, 6901.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6901.0, 1.0429907044782716 [51, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 6911.0, 1.0421639601613817 [52, 260.0]. With state isl=5, migfreq=15000
+171/100000000, 6924.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 6924.0, 1.0421250491114555 [53, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 6932.0, 1.0440470287517163 [54, 260.0]. With state isl=5, migfreq=15000
+          -> After 9 bonus runs for LM: isl=5 migfreq=15000 (1.0440470287517163 [based on 54 runs with cutoff 260.0])
+
+   LM for iteration 6: isl=5 migfreq=15000 (1.0440470287517163 [based on 54 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 6): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 6): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0440470287517163, based on 54 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0440470287517163 [based on 54 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0440470287517163 [based on 54 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 6932.0, 1.0440470287517163 [54, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0440470287517163 [based on 54 runs with cutoff 260.0])
+172/100000000, 6932.0/18000.0
+iteration 7, flip 15, evaluation count 172
+    perturb to ---> isl=10 migfreq=15000 (1.04355385409757 [based on 8 runs with cutoff 260.0])
+    perturb to ---> isl=10 migfreq=25000 (1.0568171541320297 [based on 3 runs with cutoff 260.0])
+    perturb to ---> isl=7 migfreq=25000 (1.0394735559709283 [based on 12 runs with cutoff 260.0])
+173/100000000, 6945.0/18000.0
+   BLS in iteration 7, start with isl=7 migfreq=25000 (1.0398066223426583 [based on 13 runs with cutoff 260.0])
+    Changing ["isl: 7->4"], evaluating ...
+174/100000000, 6959.0/18000.0
+175/100000000, 6981.0/18000.0
+176/100000000, 7033.0/18000.0
+        -> worse: (1.0448023337092924 [based on 7 runs with cutoff 260.0])
+    Changing ["isl: 7->10"], evaluating ...
+        -> worse: (1.0572720667276707 [based on 4 runs with cutoff 260.0])
+    Changing ["isl: 7->9"], evaluating ...
+178/100000000, 7087.0/18000.0
+        -> worse: (1.0452069404790807 [based on 3 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->10000"], evaluating ...
+179/100000000, 7123.0/18000.0
+        -> worse: (1.0329757110014124 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 7->5"], evaluating ...
+180/100000000, 7145.0/18000.0
+        -> worse: (1.0450182790404863 [based on 7 runs with cutoff 260.0])
+    Changing ["isl: 7->6"], evaluating ...
+181/100000000, 7205.0/18000.0
+        -> worse: (1.0451917289377066 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 7->8"], evaluating ...
+182/100000000, 7283.0/18000.0
+        -> worse: (1.0543603061547595 [based on 2 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->5000"], evaluating ...
+183/100000000, 7319.0/18000.0
+        -> worse: (1.0329757110014124 [based on 2 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->15000"], evaluating ...
+184/100000000, 7421.0/18000.0
+        -> worse: (1.040498127884019 [based on 9 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->20000"], evaluating ...
+185/100000000, 7460.0/18000.0
+        -> worse: (1.0329757110014124 [based on 2 runs with cutoff 260.0])
+          
+============= Performing 10 bonus runs of state: isl=7 migfreq=25000 (1.0398066223426583 [based on 13 runs with cutoff 260.0]) ============ 
+
+187/100000000, 7482.0/18000.0
+188/100000000, 7651.0/18000.0
+190/100000000, 7671.0/18000.0
+191/100000000, 7682.0/18000.0
+193/100000000, 7697.0/18000.0
+195/100000000, 7711.0/18000.0
+          -> After 10 bonus runs for LM: isl=7 migfreq=25000 (1.0441448712562607 [based on 23 runs with cutoff 260.0])
+
+   LM for iteration 7: isl=7 migfreq=25000 (1.0441448712562607 [based on 23 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 7): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 7): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0440470287517163, based on 54 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=7 migfreq=25000 (1.0441448712562607 [based on 23 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0440470287517163 [based on 54 runs with cutoff 260.0])
+196/100000000, 7723.0/18000.0
+197/100000000, 7797.0/18000.0
+198/100000000, 7809.0/18000.0
+199/100000000, 7820.0/18000.0
+200/100000000, 7832.0/18000.0
+Incumbent better, keeping it
+rejecting worse isl=7 migfreq=25000 (1.040628076062472 [based on 28 runs with cutoff 260.0]), going back to isl=5 migfreq=15000 (1.0440470287517163 [based on 54 runs with cutoff 260.0])
+200/100000000, 7832.0/18000.0
+iteration 8, flip 16, evaluation count 200
+    perturb to ---> isl=5 migfreq=25000 (1.0450182790404863 [based on 7 runs with cutoff 260.0])
+    perturb to ---> isl=5 migfreq=15000 (1.0440470287517163 [based on 54 runs with cutoff 260.0])
+    perturb to ---> isl=7 migfreq=15000 (1.040498127884019 [based on 9 runs with cutoff 260.0])
+201/100000000, 7856.0/18000.0
+   BLS in iteration 8, start with isl=7 migfreq=15000 (1.0399139524204473 [based on 10 runs with cutoff 260.0])
+    Changing ["isl: 7->4"], evaluating ...
+202/100000000, 7893.0/18000.0
+          -> Take improving step to neighbour isl=4 migfreq=15000 (1.0443790227088035 [based on 20 runs with cutoff 260.0]) with flip 16
+
+          
+============= Performing 1 bonus runs of state: isl=4 migfreq=15000 (1.0443790227088035 [based on 20 runs with cutoff 260.0]) ============ 
+
+203/100000000, 7905.0/18000.0
+          -> After 1 bonus runs: isl=4 migfreq=15000 (1.0448523827836513 [based on 21 runs with cutoff 260.0])
+
+    Changing ["isl: 4->8"], evaluating ...
+204/100000000, 7958.0/18000.0
+        -> worse: (1.0537796953186562 [based on 7 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+205/100000000, 7970.0/18000.0
+        -> worse: (1.039202041995631 [based on 8 runs with cutoff 260.0])
+    Changing ["isl: 4->10"], evaluating ...
+206/100000000, 8009.0/18000.0
+        -> worse: (1.044199108476838 [based on 9 runs with cutoff 260.0])
+    Changing ["isl: 4->9"], evaluating ...
+207/100000000, 8063.0/18000.0
+        -> worse: (1.0400956311869172 [based on 11 runs with cutoff 260.0])
+    Changing ["isl: 4->6"], evaluating ...
+208/100000000, 8101.0/18000.0
+        -> worse: (1.0471018226827076 [based on 6 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+209/100000000, 8133.0/18000.0
+        -> worse: (1.0385231874855734 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 4->5"], evaluating ...
+211/100000000, 8152.0/18000.0
+212/100000000, 8167.0/18000.0
+213/100000000, 8231.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0440470287517163 [based on 54 runs with cutoff 260.0]) with flip 17
+
+          
+============= Performing 7 bonus runs of state: isl=5 migfreq=15000 (1.0440470287517163 [based on 54 runs with cutoff 260.0]) ============ 
+
+ Same incumbent, new precision:
+New Incumbent: 8238.0, 1.0432461736835033 [55, 260.0]. With state isl=5, migfreq=15000
+215/100000000, 8245.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 8245.0, 1.043674458422965 [56, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 8254.0, 1.0440754288739182 [57, 260.0]. With state isl=5, migfreq=15000
+217/100000000, 8263.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 8263.0, 1.0439483692700993 [58, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 8272.0, 1.0439954096687798 [59, 260.0]. With state isl=5, migfreq=15000
+219/100000000, 8298.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 8298.0, 1.0439153344675998 [60, 260.0]. With state isl=5, migfreq=15000
+220/100000000, 8447.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 8447.0, 1.04371901283585 [61, 260.0]. With state isl=5, migfreq=15000
+          -> After 7 bonus runs: isl=5 migfreq=15000 (1.04371901283585 [based on 61 runs with cutoff 260.0])
+
+    Changing ["migfreq: 15000->20000"], evaluating ...
+221/100000000, 8482.0/18000.0
+        -> worse: (1.0433931477950071 [based on 6 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+        -> worse: (1.0393909941604256 [based on 8 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+223/100000000, 8502.0/18000.0
+        -> worse: (1.0393909941604256 [based on 8 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+224/100000000, 8536.0/18000.0
+        -> worse: (1.0433931477950071 [based on 6 runs with cutoff 260.0])
+          
+============= Performing 4 bonus runs of state: isl=5 migfreq=15000 (1.04371901283585 [based on 61 runs with cutoff 260.0]) ============ 
+
+ Same incumbent, new precision:
+New Incumbent: 8544.0, 1.0436106722664527 [62, 260.0]. With state isl=5, migfreq=15000
+226/100000000, 8562.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 8562.0, 1.0432497344163445 [63, 260.0]. With state isl=5, migfreq=15000
+227/100000000, 8575.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 8575.0, 1.0434787065318467 [64, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 8581.0, 1.0434285195183934 [65, 260.0]. With state isl=5, migfreq=15000
+          -> After 4 bonus runs for LM: isl=5 migfreq=15000 (1.0434285195183934 [based on 65 runs with cutoff 260.0])
+
+   LM for iteration 8: isl=5 migfreq=15000 (1.0434285195183934 [based on 65 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 8): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 8): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0434285195183934, based on 65 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0434285195183934 [based on 65 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0434285195183934 [based on 65 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 8581.0, 1.0434285195183934 [65, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0434285195183934 [based on 65 runs with cutoff 260.0])
+228/100000000, 8581.0/18000.0
+iteration 9, flip 19, evaluation count 228
+    perturb to ---> isl=10 migfreq=15000 (1.044199108476838 [based on 9 runs with cutoff 260.0])
+    perturb to ---> isl=5 migfreq=15000 (1.0434285195183934 [based on 65 runs with cutoff 260.0])
+    perturb to ---> isl=4 migfreq=15000 (1.0423913025239098 [based on 25 runs with cutoff 260.0])
+229/100000000, 8595.0/18000.0
+   BLS in iteration 9, start with isl=4 migfreq=15000 (1.0407608678114517 [based on 26 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+        -> worse: (1.0531773216203026 [based on 4 runs with cutoff 260.0])
+    Changing ["isl: 4->9"], evaluating ...
+231/100000000, 8615.0/18000.0
+233/100000000, 8630.0/18000.0
+        -> worse: (1.0393654553326994 [based on 14 runs with cutoff 260.0])
+    Changing ["isl: 4->5"], evaluating ...
+235/100000000, 8651.0/18000.0
+236/100000000, 8691.0/18000.0
+238/100000000, 8731.0/18000.0
+240/100000000, 8790.0/18000.0
+242/100000000, 8866.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0434285195183934 [based on 65 runs with cutoff 260.0]) with flip 19
+
+          
+============= Performing 3 bonus runs of state: isl=5 migfreq=15000 (1.0434285195183934 [based on 65 runs with cutoff 260.0]) ============ 
+
+243/100000000, 8913.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 8913.0, 1.0431857009971104 [66, 260.0]. With state isl=5, migfreq=15000
+244/100000000, 8924.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 8924.0, 1.042800834398759 [67, 260.0]. With state isl=5, migfreq=15000
+245/100000000, 8944.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 8944.0, 1.0430425980330345 [68, 260.0]. With state isl=5, migfreq=15000
+          -> After 3 bonus runs: isl=5 migfreq=15000 (1.0430425980330345 [based on 68 runs with cutoff 260.0])
+
+    Changing ["isl: 5->7"], evaluating ...
+        -> worse: (1.0394735559709283 [based on 12 runs with cutoff 260.0])
+    Changing ["isl: 5->6"], evaluating ...
+247/100000000, 9019.0/18000.0
+        -> worse: (1.042649643610508 [based on 8 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+249/100000000, 9134.0/18000.0
+        -> worse: (1.0403732690891647 [based on 9 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+250/100000000, 9158.0/18000.0
+        -> worse: (1.0450182790404863 [based on 7 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+251/100000000, 9181.0/18000.0
+        -> worse: (1.0432448349539842 [based on 10 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+252/100000000, 9205.0/18000.0
+        -> worse: (1.0450182790404863 [based on 7 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+253/100000000, 9316.0/18000.0
+        -> worse: (1.0403732690891647 [based on 9 runs with cutoff 260.0])
+    Changing ["isl: 5->8"], evaluating ...
+        -> worse: (1.0508468261640052 [based on 8 runs with cutoff 260.0])
+          
+============= Performing 8 bonus runs of state: isl=5 migfreq=15000 (1.0430425980330345 [based on 68 runs with cutoff 260.0]) ============ 
+
+255/100000000, 9414.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 9414.0, 1.042781188248719 [69, 260.0]. With state isl=5, migfreq=15000
+256/100000000, 9426.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 9426.0, 1.043045127859713 [70, 260.0]. With state isl=5, migfreq=15000
+257/100000000, 9439.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 9439.0, 1.0430951798847734 [71, 260.0]. With state isl=5, migfreq=15000
+258/100000000, 9452.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 9452.0, 1.042496635719707 [72, 260.0]. With state isl=5, migfreq=15000
+259/100000000, 9466.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 9466.0, 1.0419144900249167 [73, 260.0]. With state isl=5, migfreq=15000
+260/100000000, 9537.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 9537.0, 1.0417474522171943 [74, 260.0]. With state isl=5, migfreq=15000
+261/100000000, 9563.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 9563.0, 1.0417110347989926 [75, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 9570.0, 1.041649072466548 [76, 260.0]. With state isl=5, migfreq=15000
+          -> After 8 bonus runs for LM: isl=5 migfreq=15000 (1.041649072466548 [based on 76 runs with cutoff 260.0])
+
+   LM for iteration 9: isl=5 migfreq=15000 (1.041649072466548 [based on 76 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 9): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 9): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.041649072466548, based on 76 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.041649072466548 [based on 76 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.041649072466548 [based on 76 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 9570.0, 1.041649072466548 [76, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.041649072466548 [based on 76 runs with cutoff 260.0])
+262/100000000, 9570.0/18000.0
+iteration 10, flip 21, evaluation count 262
+    perturb to ---> isl=5 migfreq=10000 (1.0403732690891647 [based on 9 runs with cutoff 260.0])
+    perturb to ---> isl=5 migfreq=25000 (1.0403732690891647 [based on 9 runs with cutoff 260.0])
+    perturb to ---> isl=8 migfreq=25000 (1.0543603061547595 [based on 2 runs with cutoff 260.0])
+263/100000000, 9587.0/18000.0
+   BLS in iteration 10, start with isl=8 migfreq=25000 (1.0549181830825323 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 8->9"], evaluating ...
+265/100000000, 9607.0/18000.0
+          -> Take improving step to neighbour isl=9 migfreq=25000 (1.059626315041471 [based on 4 runs with cutoff 260.0]) with flip 21
+
+          
+============= Performing 2 bonus runs of state: isl=9 migfreq=25000 (1.059626315041471 [based on 4 runs with cutoff 260.0]) ============ 
+
+266/100000000, 9619.0/18000.0
+267/100000000, 9644.0/18000.0
+          -> After 2 bonus runs: isl=9 migfreq=25000 (1.045412859501608 [based on 6 runs with cutoff 260.0])
+
+    Changing ["isl: 9->5"], evaluating ...
+268/100000000, 9697.0/18000.0
+270/100000000, 9787.0/18000.0
+        -> worse: (1.0403732690891647 [based on 9 runs with cutoff 260.0])
+    Changing ["isl: 9->10"], evaluating ...
+271/100000000, 9798.0/18000.0
+272/100000000, 9834.0/18000.0
+273/100000000, 9903.0/18000.0
+        -> worse: (1.045444870099873 [based on 7 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->20000"], evaluating ...
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->15000"], evaluating ...
+275/100000000, 9929.0/18000.0
+          -> Take improving step to neighbour isl=9 migfreq=15000 (1.0393654553326994 [based on 14 runs with cutoff 260.0]) with flip 22
+
+          
+============= Performing 4 bonus runs of state: isl=9 migfreq=15000 (1.0393654553326994 [based on 14 runs with cutoff 260.0]) ============ 
+
+276/100000000, 9943.0/18000.0
+277/100000000, 10053.0/18000.0
+279/100000000, 10072.0/18000.0
+          -> After 4 bonus runs: isl=9 migfreq=15000 (1.0400921181981844 [based on 18 runs with cutoff 260.0])
+
+    Changing ["isl: 9->5"], evaluating ...
+280/100000000, 10084.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.041649072466548 [based on 76 runs with cutoff 260.0]) with flip 23
+
+          
+============= Performing 1 bonus runs of state: isl=5 migfreq=15000 (1.041649072466548 [based on 76 runs with cutoff 260.0]) ============ 
+
+281/100000000, 10103.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 10103.0, 1.0414266151303258 [77, 260.0]. With state isl=5, migfreq=15000
+          -> After 1 bonus runs: isl=5 migfreq=15000 (1.0414266151303258 [based on 77 runs with cutoff 260.0])
+
+    Changing ["migfreq: 15000->5000"], evaluating ...
+        -> worse: (1.0393909941604256 [based on 8 runs with cutoff 260.0])
+    Changing ["isl: 5->7"], evaluating ...
+283/100000000, 10127.0/18000.0
+285/100000000, 10147.0/18000.0
+286/100000000, 10304.0/18000.0
+288/100000000, 10325.0/18000.0
+289/100000000, 10337.0/18000.0
+        -> worse: (1.039072019175162 [based on 19 runs with cutoff 260.0])
+    Changing ["isl: 5->6"], evaluating ...
+290/100000000, 10428.0/18000.0
+        -> worse: (1.0459935349866365 [based on 9 runs with cutoff 260.0])
+    Changing ["isl: 5->4"], evaluating ...
+291/100000000, 10455.0/18000.0
+        -> worse: (1.0423557918549153 [based on 36 runs with cutoff 260.0])
+    Changing ["isl: 5->8"], evaluating ...
+292/100000000, 10517.0/18000.0
+        -> worse: (1.049775652651243 [based on 9 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+293/100000000, 10536.0/18000.0
+        -> worse: (1.0423006989554424 [based on 11 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+294/100000000, 10563.0/18000.0
+        -> worse: (1.0400452533081814 [based on 10 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+295/100000000, 10574.0/18000.0
+        -> worse: (1.0393909941604256 [based on 8 runs with cutoff 260.0])
+          
+============= Performing 8 bonus runs of state: isl=5 migfreq=15000 (1.0414266151303258 [based on 77 runs with cutoff 260.0]) ============ 
+
+296/100000000, 10585.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 10585.0, 1.0421614819228522 [78, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 10595.0, 1.042155117650108 [79, 260.0]. With state isl=5, migfreq=15000
+298/100000000, 10608.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 10608.0, 1.0423448771031782 [80, 260.0]. With state isl=5, migfreq=15000
+299/100000000, 10634.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 10634.0, 1.0424214056490697 [81, 260.0]. With state isl=5, migfreq=15000
+300/100000000, 10694.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 10694.0, 1.0423629862321682 [82, 260.0]. With state isl=5, migfreq=15000
+301/100000000, 10708.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 10708.0, 1.0418525888076842 [83, 260.0]. With state isl=5, migfreq=15000
+302/100000000, 10721.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 10721.0, 1.0415663815705878 [84, 260.0]. With state isl=5, migfreq=15000
+303/100000000, 10744.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 10744.0, 1.0414850873550314 [85, 260.0]. With state isl=5, migfreq=15000
+          -> After 8 bonus runs for LM: isl=5 migfreq=15000 (1.0414850873550314 [based on 85 runs with cutoff 260.0])
+
+   LM for iteration 10: isl=5 migfreq=15000 (1.0414850873550314 [based on 85 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 10): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 10): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0414850873550314, based on 85 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0414850873550314 [based on 85 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0414850873550314 [based on 85 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 10744.0, 1.0414850873550314 [85, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0414850873550314 [based on 85 runs with cutoff 260.0])
+303/100000000, 10744.0/18000.0
+iteration 11, flip 25, evaluation count 303
+    perturb to ---> isl=5 migfreq=10000 (1.0400452533081814 [based on 10 runs with cutoff 260.0])
+    perturb to ---> isl=5 migfreq=25000 (1.0403732690891647 [based on 9 runs with cutoff 260.0])
+    perturb to ---> isl=10 migfreq=25000 (1.045444870099873 [based on 7 runs with cutoff 260.0])
+   BLS in iteration 11, start with isl=10 migfreq=25000 (1.04355385409757 [based on 8 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->5000"], evaluating ...
+305/100000000, 10806.0/18000.0
+        -> worse: (1.0572087627290059 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 10->7"], evaluating ...
+306/100000000, 10846.0/18000.0
+          -> Take improving step to neighbour isl=7 migfreq=25000 (1.040628076062472 [based on 28 runs with cutoff 260.0]) with flip 25
+
+          
+============= Performing 2 bonus runs of state: isl=7 migfreq=25000 (1.040628076062472 [based on 28 runs with cutoff 260.0]) ============ 
+
+307/100000000, 10876.0/18000.0
+          -> After 2 bonus runs: isl=7 migfreq=25000 (1.0412771410096415 [based on 30 runs with cutoff 260.0])
+
+    Changing ["migfreq: 25000->20000"], evaluating ...
+309/100000000, 10929.0/18000.0
+        -> worse: (1.0400610464468467 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 7->9"], evaluating ...
+310/100000000, 10985.0/18000.0
+311/100000000, 10998.0/18000.0
+313/100000000, 11013.0/18000.0
+        -> worse: (1.0393654553326994 [based on 14 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->15000"], evaluating ...
+        -> worse: (1.0444861764028017 [based on 20 runs with cutoff 260.0])
+    Changing ["isl: 7->5"], evaluating ...
+315/100000000, 11042.0/18000.0
+        -> worse: (1.0400452533081814 [based on 10 runs with cutoff 260.0])
+    Changing ["isl: 7->8"], evaluating ...
+316/100000000, 11053.0/18000.0
+        -> worse: (1.0524590915845957 [based on 5 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->10000"], evaluating ...
+317/100000000, 11094.0/18000.0
+        -> worse: (1.0400610464468467 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 7->6"], evaluating ...
+318/100000000, 11118.0/18000.0
+        -> worse: (1.0488057982711636 [based on 3 runs with cutoff 260.0])
+    Changing ["isl: 7->4"], evaluating ...
+319/100000000, 11217.0/18000.0
+        -> worse: (1.0405987848939984 [based on 9 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->5000"], evaluating ...
+320/100000000, 11260.0/18000.0
+        -> worse: (1.0400610464468467 [based on 3 runs with cutoff 260.0])
+          
+============= Performing 9 bonus runs of state: isl=7 migfreq=25000 (1.0412771410096415 [based on 30 runs with cutoff 260.0]) ============ 
+
+321/100000000, 11307.0/18000.0
+323/100000000, 11383.0/18000.0
+325/100000000, 11436.0/18000.0
+326/100000000, 11461.0/18000.0
+328/100000000, 11482.0/18000.0
+329/100000000, 11494.0/18000.0
+          -> After 9 bonus runs for LM: isl=7 migfreq=25000 (1.044882611519626 [based on 39 runs with cutoff 260.0])
+
+   LM for iteration 11: isl=7 migfreq=25000 (1.044882611519626 [based on 39 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 11): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 11): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0414850873550314, based on 85 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=7 migfreq=25000 (1.044882611519626 [based on 39 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0414850873550314 [based on 85 runs with cutoff 260.0])
+Incumbent better, keeping it
+rejecting worse isl=7 migfreq=25000 (1.044882611519626 [based on 39 runs with cutoff 260.0]), going back to isl=5 migfreq=15000 (1.0414850873550314 [based on 85 runs with cutoff 260.0])
+329/100000000, 11494.0/18000.0
+iteration 12, flip 27, evaluation count 329
+    perturb to ---> isl=7 migfreq=15000 (1.0444861764028017 [based on 20 runs with cutoff 260.0])
+    perturb to ---> isl=7 migfreq=5000 (1.0400610464468467 [based on 3 runs with cutoff 260.0])
+    perturb to ---> isl=7 migfreq=20000 (1.0400610464468467 [based on 3 runs with cutoff 260.0])
+   BLS in iteration 12, start with isl=7 migfreq=20000 (1.0543307158412576 [based on 4 runs with cutoff 260.0])
+    Changing ["migfreq: 20000->5000"], evaluating ...
+331/100000000, 11510.0/18000.0
+          -> Take improving step to neighbour isl=7 migfreq=5000 (1.0543307158412576 [based on 4 runs with cutoff 260.0]) with flip 27
+
+          
+============= Performing 1 bonus runs of state: isl=7 migfreq=5000 (1.0543307158412576 [based on 4 runs with cutoff 260.0]) ============ 
+
+332/100000000, 11521.0/18000.0
+          -> After 1 bonus runs: isl=7 migfreq=5000 (1.043464572673006 [based on 5 runs with cutoff 260.0])
+
+    Changing ["isl: 7->5"], evaluating ...
+333/100000000, 11551.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=5000 (1.0393909941604256 [based on 8 runs with cutoff 260.0]) with flip 28
+
+          
+============= Performing 1 bonus runs of state: isl=5 migfreq=5000 (1.0393909941604256 [based on 8 runs with cutoff 260.0]) ============ 
+
+334/100000000, 11653.0/18000.0
+          -> After 1 bonus runs: isl=5 migfreq=5000 (1.0403732690891647 [based on 9 runs with cutoff 260.0])
+
+    Changing ["migfreq: 5000->25000"], evaluating ...
+335/100000000, 11678.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=25000 (1.0400452533081814 [based on 10 runs with cutoff 260.0]) with flip 29
+
+          
+============= Performing 1 bonus runs of state: isl=5 migfreq=25000 (1.0400452533081814 [based on 10 runs with cutoff 260.0]) ============ 
+
+336/100000000, 11704.0/18000.0
+          -> After 1 bonus runs: isl=5 migfreq=25000 (1.039391988368349 [based on 11 runs with cutoff 260.0])
+
+    Changing ["isl: 5->8"], evaluating ...
+337/100000000, 11739.0/18000.0
+        -> worse: (1.054541717954913 [based on 6 runs with cutoff 260.0])
+    Changing ["isl: 5->9"], evaluating ...
+          -> Take improving step to neighbour isl=9 migfreq=25000 (1.0393654553326994 [based on 14 runs with cutoff 260.0]) with flip 30
+
+          
+============= Performing 2 bonus runs of state: isl=9 migfreq=25000 (1.0393654553326994 [based on 14 runs with cutoff 260.0]) ============ 
+
+339/100000000, 11764.0/18000.0
+340/100000000, 11880.0/18000.0
+          -> After 2 bonus runs: isl=9 migfreq=25000 (1.0375913607381535 [based on 16 runs with cutoff 260.0])
+
+    Changing ["migfreq: 25000->15000"], evaluating ...
+          -> Take improving step to neighbour isl=9 migfreq=15000 (1.0415723237267194 [based on 19 runs with cutoff 260.0]) with flip 31
+
+          
+============= Performing 1 bonus runs of state: isl=9 migfreq=15000 (1.0415723237267194 [based on 19 runs with cutoff 260.0]) ============ 
+
+342/100000000, 11892.0/18000.0
+          -> After 1 bonus runs: isl=9 migfreq=15000 (1.0467893050246602 [based on 20 runs with cutoff 260.0])
+
+    Changing ["isl: 9->6"], evaluating ...
+343/100000000, 11916.0/18000.0
+        -> worse: (1.0428756629694544 [based on 10 runs with cutoff 260.0])
+    Changing ["isl: 9->5"], evaluating ...
+344/100000000, 11930.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0414850873550314 [based on 85 runs with cutoff 260.0]) with flip 32
+
+          
+============= Performing 2 bonus runs of state: isl=5 migfreq=15000 (1.0414850873550314 [based on 85 runs with cutoff 260.0]) ============ 
+
+345/100000000, 12077.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 12077.0, 1.0414754478112482 [86, 260.0]. With state isl=5, migfreq=15000
+346/100000000, 12211.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 12211.0, 1.0414442717432404 [87, 260.0]. With state isl=5, migfreq=15000
+          -> After 2 bonus runs: isl=5 migfreq=15000 (1.0414442717432404 [based on 87 runs with cutoff 260.0])
+
+    Changing ["isl: 5->8"], evaluating ...
+347/100000000, 12235.0/18000.0
+        -> worse: (1.0482637247109488 [based on 10 runs with cutoff 260.0])
+    Changing ["isl: 5->7"], evaluating ...
+348/100000000, 12246.0/18000.0
+        -> worse: (1.0449544339207926 [based on 21 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+349/100000000, 12274.0/18000.0
+        -> worse: (1.039391988368349 [based on 11 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+        -> worse: (1.0427141613623736 [based on 12 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+351/100000000, 12395.0/18000.0
+        -> worse: (1.0403732690891647 [based on 9 runs with cutoff 260.0])
+    Changing ["isl: 5->4"], evaluating ...
+        -> worse: (1.0422110920083827 [based on 37 runs with cutoff 260.0])
+          
+============= Performing 6 bonus runs of state: isl=5 migfreq=15000 (1.0414442717432404 [based on 87 runs with cutoff 260.0]) ============ 
+
+353/100000000, 12438.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 12438.0, 1.0416359525500345 [88, 260.0]. With state isl=5, migfreq=15000
+354/100000000, 12449.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 12449.0, 1.0415501803826677 [89, 260.0]. With state isl=5, migfreq=15000
+355/100000000, 12460.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 12460.0, 1.0415099147359357 [90, 260.0]. With state isl=5, migfreq=15000
+356/100000000, 12503.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 12503.0, 1.0416024137562154 [91, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 12511.0, 1.041872069569305 [92, 260.0]. With state isl=5, migfreq=15000
+358/100000000, 12525.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 12525.0, 1.041421832262108 [93, 260.0]. With state isl=5, migfreq=15000
+          -> After 6 bonus runs for LM: isl=5 migfreq=15000 (1.041421832262108 [based on 93 runs with cutoff 260.0])
+
+   LM for iteration 12: isl=5 migfreq=15000 (1.041421832262108 [based on 93 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 12): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 12): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.041421832262108, based on 93 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.041421832262108 [based on 93 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.041421832262108 [based on 93 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 12525.0, 1.041421832262108 [93, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.041421832262108 [based on 93 runs with cutoff 260.0])
+358/100000000, 12525.0/18000.0
+iteration 13, flip 34, evaluation count 358
+    perturb to ---> isl=5 migfreq=10000 (1.039391988368349 [based on 11 runs with cutoff 260.0])
+    perturb to ---> isl=5 migfreq=20000 (1.0403732690891647 [based on 9 runs with cutoff 260.0])
+    perturb to ---> isl=4 migfreq=20000 (1.0531773216203026 [based on 4 runs with cutoff 260.0])
+359/100000000, 12540.0/18000.0
+   BLS in iteration 13, start with isl=4 migfreq=20000 (1.0425418572962422 [based on 5 runs with cutoff 260.0])
+    Changing ["migfreq: 20000->25000"], evaluating ...
+360/100000000, 12565.0/18000.0
+          -> Take improving step to neighbour isl=4 migfreq=25000 (1.0405987848939984 [based on 9 runs with cutoff 260.0]) with flip 34
+
+          
+============= Performing 1 bonus runs of state: isl=4 migfreq=25000 (1.0405987848939984 [based on 9 runs with cutoff 260.0]) ============ 
+
+361/100000000, 12594.0/18000.0
+          -> After 1 bonus runs: isl=4 migfreq=25000 (1.0400045437294285 [based on 10 runs with cutoff 260.0])
+
+    Changing ["isl: 4->8"], evaluating ...
+362/100000000, 12647.0/18000.0
+        -> worse: (1.0537796953186562 [based on 7 runs with cutoff 260.0])
+    Changing ["isl: 4->9"], evaluating ...
+363/100000000, 12674.0/18000.0
+364/100000000, 12690.0/18000.0
+          -> Take improving step to neighbour isl=9 migfreq=25000 (1.039286618845348 [based on 17 runs with cutoff 260.0]) with flip 35
+
+          
+============= Performing 2 bonus runs of state: isl=9 migfreq=25000 (1.039286618845348 [based on 17 runs with cutoff 260.0]) ============ 
+
+365/100000000, 12706.0/18000.0
+366/100000000, 12719.0/18000.0
+          -> After 2 bonus runs: isl=9 migfreq=25000 (1.0415723237267194 [based on 19 runs with cutoff 260.0])
+
+    Changing ["migfreq: 25000->20000"], evaluating ...
+367/100000000, 12764.0/18000.0
+        -> worse: (1.0345942981866516 [based on 2 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->5000"], evaluating ...
+        -> worse: (1.01564458398228 [based on 1 runs with cutoff 260.0])
+    Changing ["isl: 9->6"], evaluating ...
+369/100000000, 12783.0/18000.0
+        -> worse: (1.0623507887584944 [based on 4 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->10000"], evaluating ...
+370/100000000, 12829.0/18000.0
+        -> worse: (1.0345942981866516 [based on 2 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->15000"], evaluating ...
+          -> Take improving step to neighbour isl=9 migfreq=15000 (1.0465040206329608 [based on 21 runs with cutoff 260.0]) with flip 36
+
+          
+============= Performing 5 bonus runs of state: isl=9 migfreq=15000 (1.0465040206329608 [based on 21 runs with cutoff 260.0]) ============ 
+
+372/100000000, 12842.0/18000.0
+374/100000000, 12859.0/18000.0
+375/100000000, 12943.0/18000.0
+376/100000000, 12955.0/18000.0
+          -> After 5 bonus runs: isl=9 migfreq=15000 (1.0409043337882744 [based on 26 runs with cutoff 260.0])
+
+    Changing ["isl: 9->5"], evaluating ...
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.041421832262108 [based on 93 runs with cutoff 260.0]) with flip 37
+
+          
+============= Performing 1 bonus runs of state: isl=5 migfreq=15000 (1.041421832262108 [based on 93 runs with cutoff 260.0]) ============ 
+
+378/100000000, 12974.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 12974.0, 1.0411722101241143 [94, 260.0]. With state isl=5, migfreq=15000
+          -> After 1 bonus runs: isl=5 migfreq=15000 (1.0411722101241143 [based on 94 runs with cutoff 260.0])
+
+    Changing ["migfreq: 15000->10000"], evaluating ...
+379/100000000, 12986.0/18000.0
+        -> worse: (1.0391681536586879 [based on 12 runs with cutoff 260.0])
+    Changing ["isl: 5->6"], evaluating ...
+380/100000000, 13025.0/18000.0
+        -> worse: (1.0421531120816807 [based on 11 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+381/100000000, 13036.0/18000.0
+        -> worse: (1.0439464787154797 [based on 13 runs with cutoff 260.0])
+    Changing ["isl: 5->4"], evaluating ...
+382/100000000, 13049.0/18000.0
+        -> worse: (1.042403538180206 [based on 38 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+383/100000000, 13062.0/18000.0
+        -> worse: (1.0405762766519138 [based on 13 runs with cutoff 260.0])
+    Changing ["isl: 5->8"], evaluating ...
+384/100000000, 13136.0/18000.0
+        -> worse: (1.0467433125383787 [based on 11 runs with cutoff 260.0])
+    Changing ["isl: 5->7"], evaluating ...
+386/100000000, 13153.0/18000.0
+387/100000000, 13167.0/18000.0
+388/100000000, 13244.0/18000.0
+389/100000000, 13257.0/18000.0
+390/100000000, 13268.0/18000.0
+391/100000000, 13281.0/18000.0
+        -> worse: (1.040628076062472 [based on 28 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+392/100000000, 13307.0/18000.0
+        -> worse: (1.039391988368349 [based on 11 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+393/100000000, 13335.0/18000.0
+        -> worse: (1.0400452533081814 [based on 10 runs with cutoff 260.0])
+          
+============= Performing 9 bonus runs of state: isl=5 migfreq=15000 (1.0411722101241143 [based on 94 runs with cutoff 260.0]) ============ 
+
+394/100000000, 13358.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 13358.0, 1.040884323134287 [95, 260.0]. With state isl=5, migfreq=15000
+395/100000000, 13373.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 13373.0, 1.0407475413544265 [96, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 13383.0, 1.0406400073413031 [97, 260.0]. With state isl=5, migfreq=15000
+397/100000000, 13390.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 13390.0, 1.0410223185814504 [98, 260.0]. With state isl=5, migfreq=15000
+398/100000000, 13485.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 13485.0, 1.0409640540381084 [99, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 13494.0, 1.041220551483453 [100, 260.0]. With state isl=5, migfreq=15000
+400/100000000, 13508.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 13508.0, 1.0408124272113395 [101, 260.0]. With state isl=5, migfreq=15000
+401/100000000, 13520.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 13520.0, 1.0413284095225108 [102, 260.0]. With state isl=5, migfreq=15000
+402/100000000, 13654.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 13654.0, 1.0415078203875339 [103, 260.0]. With state isl=5, migfreq=15000
+          -> After 9 bonus runs for LM: isl=5 migfreq=15000 (1.0415078203875339 [based on 103 runs with cutoff 260.0])
+
+   LM for iteration 13: isl=5 migfreq=15000 (1.0415078203875339 [based on 103 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 13): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 13): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0415078203875339, based on 103 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0415078203875339 [based on 103 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0415078203875339 [based on 103 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 13654.0, 1.0415078203875339 [103, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0415078203875339 [based on 103 runs with cutoff 260.0])
+402/100000000, 13654.0/18000.0
+iteration 14, flip 39, evaluation count 402
+    perturb to ---> isl=5 migfreq=20000 (1.0400452533081814 [based on 10 runs with cutoff 260.0])
+    perturb to ---> isl=6 migfreq=20000 (100000000 [based on 0 runs with cutoff 0])
+    perturb to ---> isl=8 migfreq=20000 (100000000 [based on 0 runs with cutoff 0])
+403/100000000, 13667.0/18000.0
+   BLS in iteration 14, start with isl=8 migfreq=20000 (1.0573081102355468 [based on 1 runs with cutoff 260.0])
+    Changing ["migfreq: 20000->5000"], evaluating ...
+404/100000000, 13750.0/18000.0
+          -> Take improving step to neighbour isl=8 migfreq=5000 (1.0543603061547595 [based on 2 runs with cutoff 260.0]) with flip 39
+
+          
+============= Performing 1 bonus runs of state: isl=8 migfreq=5000 (1.0543603061547595 [based on 2 runs with cutoff 260.0]) ============ 
+
+405/100000000, 13767.0/18000.0
+          -> After 1 bonus runs: isl=8 migfreq=5000 (1.0549181830825323 [based on 3 runs with cutoff 260.0])
+
+    Changing ["isl: 8->5"], evaluating ...
+406/100000000, 13778.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=5000 (1.039391988368349 [based on 11 runs with cutoff 260.0]) with flip 40
+
+          
+============= Performing 1 bonus runs of state: isl=5 migfreq=5000 (1.039391988368349 [based on 11 runs with cutoff 260.0]) ============ 
+
+407/100000000, 13789.0/18000.0
+          -> After 1 bonus runs: isl=5 migfreq=5000 (1.0391681536586879 [based on 12 runs with cutoff 260.0])
+
+    Changing ["isl: 5->10"], evaluating ...
+408/100000000, 13807.0/18000.0
+        -> worse: (1.0568171541320297 [based on 3 runs with cutoff 260.0])
+    Changing ["migfreq: 5000->25000"], evaluating ...
+409/100000000, 13820.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=25000 (1.0405762766519138 [based on 13 runs with cutoff 260.0]) with flip 41
+
+          
+============= Performing 2 bonus runs of state: isl=5 migfreq=25000 (1.0405762766519138 [based on 13 runs with cutoff 260.0]) ============ 
+
+411/100000000, 13843.0/18000.0
+          -> After 2 bonus runs: isl=5 migfreq=25000 (1.0377356011960726 [based on 15 runs with cutoff 260.0])
+
+    Changing ["isl: 5->9"], evaluating ...
+412/100000000, 13885.0/18000.0
+414/100000000, 13908.0/18000.0
+415/100000000, 13921.0/18000.0
+        -> worse: (1.0467893050246602 [based on 20 runs with cutoff 260.0])
+    Changing ["isl: 5->6"], evaluating ...
+417/100000000, 13941.0/18000.0
+        -> worse: (1.0498806310067956 [based on 5 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->15000"], evaluating ...
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0415078203875339 [based on 103 runs with cutoff 260.0]) with flip 42
+
+          
+============= Performing 3 bonus runs of state: isl=5 migfreq=15000 (1.0415078203875339 [based on 103 runs with cutoff 260.0]) ============ 
+
+419/100000000, 13958.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 13958.0, 1.0412364760558148 [104, 260.0]. With state isl=5, migfreq=15000
+420/100000000, 13973.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 13973.0, 1.041244463209844 [105, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 13980.0, 1.0414818809961706 [106, 260.0]. With state isl=5, migfreq=15000
+          -> After 3 bonus runs: isl=5 migfreq=15000 (1.0414818809961706 [based on 106 runs with cutoff 260.0])
+
+    Changing ["isl: 5->6"], evaluating ...
+422/100000000, 13991.0/18000.0
+        -> worse: (1.0416991837292418 [based on 12 runs with cutoff 260.0])
+    Changing ["isl: 5->7"], evaluating ...
+423/100000000, 14021.0/18000.0
+425/100000000, 14081.0/18000.0
+        -> worse: (1.0411272788208505 [based on 32 runs with cutoff 260.0])
+    Changing ["isl: 5->9"], evaluating ...
+427/100000000, 14102.0/18000.0
+        -> worse: (1.0417992899352189 [based on 28 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+428/100000000, 14136.0/18000.0
+        -> worse: (1.039391988368349 [based on 11 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+        -> worse: (1.041578098035697 [based on 14 runs with cutoff 260.0])
+    Changing ["isl: 5->8"], evaluating ...
+430/100000000, 14155.0/18000.0
+        -> worse: (1.0468201038905285 [based on 12 runs with cutoff 260.0])
+    Changing ["isl: 5->4"], evaluating ...
+431/100000000, 14169.0/18000.0
+        -> worse: (1.04282227532822 [based on 39 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+432/100000000, 14182.0/18000.0
+        -> worse: (1.0405762766519138 [based on 13 runs with cutoff 260.0])
+          
+============= Performing 8 bonus runs of state: isl=5 migfreq=15000 (1.0414818809961706 [based on 106 runs with cutoff 260.0]) ============ 
+
+ Same incumbent, new precision:
+New Incumbent: 14189.0, 1.0414700554789857 [107, 260.0]. With state isl=5, migfreq=15000
+434/100000000, 14205.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 14205.0, 1.0416161133530721 [108, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 14213.0, 1.0424811969410155 [109, 260.0]. With state isl=5, migfreq=15000
+436/100000000, 14250.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 14250.0, 1.0424453948223285 [110, 260.0]. With state isl=5, migfreq=15000
+437/100000000, 14281.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 14281.0, 1.0424577672532271 [111, 260.0]. With state isl=5, migfreq=15000
+438/100000000, 14306.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 14306.0, 1.0423881119496117 [112, 260.0]. With state isl=5, migfreq=15000
+439/100000000, 14344.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 14344.0, 1.042380256592333 [113, 260.0]. With state isl=5, migfreq=15000
+440/100000000, 14506.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 14506.0, 1.0423158034925801 [114, 260.0]. With state isl=5, migfreq=15000
+          -> After 8 bonus runs for LM: isl=5 migfreq=15000 (1.0423158034925801 [based on 114 runs with cutoff 260.0])
+
+   LM for iteration 14: isl=5 migfreq=15000 (1.0423158034925801 [based on 114 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 14): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 14): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0423158034925801, based on 114 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0423158034925801 [based on 114 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0423158034925801 [based on 114 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 14506.0, 1.0423158034925801 [114, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0423158034925801 [based on 114 runs with cutoff 260.0])
+440/100000000, 14506.0/18000.0
+iteration 15, flip 44, evaluation count 440
+    perturb to ---> isl=6 migfreq=15000 (1.0416991837292418 [based on 12 runs with cutoff 260.0])
+    perturb to ---> isl=6 migfreq=25000 (1.0498806310067956 [based on 5 runs with cutoff 260.0])
+    perturb to ---> isl=9 migfreq=25000 (1.0467893050246602 [based on 20 runs with cutoff 260.0])
+441/100000000, 14517.0/18000.0
+   BLS in iteration 15, start with isl=9 migfreq=25000 (1.0465040206329608 [based on 21 runs with cutoff 260.0])
+    Changing ["isl: 9->4"], evaluating ...
+442/100000000, 14531.0/18000.0
+        -> worse: (1.039980128154497 [based on 13 runs with cutoff 260.0])
+    Changing ["isl: 9->5"], evaluating ...
+444/100000000, 14551.0/18000.0
+        -> worse: (1.0450329993756915 [based on 22 runs with cutoff 260.0])
+    Changing ["isl: 9->8"], evaluating ...
+        -> worse: (1.0508468261640052 [based on 8 runs with cutoff 260.0])
+    Changing ["isl: 9->7"], evaluating ...
+446/100000000, 14564.0/18000.0
+          -> Take improving step to neighbour isl=7 migfreq=25000 (1.044882611519626 [based on 39 runs with cutoff 260.0]) with flip 44
+
+          
+============= Performing 5 bonus runs of state: isl=7 migfreq=25000 (1.044882611519626 [based on 39 runs with cutoff 260.0]) ============ 
+
+448/100000000, 14589.0/18000.0
+449/100000000, 14695.0/18000.0
+450/100000000, 14706.0/18000.0
+451/100000000, 14779.0/18000.0
+          -> After 5 bonus runs: isl=7 migfreq=25000 (1.0449629778437812 [based on 44 runs with cutoff 260.0])
+
+    Changing ["isl: 7->6"], evaluating ...
+452/100000000, 14821.0/18000.0
+        -> worse: (1.0471018226827076 [based on 6 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->5000"], evaluating ...
+453/100000000, 14887.0/18000.0
+        -> worse: (1.0422170942361135 [based on 7 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->10000"], evaluating ...
+        -> worse: (1.0543307158412576 [based on 4 runs with cutoff 260.0])
+    Changing ["isl: 7->10"], evaluating ...
+455/100000000, 14921.0/18000.0
+        -> worse: (1.0432448349539842 [based on 10 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->15000"], evaluating ...
+456/100000000, 14997.0/18000.0
+        -> worse: (1.041167326231022 [based on 33 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->20000"], evaluating ...
+457/100000000, 15010.0/18000.0
+        -> worse: (1.043464572673006 [based on 5 runs with cutoff 260.0])
+          
+============= Performing 6 bonus runs of state: isl=7 migfreq=25000 (1.0449629778437812 [based on 44 runs with cutoff 260.0]) ============ 
+
+459/100000000, 15025.0/18000.0
+460/100000000, 15064.0/18000.0
+461/100000000, 15125.0/18000.0
+462/100000000, 15137.0/18000.0
+463/100000000, 15148.0/18000.0
+          -> After 6 bonus runs for LM: isl=7 migfreq=25000 (1.0433658671131985 [based on 50 runs with cutoff 260.0])
+
+   LM for iteration 15: isl=7 migfreq=25000 (1.0433658671131985 [based on 50 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 15): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 15): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0423158034925801, based on 114 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=7 migfreq=25000 (1.0433658671131985 [based on 50 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0423158034925801 [based on 114 runs with cutoff 260.0])
+Incumbent better, keeping it
+rejecting worse isl=7 migfreq=25000 (1.0433658671131985 [based on 50 runs with cutoff 260.0]), going back to isl=5 migfreq=15000 (1.0423158034925801 [based on 114 runs with cutoff 260.0])
+463/100000000, 15148.0/18000.0
+iteration 16, flip 46, evaluation count 463
+    perturb to ---> isl=6 migfreq=15000 (1.0416991837292418 [based on 12 runs with cutoff 260.0])
+    perturb to ---> isl=6 migfreq=25000 (1.0471018226827076 [based on 6 runs with cutoff 260.0])
+    perturb to ---> isl=9 migfreq=25000 (1.0442087384325898 [based on 23 runs with cutoff 260.0])
+   BLS in iteration 16, start with isl=9 migfreq=25000 (1.0423667076645653 [based on 24 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->5000"], evaluating ...
+465/100000000, 15202.0/18000.0
+        -> worse: (1.0345942981866516 [based on 2 runs with cutoff 260.0])
+    Changing ["migfreq: 25000->15000"], evaluating ...
+466/100000000, 15283.0/18000.0
+          -> Take improving step to neighbour isl=9 migfreq=15000 (1.0417992899352189 [based on 28 runs with cutoff 260.0]) with flip 46
+
+          
+============= Performing 2 bonus runs of state: isl=9 migfreq=15000 (1.0417992899352189 [based on 28 runs with cutoff 260.0]) ============ 
+
+467/100000000, 15314.0/18000.0
+          -> After 2 bonus runs: isl=9 migfreq=15000 (1.042890606410933 [based on 30 runs with cutoff 260.0])
+
+    Changing ["isl: 9->6"], evaluating ...
+469/100000000, 15331.0/18000.0
+        -> worse: (1.0430095762848965 [based on 13 runs with cutoff 260.0])
+    Changing ["isl: 9->4"], evaluating ...
+470/100000000, 15394.0/18000.0
+          -> Take improving step to neighbour isl=4 migfreq=15000 (1.04282227532822 [based on 39 runs with cutoff 260.0]) with flip 47
+
+          
+============= Performing 2 bonus runs of state: isl=4 migfreq=15000 (1.04282227532822 [based on 39 runs with cutoff 260.0]) ============ 
+
+471/100000000, 15407.0/18000.0
+472/100000000, 15424.0/18000.0
+          -> After 2 bonus runs: isl=4 migfreq=15000 (1.0423055605346507 [based on 41 runs with cutoff 260.0])
+
+    Changing ["migfreq: 15000->10000"], evaluating ...
+473/100000000, 15457.0/18000.0
+        -> worse: (1.0446163608234618 [based on 2 runs with cutoff 260.0])
+    Changing ["isl: 4->5"], evaluating ...
+474/100000000, 15696.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0423158034925801 [based on 114 runs with cutoff 260.0]) with flip 48
+
+          
+============= Performing 2 bonus runs of state: isl=5 migfreq=15000 (1.0423158034925801 [based on 114 runs with cutoff 260.0]) ============ 
+
+475/100000000, 15716.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 15716.0, 1.042283523638243 [115, 260.0]. With state isl=5, migfreq=15000
+476/100000000, 15729.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 15729.0, 1.0423236249557415 [116, 260.0]. With state isl=5, migfreq=15000
+          -> After 2 bonus runs: isl=5 migfreq=15000 (1.0423236249557415 [based on 116 runs with cutoff 260.0])
+
+    Changing ["isl: 5->7"], evaluating ...
+        -> worse: (1.0442057096303754 [based on 34 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+478/100000000, 15743.0/18000.0
+        -> worse: (1.0448235885618522 [based on 23 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+        -> worse: (1.038448624690957 [based on 14 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+480/100000000, 15769.0/18000.0
+        -> worse: (1.040273417030414 [based on 15 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+        -> worse: (1.038448624690957 [based on 14 runs with cutoff 260.0])
+    Changing ["isl: 5->8"], evaluating ...
+482/100000000, 15789.0/18000.0
+        -> worse: (1.0477365795106997 [based on 13 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+483/100000000, 15800.0/18000.0
+        -> worse: (1.0391681536586879 [based on 12 runs with cutoff 260.0])
+          
+============= Performing 7 bonus runs of state: isl=5 migfreq=15000 (1.0423236249557415 [based on 116 runs with cutoff 260.0]) ============ 
+
+484/100000000, 15855.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 15855.0, 1.0422217096693365 [117, 260.0]. With state isl=5, migfreq=15000
+485/100000000, 15866.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 15866.0, 1.0421208201135068 [118, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 15875.0, 1.0423310932785927 [119, 260.0]. With state isl=5, migfreq=15000
+487/100000000, 15889.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 15889.0, 1.0419783341679376 [120, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 15898.0, 1.0419401809885849 [121, 260.0]. With state isl=5, migfreq=15000
+489/100000000, 15924.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 15924.0, 1.0419283195645335 [122, 260.0]. With state isl=5, migfreq=15000
+490/100000000, 15941.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 15941.0, 1.0418130752775672 [123, 260.0]. With state isl=5, migfreq=15000
+          -> After 7 bonus runs for LM: isl=5 migfreq=15000 (1.0418130752775672 [based on 123 runs with cutoff 260.0])
+
+   LM for iteration 16: isl=5 migfreq=15000 (1.0418130752775672 [based on 123 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 16): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 16): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0418130752775672, based on 123 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0418130752775672 [based on 123 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0418130752775672 [based on 123 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 15941.0, 1.0418130752775672 [123, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0418130752775672 [based on 123 runs with cutoff 260.0])
+490/100000000, 15941.0/18000.0
+iteration 17, flip 50, evaluation count 490
+    perturb to ---> isl=5 migfreq=10000 (1.038448624690957 [based on 14 runs with cutoff 260.0])
+    perturb to ---> isl=5 migfreq=15000 (1.0418130752775672 [based on 123 runs with cutoff 260.0])
+    perturb to ---> isl=4 migfreq=15000 (1.0420598625010282 [based on 42 runs with cutoff 260.0])
+491/100000000, 15953.0/18000.0
+   BLS in iteration 17, start with isl=4 migfreq=15000 (1.0424453727804133 [based on 43 runs with cutoff 260.0])
+    Changing ["isl: 4->6"], evaluating ...
+        -> worse: (1.0407081172072983 [based on 14 runs with cutoff 260.0])
+    Changing ["isl: 4->7"], evaluating ...
+493/100000000, 16012.0/18000.0
+        -> worse: (1.0451616502095773 [based on 35 runs with cutoff 260.0])
+    Changing ["isl: 4->5"], evaluating ...
+494/100000000, 16033.0/18000.0
+495/100000000, 16044.0/18000.0
+497/100000000, 16101.0/18000.0
+498/100000000, 16214.0/18000.0
+499/100000000, 16230.0/18000.0
+500/100000000, 16243.0/18000.0
+501/100000000, 16310.0/18000.0
+502/100000000, 16321.0/18000.0
+503/100000000, 16337.0/18000.0
+505/100000000, 16355.0/18000.0
+507/100000000, 16378.0/18000.0
+508/100000000, 16391.0/18000.0
+509/100000000, 16420.0/18000.0
+510/100000000, 16451.0/18000.0
+511/100000000, 16621.0/18000.0
+513/100000000, 16656.0/18000.0
+514/100000000, 16668.0/18000.0
+516/100000000, 16735.0/18000.0
+517/100000000, 16749.0/18000.0
+518/100000000, 16816.0/18000.0
+519/100000000, 16913.0/18000.0
+520/100000000, 16926.0/18000.0
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0418130752775672 [based on 123 runs with cutoff 260.0]) with flip 50
+
+          
+============= Performing 3 bonus runs of state: isl=5 migfreq=15000 (1.0418130752775672 [based on 123 runs with cutoff 260.0]) ============ 
+
+521/100000000, 17001.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 17001.0, 1.0418637880290829 [124, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 17011.0, 1.0418877046368686 [125, 260.0]. With state isl=5, migfreq=15000
+523/100000000, 17033.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 17033.0, 1.0418076794806148 [126, 260.0]. With state isl=5, migfreq=15000
+          -> After 3 bonus runs: isl=5 migfreq=15000 (1.0418076794806148 [based on 126 runs with cutoff 260.0])
+
+    Changing ["isl: 5->8"], evaluating ...
+        -> worse: (1.0469698165123071 [based on 14 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+525/100000000, 17055.0/18000.0
+        -> worse: (1.0377356011960726 [based on 15 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+526/100000000, 17216.0/18000.0
+        -> worse: (1.0391577015790063 [based on 16 runs with cutoff 260.0])
+    Changing ["isl: 5->9"], evaluating ...
+        -> worse: (1.04258643814173 [based on 32 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+528/100000000, 17238.0/18000.0
+        -> worse: (1.0429559390384417 [based on 24 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+529/100000000, 17254.0/18000.0
+        -> worse: (1.0377356011960726 [based on 15 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+530/100000000, 17267.0/18000.0
+        -> worse: (1.0405762766519138 [based on 13 runs with cutoff 260.0])
+          
+============= Performing 7 bonus runs of state: isl=5 migfreq=15000 (1.0418076794806148 [based on 126 runs with cutoff 260.0]) ============ 
+
+531/100000000, 17281.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 17281.0, 1.0416681438202728 [127, 260.0]. With state isl=5, migfreq=15000
+532/100000000, 17293.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 17293.0, 1.0417081482136643 [128, 260.0]. With state isl=5, migfreq=15000
+ Same incumbent, new precision:
+New Incumbent: 17303.0, 1.042583481243006 [129, 260.0]. With state isl=5, migfreq=15000
+534/100000000, 17312.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 17312.0, 1.0427667679146786 [130, 260.0]. With state isl=5, migfreq=15000
+535/100000000, 17370.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 17370.0, 1.0427264325399979 [131, 260.0]. With state isl=5, migfreq=15000
+536/100000000, 17385.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 17385.0, 1.0426900676887614 [132, 260.0]. With state isl=5, migfreq=15000
+537/100000000, 17555.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 17555.0, 1.0426324243395957 [133, 260.0]. With state isl=5, migfreq=15000
+          -> After 7 bonus runs for LM: isl=5 migfreq=15000 (1.0426324243395957 [based on 133 runs with cutoff 260.0])
+
+   LM for iteration 17: isl=5 migfreq=15000 (1.0426324243395957 [based on 133 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 17): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 17): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0426324243395957, based on 133 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0426324243395957 [based on 133 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0426324243395957 [based on 133 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 17555.0, 1.0426324243395957 [133, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0426324243395957 [based on 133 runs with cutoff 260.0])
+537/100000000, 17555.0/18000.0
+iteration 18, flip 52, evaluation count 537
+    perturb to ---> isl=10 migfreq=15000 (1.0391577015790063 [based on 16 runs with cutoff 260.0])
+    perturb to ---> isl=6 migfreq=15000 (1.0407081172072983 [based on 14 runs with cutoff 260.0])
+    perturb to ---> isl=9 migfreq=15000 (1.04258643814173 [based on 32 runs with cutoff 260.0])
+538/100000000, 17637.0/18000.0
+   BLS in iteration 18, start with isl=9 migfreq=15000 (1.043462651999139 [based on 33 runs with cutoff 260.0])
+    Changing ["isl: 9->5"], evaluating ...
+          -> Take improving step to neighbour isl=5 migfreq=15000 (1.0426324243395957 [based on 133 runs with cutoff 260.0]) with flip 52
+
+          
+============= Performing 1 bonus runs of state: isl=5 migfreq=15000 (1.0426324243395957 [based on 133 runs with cutoff 260.0]) ============ 
+
+540/100000000, 17651.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 17651.0, 1.042314271919151 [134, 260.0]. With state isl=5, migfreq=15000
+          -> After 1 bonus runs: isl=5 migfreq=15000 (1.042314271919151 [based on 134 runs with cutoff 260.0])
+
+    Changing ["isl: 5->4"], evaluating ...
+541/100000000, 17664.0/18000.0
+        -> worse: (1.0434667663026778 [based on 71 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->10000"], evaluating ...
+542/100000000, 17706.0/18000.0
+        -> worse: (1.0368528817094214 [based on 16 runs with cutoff 260.0])
+    Changing ["isl: 5->8"], evaluating ...
+543/100000000, 17723.0/18000.0
+        -> worse: (1.0453056876085836 [based on 15 runs with cutoff 260.0])
+    Changing ["isl: 5->10"], evaluating ...
+        -> worse: (1.0407608219896802 [based on 17 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->25000"], evaluating ...
+545/100000000, 17857.0/18000.0
+        -> worse: (1.0422830284794187 [based on 25 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->20000"], evaluating ...
+        -> worse: (1.038448624690957 [based on 14 runs with cutoff 260.0])
+    Changing ["isl: 5->7"], evaluating ...
+547/100000000, 17889.0/18000.0
+        -> worse: (1.044869836960653 [based on 36 runs with cutoff 260.0])
+    Changing ["isl: 5->6"], evaluating ...
+        -> worse: (1.0391542186539822 [based on 15 runs with cutoff 260.0])
+    Changing ["migfreq: 15000->5000"], evaluating ...
+549/100000000, 17940.0/18000.0
+        -> worse: (1.0368528817094214 [based on 16 runs with cutoff 260.0])
+          
+============= Performing 9 bonus runs of state: isl=5 migfreq=15000 (1.042314271919151 [based on 134 runs with cutoff 260.0]) ============ 
+
+550/100000000, 18034.0/18000.0
+ Same incumbent, new precision:
+New Incumbent: 18034.0, 1.0425509256632568 [135, 260.0]. With state isl=5, migfreq=15000
+          -> After 9 bonus runs for LM: isl=5 migfreq=15000 (1.0425509256632568 [based on 135 runs with cutoff 260.0])
+
+   LM for iteration 18: isl=5 migfreq=15000 (1.0425509256632568 [based on 135 runs with cutoff 260.0])
+
+========== DETAILED RESULTS (iteration 18): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 18): isl=5, migfreq=15000
+==================================================================
+Training quality of this incumbent parameter configuration: 1.0425509256632568, based on 135 runs with cutoff 260.0
+==================================================================
+
+Comparing LM against incumbent:
+isl=5 migfreq=15000 (1.0425509256632568 [based on 135 runs with cutoff 260.0])
+isl=5 migfreq=15000 (1.0425509256632568 [based on 135 runs with cutoff 260.0])
+LM better, change incumbent
+New Incumbent: 18034.0, 1.0425509256632568 [135, 260.0]. With state isl=5, migfreq=15000
+same state as last ILS: isl=5 migfreq=15000 (1.0425509256632568 [based on 135 runs with cutoff 260.0])
+Final solution for depth 1 with limit N=2000, and cutoff time=260.0.
+New Incumbent: 18034.0, 1.0425509256632568 [135, 260.0]. With state isl=5, migfreq=15000
+
+==================================================================
+ParamILS is finished.
+==================================================================
+
+Final best parameter configuration found: isl=5, migfreq=15000
+==================================================================
+Active parameters: isl=5, migfreq=15000
+
+==================================================================
+Training quality of this final best found parameter configuration: 1.0425509256632568, based on 135 runs with cutoff 260.0
+==================================================================
+
+
+==================================================================
+Computing validation result on independent data -- 100 runs with cutoff time 260.0...
+==================================================================
+C:/JCell/temp/instanciasCSP/CU2.txt: 1.0551423027166882
+C:/JCell/temp/instanciasCSP/OF1.txt: 1.0289473684210526
+C:/JCell/temp/instanciasCSP/Hchl3s.txt: 1.0461630695443644
+C:/JCell/temp/instanciasCSP/ATP38.txt: 1.036981350640489
+C:/JCell/temp/instanciasCSP/CU8.txt: 1.036485405358794
+C:/JCell/temp/instanciasCSP/CHL1s.txt: 1.025281778334377
+C:/JCell/temp/instanciasCSP/ATP34.txt: 1.0234627442206885
+C:/JCell/temp/instanciasCSP/Hchl7s.txt: 1.0328789093825181
+C:/JCell/temp/instanciasCSP/Hchl5s.txt: 1.038892701898879
+C:/JCell/temp/instanciasCSP/A2s.txt: 1.0354422964264791
+C:/JCell/temp/instanciasCSP/STS2s.txt: 1.0060540540540541
+C:/JCell/temp/instanciasCSP/CHL7.txt: 1.0886051460630684
+C:/JCell/temp/instanciasCSP/ATP32.txt: 1.034091217776329
+C:/JCell/temp/instanciasCSP/A4.txt: 1.057504706486394
+C:/JCell/temp/instanciasCSP/W.txt: 1.03736179946626
+C:/JCell/temp/instanciasCSP/CHL5.txt: 1.0077519379844961
+C:/JCell/temp/instanciasCSP/CHL3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/ATP30.txt: 1.034135028219562
+C:/JCell/temp/instanciasCSP/CU6.txt: 1.0470876446933128
+C:/JCell/temp/instanciasCSP/ATP36.txt: 1.0294154698916604
+C:/JCell/temp/instanciasCSP/CU10.txt: 1.047958925241176
+C:/JCell/temp/instanciasCSP/wang2.DAT: 1.0
+C:/JCell/temp/instanciasCSP/CU4.txt: 1.0497923996069856
+C:/JCell/temp/instanciasCSP/3s.txt: 1.0179573512906845
+C:/JCell/temp/instanciasCSP/CU6.txt: 1.0422905519988432
+C:/JCell/temp/instanciasCSP/STS2s.txt: 1.0060540540540541
+C:/JCell/temp/instanciasCSP/CU10.txt: 1.0268424579819386
+C:/JCell/temp/instanciasCSP/ATP34.txt: 1.0491573889945278
+C:/JCell/temp/instanciasCSP/ATP38.txt: 1.0461407314320477
+C:/JCell/temp/instanciasCSP/CHL5.txt: 1.0077519379844961
+C:/JCell/temp/instanciasCSP/A2s.txt: 1.0354422964264791
+C:/JCell/temp/instanciasCSP/A4.txt: 1.0391860073999328
+C:/JCell/temp/instanciasCSP/3s.txt: 1.03736179946626
+C:/JCell/temp/instanciasCSP/Hchl5s.txt: 1.038892701898879
+C:/JCell/temp/instanciasCSP/ATP36.txt: 1.0619405773323154
+C:/JCell/temp/instanciasCSP/CU8.txt: 1.0365698242655372
+C:/JCell/temp/instanciasCSP/ATP30.txt: 1.0298419102330783
+C:/JCell/temp/instanciasCSP/ATP32.txt: 1.024765801658232
+C:/JCell/temp/instanciasCSP/CHL7.txt: 1.0687559354226022
+C:/JCell/temp/instanciasCSP/W.txt: 1.03736179946626
+C:/JCell/temp/instanciasCSP/Hchl7s.txt: 1.041297497071392
+C:/JCell/temp/instanciasCSP/CU2.txt: 1.0538216174748658
+C:/JCell/temp/instanciasCSP/Hchl3s.txt: 1.0414357575240856
+C:/JCell/temp/instanciasCSP/CHL1s.txt: 1.025281778334377
+C:/JCell/temp/instanciasCSP/wang2.DAT: 1.044186046511628
+C:/JCell/temp/instanciasCSP/OF1.txt: 1.0289473684210526
+C:/JCell/temp/instanciasCSP/CHL3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/CU4.txt: 1.0316773088304003
+C:/JCell/temp/instanciasCSP/wang2.DAT: 1.0270682424704536
+C:/JCell/temp/instanciasCSP/ATP36.txt: 1.0294154698916604
+C:/JCell/temp/instanciasCSP/CHL7.txt: 1.0522346194602008
+C:/JCell/temp/instanciasCSP/CU8.txt: 1.0498893612065452
+C:/JCell/temp/instanciasCSP/CHL1s.txt: 1.025281778334377
+C:/JCell/temp/instanciasCSP/CHL3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/ATP32.txt: 1.031764960971379
+C:/JCell/temp/instanciasCSP/3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/W.txt: 1.0
+C:/JCell/temp/instanciasCSP/ATP30.txt: 1.0318555296805658
+C:/JCell/temp/instanciasCSP/Hchl3s.txt: 1.017407962685324
+C:/JCell/temp/instanciasCSP/Hchl5s.txt: 1.0371605417627847
+C:/JCell/temp/instanciasCSP/ATP38.txt: 1.0314165874215275
+C:/JCell/temp/instanciasCSP/CU4.txt: 1.0376783140834187
+C:/JCell/temp/instanciasCSP/A2s.txt: 1.0354422964264791
+C:/JCell/temp/instanciasCSP/STS2s.txt: 1.0060540540540541
+C:/JCell/temp/instanciasCSP/ATP34.txt: 1.0281944191551347
+C:/JCell/temp/instanciasCSP/A4.txt: 1.0391860073999328
+C:/JCell/temp/instanciasCSP/CU6.txt: 1.045872164730868
+C:/JCell/temp/instanciasCSP/OF1.txt: 1.0289473684210526
+C:/JCell/temp/instanciasCSP/CHL5.txt: 1.0077519379844961
+C:/JCell/temp/instanciasCSP/CU10.txt: 1.0235796954019263
+C:/JCell/temp/instanciasCSP/Hchl7s.txt: 1.0547496490407113
+C:/JCell/temp/instanciasCSP/CU2.txt: 1.0870017908458622
+C:/JCell/temp/instanciasCSP/ATP38.txt: 1.0300753064867614
+C:/JCell/temp/instanciasCSP/ATP32.txt: 1.0298668975219132
+C:/JCell/temp/instanciasCSP/A2s.txt: 1.0483392645314353
+C:/JCell/temp/instanciasCSP/3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/ATP36.txt: 1.0485860481529603
+C:/JCell/temp/instanciasCSP/CU2.txt: 1.062790129489372
+C:/JCell/temp/instanciasCSP/Hchl7s.txt: 1.0597085096379877
+C:/JCell/temp/instanciasCSP/ATP30.txt: 1.0356476105075925
+C:/JCell/temp/instanciasCSP/W.txt: 1.0526112185686654
+C:/JCell/temp/instanciasCSP/Hchl3s.txt: 1.0465215901302263
+C:/JCell/temp/instanciasCSP/CHL5.txt: 1.0077519379844961
+C:/JCell/temp/instanciasCSP/OF1.txt: 1.06003098373354
+C:/JCell/temp/instanciasCSP/CHL3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/ATP34.txt: 1.040398428166338
+C:/JCell/temp/instanciasCSP/CHL7.txt: 1.0446809827340802
+C:/JCell/temp/instanciasCSP/CU6.txt: 1.0422905519988432
+C:/JCell/temp/instanciasCSP/CU10.txt: 1.0419066855180772
+C:/JCell/temp/instanciasCSP/STS2s.txt: 1.0060540540540541
+C:/JCell/temp/instanciasCSP/Hchl5s.txt: 1.0512304095191796
+C:/JCell/temp/instanciasCSP/CU8.txt: 1.053126787300583
+C:/JCell/temp/instanciasCSP/CU4.txt: 1.036671500558158
+C:/JCell/temp/instanciasCSP/CHL1s.txt: 1.025281778334377
+C:/JCell/temp/instanciasCSP/wang2.DAT: 1.0270682424704536
+C:/JCell/temp/instanciasCSP/A4.txt: 1.0453391981052276
+C:/JCell/temp/instanciasCSP/STS2s.txt: 1.013946393549793
+C:/JCell/temp/instanciasCSP/CHL3s.txt: 1.0
+C:/JCell/temp/instanciasCSP/CHL5.txt: 1.0077519379844961
+C:/JCell/temp/instanciasCSP/CU4.txt: 1.023136564420968
+Combined result: 1.033411625207899
+
+================================================================
+Final best parameter configuration: isl=5, migfreq=15000
+==================================================================
+Active parameters: isl=5, migfreq=15000
+
+================================================================
+Training quality of this final best found parameter configuration: 1.0425509256632568, based on 135 runs with cutoff 260.0
+Test quality of this final best found parameter configuration: 1.033411625207899, based on 100 independent runs with cutoff 260.0
+==================================================================
