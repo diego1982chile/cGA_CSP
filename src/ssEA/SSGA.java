@@ -54,7 +54,11 @@ public class SSGA extends EvolutionaryAlg
       generationNumber = 0;
       listener.generation(this);
       
-      while ((problem.getNEvals() < evaluationLimit) && (generationNumber < generationLimit))
+      ///////////////////////////// CODIGO AGREGADO //////////////////////////////////          
+      Double bestFitness=0.0;          
+      ///////////////////////////////////////////////////////////////////////////////
+      
+      while ((problem.getNEvals() < evaluationLimit) && (generationNumber < generationLimit) && bestFitness!=problem.getMaxFitness())
       {
 
       		//First parent selection
@@ -139,6 +143,12 @@ public class SSGA extends EvolutionaryAlg
             	generationNumber++;
                 listener.generation(this);
             }
+            
+         //////////////////////////////////////// CODIGO AGREGADO ///////////////////////////////////////////
+         int pos = ((Integer)((Statistic)this.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MAX_FIT_POS)).intValue();
+         Individual bestInd = ((Population) this.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);            
+         bestFitness= (Double)bestInd.getFitness();
+         ///////////////////////////////////////////////////////////////////////////////////////////////////
       }
    }
 }

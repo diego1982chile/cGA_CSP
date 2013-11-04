@@ -74,8 +74,12 @@ public class DistributedGA extends EvolutionaryAlg {
 
         generationNumber = 0;
         listener.generation(this);
+        
+        ///////////////////////////// CODIGO AGREGADO //////////////////////////////////          
+        Double bestFitness=0.0;          
+        ///////////////////////////////////////////////////////////////////////////////
 
-        while ((problem.getNEvals() < evaluationLimit) && (generationNumber < generationLimit)) {
+        while ((problem.getNEvals() < evaluationLimit) && (generationNumber < generationLimit) && bestFitness!=problem.getMaxFitness()) {
             // Apply the breeding loop in every island (elitist ssGAs run in the islands)
             for (int i = 0; i < islands; i++) // Generate a new individual in each sub-population
             {
@@ -186,6 +190,12 @@ public class DistributedGA extends EvolutionaryAlg {
                 generationNumber++;
                 listener.generation(this);
             }
+            
+         //////////////////////////////////////// CODIGO AGREGADO ///////////////////////////////////////////
+         int pos = ((Integer)((Statistic)this.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MAX_FIT_POS)).intValue();
+         Individual bestInd = ((Population) this.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);            
+         bestFitness= (Double)bestInd.getFitness();
+         ///////////////////////////////////////////////////////////////////////////////////////////////////
         }
     }
 }

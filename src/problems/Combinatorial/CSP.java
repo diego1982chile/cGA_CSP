@@ -65,7 +65,7 @@ public class CSP extends Problem implements Utilities {
         readInst(filename);
     }
 
-    // REPRESENTACION SIMPLIFICADA
+//     REPRESENTACION SIMPLIFICADA
 //    public void readInst(String filename)
 //    {		        
 //        BufferedReader br = null;
@@ -82,6 +82,10 @@ public class CSP extends Problem implements Utilities {
 //
 //            anchoPl= (new Integer(st.nextToken())).intValue();
 //            altoPl= (new Integer(st.nextToken())).intValue();                                       
+//            
+//            st = new StringTokenizer(br.readLine());            
+////            maxFitness = (float) (new Integer(st.nextToken())).intValue();
+//            super.maxFitness = (float) (new Integer(st.nextToken())).intValue();
 //            
 //            st = new StringTokenizer(br.readLine());            
 //            
@@ -169,6 +173,10 @@ public class CSP extends Problem implements Utilities {
             altoPl= (new Integer(st.nextToken())).intValue();                                       
             
             st = new StringTokenizer(br.readLine());            
+//            maxFitness = (float) (new Integer(st.nextToken())).intValue();
+            super.maxFitness = (float) (new Integer(st.nextToken())).intValue();
+            
+            st = new StringTokenizer(br.readLine());            
             
             int num= (new Integer(st.nextToken())).intValue();  
                         
@@ -237,7 +245,7 @@ public class CSP extends Problem implements Utilities {
             longitCrom = alelosReservados + numPie; //Define el largo del cromosoma
             variables = longitCrom;            
             System.out.println("longit crom="+longitCrom);                        
-            maxFitness = (float) (altoPl * anchoPl);
+//            maxFitness = (float) (altoPl * anchoPl);
 //            fitness_inicial = (float) (AltoPl * AnchoPl); //Obtiene el fitness_inicial
             // Establece valor en variables utilizadas en función evaluación
             peso_func_obj = (float) 0.85; // Uso en función evaluación - Factor de la pérdida
@@ -1036,25 +1044,25 @@ public class CSP extends Problem implements Utilities {
     public void exportarIndividuo(Individual ind, int fileId) {
         BinaryIndividual bi = (BinaryIndividual)ind;                      
         funcionConstructora(bi);        
-        heuristicaColocacion2(fenotipo,true);      
-        evaluarLayout(true);        
-        System.out.println("Genotipo="+ind.toString());           
-        Iterator it = fenotipo.iterator();        
-        System.out.print("Fenotipo=");
-        while(it.hasNext())
-        {
-            Pieza p=(Pieza)it.next();
-            System.out.print("(");
-            System.out.print(p.getAncho());
-            System.out.print(",");
-            System.out.print(p.getAlto());
-            System.out.print(")");
-        }
-        System.out.print("\n");
-//        System.out.println("Fenotipo="+fenotipo.toString());                        
-        System.out.println("Perdida total="+perdidaTotal);        
-        System.out.println("Perdida total2="+(anchoPl*altoPl-gananciaTotal));                
-        System.out.println("Ganancia total="+gananciaTotal);
+        heuristicaColocacion2(fenotipo,false);      
+        evaluarLayout(false);        
+//        System.out.println("Genotipo="+ind.toString());           
+//        Iterator it = fenotipo.iterator();        
+//        System.out.print("Fenotipo=");
+//        while(it.hasNext())
+//        {
+//            Pieza p=(Pieza)it.next();
+//            System.out.print("(");
+//            System.out.print(p.getAncho());
+//            System.out.print(",");
+//            System.out.print(p.getAlto());
+//            System.out.print(")");
+//        }
+//        System.out.print("\n");
+////        System.out.println("Fenotipo="+fenotipo.toString());                        
+//        System.out.println("Perdida total="+perdidaTotal);        
+//        System.out.println("Perdida total2="+(anchoPl*altoPl-gananciaTotal));                
+//        System.out.println("Ganancia total="+gananciaTotal);
         ExportarLayout eL= new ExportarLayout(anchoPl,altoPl,layout2,perdidaInterna,perdidaExterna2,fileId);        
         try {
             eL.exportar();

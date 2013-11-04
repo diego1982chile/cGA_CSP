@@ -50,13 +50,21 @@ public class JCell implements GenerationListener
     private static File output= new File("output.csv");        
     DecimalFormat df = new DecimalFormat("0.000000000000000000");               
     
+    // Código agregado para obtener estadísticas del algoritmo
+    private static File output2= new File("output.txt");            
+    
     public static void main (String args[]) throws Exception
     {
-        System.out.println(args[0]);        
-        System.out.println(System.getProperty("java.class.path"));                        
+//        System.out.println(args[0]);        
+//        System.out.println(System.getProperty("java.class.path"));                        
         
         if (output.exists()) {            
             FileOutputStream fos = new FileOutputStream(output, false);        
+            fos.close();
+        }        
+        
+        if (output2.exists()) {            
+            FileOutputStream fos = new FileOutputStream(output2, false);        
             fos.close();
         }        
 
@@ -160,15 +168,31 @@ public class JCell implements GenerationListener
 				best = new Double(sat.evalCount(bestInd));
 			}
 			if (((Boolean)ea.getParam(EvolutionaryAlg.PARAM_VERBOSE)).booleanValue())
-                        {
-				System.out.println("Solution: Best  Generations  Evaluations  Time (ms)  Problem");
+                        {				
                                 /////////////////// Codigo agregado /////////////////
                                 if(prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CSP"))                                
                                 {
                                     int pos = ((Integer)((Statistic)ea.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MAX_FIT_POS)).intValue();
-                                    BinaryIndividual bestInd = (BinaryIndividual) ((Population) ea.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);                                    
+                                    BinaryIndividual bestInd = (BinaryIndividual) ((Population) ea.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);                                                                        
                                     prob.exportarIndividuo(bestInd,1);
-                                    
+                                    System.out.println("Solution: Best  Generations  Evaluations  Time (ms)  Problem");
+                                     // Codigo agregado para escribir en archivo de salida
+                                    BufferedWriter bw = null;                                
+                                    try {
+                                        bw = new BufferedWriter(new FileWriter(output2, true));
+                                        bw.write("optimum="+prob.getMaxFitness()+" best="+ best + " hit="+best.equals(prob.getMaxFitness())+" generation=" + (Integer) ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+ " evals="+ evals +" time="+(fin-inicio));
+                                        bw.newLine();
+                                        bw.flush();
+                                    } catch (IOException ioe) {
+                                        ioe.printStackTrace();
+                                    } finally {                       // always close the file
+                                        if (bw != null) try {
+                                            bw.close();
+                                        } catch (IOException ioe2) {
+                                            // just ignore it
+                                        }
+                                    } // end try/catch/finally
+                                    //////////////////////
                                 }
                                 /////////////////////////////////////////////////////
                         }

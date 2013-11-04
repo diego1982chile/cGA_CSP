@@ -1,0 +1,9 @@
+================================================================
+Final best parameter configuration: crossOp=Spx, pCross=1.0, pMutac=0.9, popSize=150, selecOp1=RouletteWheel, selecOp2=RouletteWheel
+==================================================================
+Active parameters: crossOp=Spx, pCross=1.0, pMutac=0.9, popSize=150, selecOp1=RouletteWheel, selecOp2=RouletteWheel
+
+================================================================
+Training quality of this final best found parameter configuration: 1.0350212573605648, based on 333 runs with cutoff 260.0
+Test quality of this final best found parameter configuration: 1.0286514710236654, based on 100 independent runs with cutoff 260.0
+==================================================================

@@ -69,8 +69,12 @@ public class CellularGA extends EvolutionaryAlg
   		lrSweep = new LineCenterLRSweep(population);
   		udSweep = new LineCenterUDSweep(population);
   	  }
+          
+      ///////////////////////////// CODIGO AGREGADO //////////////////////////////////          
+      Double best=0.0;      
+      ///////////////////////////////////////////////////////////////////////////////
   	
-      while ((problem.getNEvals() < evaluationLimit) && (generationNumber < generationLimit))
+      while ((problem.getNEvals() < evaluationLimit) && (generationNumber < generationLimit) && best!=problem.getMaxFitness())
       {
       	PopGrid auxPop = new PopGrid(population.getDimX(),population.getDimY());
          for (int k=0; k<population.getPopSize(); k++)
@@ -162,6 +166,11 @@ public class CellularGA extends EvolutionaryAlg
 	         if (Target.isBetterOrEqual(optimum, targetFitness))
 	            return; // Stop if we find the best solution
          }
+         //////////////////////////////////////// CODIGO AGREGADO ///////////////////////////////////////////
+         int pos = ((Integer)((Statistic)this.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MAX_FIT_POS)).intValue();
+         Individual bestInd = ((Population) this.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);            
+         best= (Double)bestInd.getFitness();
+         ///////////////////////////////////////////////////////////////////////////////////////////////////
       }
    }
 

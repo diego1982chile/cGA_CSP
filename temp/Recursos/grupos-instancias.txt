@@ -1,0 +1,59 @@
+Evaluaciones medias para encontrar una soluciòn
+Tiempo
+HitRate (porcentaje de ejecuciones exitosas)
+Calidad soluciòn
+Desviaciones estándar
+
+33 Problemas pequeños y medios
+OF1
+OF2
+W
+CU1
+CU2
+CU3
+CU4
+CU5
+CU6
+CU7
+CU8
+CU9
+CU10
+2s
+3s
+A1s
+A2s
+STS2s
+STS4s
+CHL1s
+CHL2s
+CHL3s
+CHL4s
+CHL5
+CHL6
+CHL7
+A3
+A4
+A5
+wang1
+wang2
+wang3
+
+6 problemas dificiles
+Hchl3s
+Hchl4s
+Hchl5s
+Hchl6s
+Hchl7s
+Hchl8s
+
+10 problemas larga escala
+ATP30
+ATP31
+ATP32
+ATP33
+ATP34
+ATP35
+ATP36
+ATP37
+ATP38
+ATP39

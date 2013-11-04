@@ -65,9 +65,13 @@ public class GenGA extends EvolutionaryAlg
 
     generationNumber = 0;
     listener.generation(this);
+    
+    ///////////////////////////// CODIGO AGREGADO //////////////////////////////////          
+    Double bestFitness=0.0;          
+    ///////////////////////////////////////////////////////////////////////////////
              
       // For the termination condition we can set either a max number of generations or a max number of evaluations
-      while ((problem.getNEvals() < evaluationLimit) && (generationNumber < generationLimit))
+      while ((problem.getNEvals() < evaluationLimit) && (generationNumber < generationLimit) && bestFitness!=problem.getMaxFitness())
       {
     	  // Insert the best individual in the population into the new population (elitism) 
       	 if (multiobjective)
@@ -156,6 +160,12 @@ public class GenGA extends EvolutionaryAlg
          generationNumber++;
          // listener is a class for monitoring the search, if needed
          listener.generation(this);
+         
+         //////////////////////////////////////// CODIGO AGREGADO ///////////////////////////////////////////
+         int pos = ((Integer)((Statistic)this.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MAX_FIT_POS)).intValue();
+         Individual bestInd = ((Population) this.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);            
+         bestFitness= (Double)bestInd.getFitness();
+         ///////////////////////////////////////////////////////////////////////////////////////////////////
       }
    }
 }
