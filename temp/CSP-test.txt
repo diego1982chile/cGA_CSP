@@ -21,5 +21,5 @@ C:\JCell\temp\instanciasCSP\Hchl7s.txt 63112
 C:\JCell\temp\instanciasCSP\OF1.txt 2737
 C:\JCell\temp\instanciasCSP\STS2s.txt 4653
 C:\JCell\temp\instanciasCSP\W.txt 2721
-C:\JCell\temp\instanciasCSP\wang2.dat 2694
+C:\JCell\temp\instanciasCSP\wang2.txt 2694
 

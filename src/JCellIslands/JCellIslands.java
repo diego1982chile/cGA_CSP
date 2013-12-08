@@ -29,9 +29,15 @@ import operators.recombination.Px;
 import operators.recombination.UX;
 import operators.replacement.ReplaceIfBetter;
 import operators.replacement.ReplaceIfNonWorse;
+import operators.selection.AnisotropicSelection;
+import operators.selection.BestSelection;
+import operators.selection.CenterSelection;
+import operators.selection.DisSimilarityTournamentSelection;
 import operators.selection.TournamentSelection;
 import operators.selection.RouletteWheelSelection;
 import operators.selection.LinearRankSelection;
+import operators.selection.RandomSelection;
+import operators.selection.SelectionBetween2Best;
 import problems.Combinatorial.CSP;
 import ssEA.SSGA;
 
@@ -156,29 +162,29 @@ public class JCellIslands implements GenerationListener {
                     for (int i = 0; i < args.length; ++i) {                    
 //                        if (args[i].equals("-popSize"))
 //                            popSize= Integer.parseInt(args[++i]); // Capturar tamaño poblacion
-                        if (args[i].equals("-pMutac"))
-                            mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion
-                        if (args[i].equals("-pCross"))                
-                            cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento
-//                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
-//                        {
-//                            if(args[++i].toString().equals("BinaryMutation"))
-//                                ea.setParam("mutation", new BinaryMutation(r, ea));
-//                            if(args[++i].toString().equals("OneGeneMutation"))
-//                                ea.setParam("mutation", new OneGeneMutation(r));                            
-//                        }
-                        if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
-                        {   
-                            crossOp= args[++i].toString();
-                            if(crossOp.contains("Dpx"))
-                                ea.setParam("crossover", new Dpx(r));
-                            else if(crossOp.contains("Spx"))
-                                ea.setParam("crossover", new Spx(r));  
-                            else if(crossOp.contains("Px"))
-                                ea.setParam("crossover", new Px(r));  
-                            else if(crossOp.contains("Ux"))
-                                ea.setParam("crossover", new UX(r));                            
-                        }       
+//                        if (args[i].equals("-pMutac"))
+//                            mutac= Double.parseDouble(args[++i]); // Capturar probabilidad mutacion
+//                        if (args[i].equals("-pCross"))                
+//                            cross= Double.parseDouble(args[++i]); // Capturar probabilidad cruzamiento
+////                        if (args[i].equals("-mutacOp")) // Capturar operador de mutación               
+////                        {
+////                            if(args[++i].toString().equals("BinaryMutation"))
+////                                ea.setParam("mutation", new BinaryMutation(r, ea));
+////                            if(args[++i].toString().equals("OneGeneMutation"))
+////                                ea.setParam("mutation", new OneGeneMutation(r));                            
+////                        }
+//                        if (args[i].equals("-crossOp")) // Capturar operador de cruzamiento
+//                        {   
+//                            crossOp= args[++i].toString();
+//                            if(crossOp.contains("Dpx"))
+//                                ea.setParam("crossover", new Dpx(r));
+//                            else if(crossOp.contains("Spx"))
+//                                ea.setParam("crossover", new Spx(r));  
+//                            else if(crossOp.contains("Px"))
+//                                ea.setParam("crossover", new Px(r));  
+//                            else if(crossOp.contains("Ux"))
+//                                ea.setParam("crossover", new UX(r));                            
+//                        }       
                         if (args[i].equals("-selecOp1")) // Capturar operador de seleccion 1
                         {
                             selecOp1= args[++i].toString();      
@@ -188,17 +194,41 @@ public class JCellIslands implements GenerationListener {
                                 ea.setParam("selection1", new RouletteWheelSelection(r));                                                            
                             else if(selecOp1.contains("LinearRank"))                            
                                 ea.setParam("selection1", new LinearRankSelection(r));                                                                              
+                            else if(selecOp1.contains("Anisotropic"))                            
+                                ea.setParam("selection1", new RouletteWheelSelection(r));                                                            
+                            else if(selecOp1.contains("Best"))                            
+                                ea.setParam("selection1", new LinearRankSelection(r));                                                                                                          
+                            else if(selecOp1.contains("Center"))                            
+                                ea.setParam("selection1", new RouletteWheelSelection(r));                                                            
+                            else if(selecOp1.contains("DisSimilarityTournament"))                            
+                                ea.setParam("selection1", new LinearRankSelection(r));                                                                                                          
+                            else if(selecOp1.contains("Random"))                            
+                                ea.setParam("selection1", new RouletteWheelSelection(r));                                                            
+                            else if(selecOp1.contains("Between2Best"))                            
+                                ea.setParam("selection1", new LinearRankSelection(r));                                                                                                          
                         }
-                        if (args[i].equals("-selecOp2")) // Capturar operador de seleccion 2
+                        if (args[i].equals("-selecOp1")) // Capturar operador de seleccion 1
                         {
-                            selecOp2= args[++i].toString();      
-                            if(selecOp2.contains("BinaryTournament"))                                                            
-                                ea.setParam("selection2", new TournamentSelection(r));                            
-                            else if(selecOp2.contains("RouletteWheel"))                            
-                                ea.setParam("selection2", new RouletteWheelSelection(r));                            
-                            else if(selecOp2.contains("LinearRank"))                            
-                                ea.setParam("selection2", new LinearRankSelection(r));                                            
-                        }                        
+                            selecOp1= args[++i].toString();      
+                            if(selecOp1.contains("BinaryTournament"))                            
+                                ea.setParam("selection2", new TournamentSelection(r));                                                            
+                            else if(selecOp1.contains("RouletteWheel"))                            
+                                ea.setParam("selection2", new RouletteWheelSelection(r));                                                            
+                            else if(selecOp1.contains("LinearRank"))                            
+                                ea.setParam("selection2", new LinearRankSelection(r));                                                                              
+                            else if(selecOp1.contains("Anisotropic"))                            
+                                ea.setParam("selection2", new RouletteWheelSelection(r));                                                            
+                            else if(selecOp1.contains("Best"))                            
+                                ea.setParam("selection2", new LinearRankSelection(r));                                                                                                          
+                            else if(selecOp1.contains("Center"))                            
+                                ea.setParam("selection2", new RouletteWheelSelection(r));                                                            
+                            else if(selecOp1.contains("DisSimilarityTournament"))                            
+                                ea.setParam("selection2", new LinearRankSelection(r));                                                                                                          
+                            else if(selecOp1.contains("Random"))                            
+                                ea.setParam("selection2", new RouletteWheelSelection(r));                                                            
+                            else if(selecOp1.contains("Between2Best"))                            
+                                ea.setParam("selection2", new LinearRankSelection(r));                                                                                                          
+                        }                      
                     }                                              
                 }
                 pop = new Population(popSize);                                     
@@ -274,6 +304,47 @@ public class JCellIslands implements GenerationListener {
                 {
                     // Capturar parametros del AG Celular
                     for (int i = 0; i < args.length; ++i) {                    
+                        if (args[i].equals("-selecOp1")) // Capturar operador de seleccion 1
+                        {
+                            selecOp1= args[++i].toString();      
+                            if(selecOp1.contains("BinaryTournament"))                            
+                                ea.setParam("selection1", new TournamentSelection(r));                                                            
+                            else if(selecOp1.contains("RouletteWheel"))                            
+                                ea.setParam("selection1", new RouletteWheelSelection(r));                                                            
+                            else if(selecOp1.contains("LinearRank"))                            
+                                ea.setParam("selection1", new LinearRankSelection(r));                                                                              
+                            else if(selecOp1.contains("Anisotropic"))                            
+                                ea.setParam("selection1", new AnisotropicSelection(r));                                                            
+                            else if(selecOp1.contains("Best"))                            
+                                ea.setParam("selection1", new BestSelection());                                                                                                          
+                            else if(selecOp1.contains("Center"))                            
+                                ea.setParam("selection1", new CenterSelection(r));                                                            
+                            else if(selecOp1.contains("DisSimilarityTournament"))                            
+                                ea.setParam("selection1", new DisSimilarityTournamentSelection(r));                                                                                                          
+                            else if(selecOp1.contains("Random"))                            
+                                ea.setParam("selection1", new RandomSelection(r));                                                                                                                                                                                               
+                        }
+                        if (args[i].equals("-selecOp2")) // Capturar operador de seleccion 2
+                        {
+                            selecOp1= args[++i].toString();      
+                            if(selecOp1.contains("BinaryTournament"))                            
+                                ea.setParam("selection2", new TournamentSelection(r));                                                            
+                            else if(selecOp1.contains("RouletteWheel"))                            
+                                ea.setParam("selection2", new RouletteWheelSelection(r));                                                            
+                            else if(selecOp1.contains("LinearRank"))                            
+                                ea.setParam("selection2", new LinearRankSelection(r));                                                                              
+                            else if(selecOp1.contains("Anisotropic"))                            
+                                ea.setParam("selection2", new AnisotropicSelection(r));                                                            
+                            else if(selecOp1.contains("Best"))                            
+                                ea.setParam("selection2", new BestSelection());                                                                                                          
+                            else if(selecOp1.contains("Center"))                            
+                                ea.setParam("selection2", new CenterSelection(r));                                                            
+                            else if(selecOp1.contains("DisSimilarityTournament"))                            
+                                ea.setParam("selection2", new DisSimilarityTournamentSelection(r));                                                                                                          
+                            else if(selecOp1.contains("Random"))                            
+                                ea.setParam("selection2", new RandomSelection(r));
+                            
+                        }                        
                         if (args[i].equals("-grid"))
                         {
                             String[] dims=args[++i].toString().split("x");
@@ -316,7 +387,9 @@ public class JCellIslands implements GenerationListener {
 //                        }                                                
 //                    }            
                    }
-                }                                     
+                }      
+                mutac=0.9;
+                cross=1.0;
                 pop = new PopGrid(dX, dY);                
                            		
                 if (!updatePolicy.contains("synchronous"))
@@ -390,8 +463,8 @@ public class JCellIslands implements GenerationListener {
         ea.setParam(EvolutionaryAlg.PARAM_LOCAL_SEARCH_STEPS, 100);        
         ea.setParam(EvolutionaryAlg.PARAM_LOCAL_SEARCH_PROB, 0.0);                
         
-        ea.setParam("selection1", new RouletteWheelSelection(r)); // selection of one parent
-        ea.setParam("selection2", new RouletteWheelSelection(r)); // selection of one parent
+//        ea.setParam("selection1", new RouletteWheelSelection(r)); // selection of one parent
+//        ea.setParam("selection2", new RouletteWheelSelection(r)); // selection of one parent
         ea.setParam("crossover", new Spx(r));
         ea.setParam("mutation", new BinaryMutation(r, ea));
         ea.setParam("replacement", new ReplaceIfBetter());

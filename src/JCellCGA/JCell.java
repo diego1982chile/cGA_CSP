@@ -44,31 +44,25 @@ public class JCell implements GenerationListener
    
     protected double lastRatio = -1.0;
     protected boolean verbose = true;
-    private static EvolutionaryAlg ea;
+    private static EvolutionaryAlg ea;      
     
-    // Código agregado para obtener curvas de convergencia   
-    private static File output= new File("output.csv");        
-    DecimalFormat df = new DecimalFormat("0.000000000000000000");               
+    static String prefix="resultados/";
     
-    // Código agregado para obtener estadísticas del algoritmo
-    private static File output2= new File("output.txt");            
+    DecimalFormat df = new DecimalFormat("0.000000000000000000");  
+    
+    static String algoritmo="";
+    static String instancia="";    
+    static int ejecucion=0;
+    
+    static File curvas_conv;
+    static File resultados;
     
     public static void main (String args[]) throws Exception
     {
 //        System.out.println(args[0]);        
-//        System.out.println(System.getProperty("java.class.path"));                        
-        
-        if (output.exists()) {            
-            FileOutputStream fos = new FileOutputStream(output, false);        
-            fos.close();
-        }        
-        
-        if (output2.exists()) {            
-            FileOutputStream fos = new FileOutputStream(output2, false);        
-            fos.close();
-        }        
+//        System.out.println(System.getProperty("java.class.path"));                                   
 
-    	if (args.length != 1)
+    	if (args.length > 2)
         {
            System.out.println("Error. Try java JCell <ConfigFile>");
            System.exit(-1);
@@ -85,10 +79,61 @@ public class JCell implements GenerationListener
 		// Read the configuration file
                                
 		ReadConf conf = new ReadConf(args[0], r);
+                
+                System.out.println(args.length);
+                
+                if(args.length>1)
+                    ejecucion= Integer.parseInt(args[1]);                
 		
 		// Create and initialice cea with the parameters of the configuration
 //		EvolutionaryAlg ea = conf.getParameters();
 		ea = conf.getParameters();
+                
+                System.out.println(ea.getClass().getName());
+                String nameSpace= ea.getClass().getName();                
+                if(nameSpace.contains("jcell"))
+                    algoritmo=nameSpace.split("jcell.")[1];
+                else if(nameSpace.contains("genEA"))
+                    algoritmo=nameSpace.split("genEA.")[1];
+                else
+                    algoritmo=nameSpace.split("ssEA.")[1];
+                
+                instancia=conf.getProperties().getProperty("InstanceFile").split("/")[4].split(".txt")[0];                                 
+                // Código agregado para obtener curvas de convergencia   
+                curvas_conv= new File(prefix+instancia+"/"+"CurvaConvergencia_"+algoritmo+"_"+instancia+"_"+ejecucion+".csv");                             
+
+                // Código agregado para obtener estadísticas del algoritmo
+                resultados= new File(prefix+instancia+"/"+"Resultados_"+algoritmo+"_"+instancia+".csv");         
+                
+               // Codigo agregado para escribir en archivo de salida
+               BufferedWriter bw = null;                                
+               if(ejecucion==1)
+               {
+                    try {
+                        bw = new BufferedWriter(new FileWriter(resultados, true));                   
+                        bw.write("Ejecucion;Optimo;Best;Hit;Generaciones;Evaluaciones;Tiempo");
+                        bw.newLine();
+                        bw.flush();
+                    } catch (IOException ioe) {
+                        ioe.printStackTrace();
+                    } finally {                       // always close the file
+                        if (bw != null) try {
+                            bw.close();
+                        } catch (IOException ioe2) {
+                            // just ignore it
+                        }
+                    } // end try/catch/finally
+                    //////////////////////
+               }
+//                if (curvas_conv.exists()) {            
+//                    FileOutputStream fos = new FileOutputStream(curvas_conv, false);        
+//                    fos.close();
+//                }        
+//
+//                if (output2.exists()) {            
+//                    FileOutputStream fos = new FileOutputStream(output2, false);        
+//                    fos.close();
+//                }     
 				
 		Problem prob = (Problem)ea.getParam(CellularGA.PARAM_PROBLEM);
 		longitCrom = prob.numberOfVariables();
@@ -173,14 +218,14 @@ public class JCell implements GenerationListener
                                 if(prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CSP"))                                
                                 {
                                     int pos = ((Integer)((Statistic)ea.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MAX_FIT_POS)).intValue();
-                                    BinaryIndividual bestInd = (BinaryIndividual) ((Population) ea.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);                                                                        
-                                    prob.exportarIndividuo(bestInd,1);
+                                    BinaryIndividual bestInd = (BinaryIndividual) ((Population) ea.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);                                                                                                                                                                                                                               
+                                    prob.exportarIndividuo(bestInd,prefix+instancia+"/"+"Layout_"+algoritmo+'_'+instancia+'_'+ejecucion+".txt");
                                     System.out.println("Solution: Best  Generations  Evaluations  Time (ms)  Problem");
                                      // Codigo agregado para escribir en archivo de salida
-                                    BufferedWriter bw = null;                                
+                                    bw = null;                                
                                     try {
-                                        bw = new BufferedWriter(new FileWriter(output2, true));
-                                        bw.write("optimum="+prob.getMaxFitness()+" best="+ best + " hit="+best.equals(prob.getMaxFitness())+" generation=" + (Integer) ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+ " evals="+ evals +" time="+(fin-inicio));
+                                        bw = new BufferedWriter(new FileWriter(resultados, true));
+                                        bw.write(ejecucion+";"+prob.getMaxFitness()+";"+best+";"+best.equals(prob.getMaxFitness())+";"+(Integer) ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+ ";"+ evals +";"+(fin-inicio));
                                         bw.newLine();
                                         bw.flush();
                                     } catch (IOException ioe) {
@@ -234,15 +279,19 @@ public class JCell implements GenerationListener
 			// Get the best Individual
 			int pos = ((Integer)((Statistic)ea.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MAX_FIT_POS)).intValue();
 			Individual bestInd = ((Population) ea.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);
+                        // Get the worst Individual
+			pos = ((Integer)((Statistic)ea.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MIN_FIT_POS)).intValue();
+			Individual worstInd = ((Population) ea.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);
+                        Double avg_fit= ((Double)((Statistic)ea.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.AVG_FIT)).doubleValue();
 			Problem prob = (Problem)ea.getParam(EvolutionaryAlg.PARAM_PROBLEM);
 			if (prob.numberOfObjectives() == 1)
                         {
-				writeLine("Generation: "+(Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+"; Best individual: "+df.format(((Double)bestInd.getFitness()).doubleValue()));
+//				writeLine("Generation: "+(Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+"; Best individual: "+df.format(((Double)bestInd.getFitness()).doubleValue()));
                                 // Codigo agregado para escribir en archivo de salida
                                 BufferedWriter bw = null;                                
                                 try {
-                                    bw = new BufferedWriter(new FileWriter(output, true));
-                                    bw.write((Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+";"+df.format(((Double)bestInd.getFitness()).doubleValue()));
+                                    bw = new BufferedWriter(new FileWriter(curvas_conv, true));
+                                    bw.write((Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+";"+df.format(((Double)bestInd.getFitness()).doubleValue())+";"+df.format(((Double)worstInd.getFitness()).doubleValue())+";"+df.format((Math.round(avg_fit))));
                                     bw.newLine();
                                     bw.flush();
                                 } catch (IOException ioe) {
