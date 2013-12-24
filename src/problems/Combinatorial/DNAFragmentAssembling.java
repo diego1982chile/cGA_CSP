@@ -122,7 +122,7 @@ public class DNAFragmentAssembling extends Problem {
 	}
 
     @Override
-    public void exportarIndividuo(Individual ind, int fileId) {
+    public void exportarIndividuo(Individual ind, String fileId) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }

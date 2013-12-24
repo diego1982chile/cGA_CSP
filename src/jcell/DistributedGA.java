@@ -152,7 +152,6 @@ public class DistributedGA extends EvolutionaryAlg {
                         }
                     }
                 }
-
             }
 
             // Migrate individuals

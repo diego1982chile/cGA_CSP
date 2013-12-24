@@ -127,7 +127,7 @@ public class BinaryIndividual extends Individual
       }
       
       return sum;
-   }
+   }   
    
    // Creates an string with the individual information
    public String toString()

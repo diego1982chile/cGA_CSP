@@ -85,8 +85,13 @@ public class Population
    // Copies the contents of pop in this population
    public void copyPop(Population pop)
    {
-   	  setPopSize(pop.getPopSize());
-      for (int i=0; i<popSize; i++)
-         setIndividual(i,(Individual)pop.getIndividual(i).clone());
+      setPopSize(pop.getPopSize());      
+//      System.out.println("hola");
+      for (int i=0; i<popSize; i++){                    
+//         System.out.print(pop.getIndividual(i).clone().toString()+"             ");         
+          setIndividual(i,(Individual)pop.getIndividual(i).clone());                    
+//         System.out.print("i="+i+" "+population[i].toString()+"             ");
+      }      
+//      System.out.println("chao");
    }
 }

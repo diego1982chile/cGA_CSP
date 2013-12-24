@@ -10,5 +10,5 @@ package jcell;
  */
 public interface Utilities {
     
-   public void exportarIndividuo(Individual ind, int fileId); //Compute the statistical measures for 'pop'      
+   public void exportarIndividuo(Individual ind, String fileId); //Compute the statistical measures for 'pop'      
 }

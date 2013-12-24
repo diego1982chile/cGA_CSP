@@ -22,14 +22,14 @@ public class ExportarLayout {
     public Pair<PiezaLayout,PiezaLayout> perdidaExterna; // Perdida externa     
     public File output;                    
     
-    public ExportarLayout(int w,int h,Map<Integer,PiezaLayout> l,Map<Integer,Pair<PiezaLayout,PiezaLayout> > pi, Pair<PiezaLayout,PiezaLayout> pe, int f)
+    public ExportarLayout(int w,int h,Map<Integer,PiezaLayout> l,Map<Integer,Pair<PiezaLayout,PiezaLayout> > pi, Pair<PiezaLayout,PiezaLayout> pe, String f)
     {    
         ancho=w;
         alto=h;
         layout=l;
         perdidaInterna=pi;
         perdidaExterna=pe;
-        output= new File("layout"+f+".txt");                            
+        output= new File(f);                            
     }
     
     public void exportar() throws FileNotFoundException, IOException

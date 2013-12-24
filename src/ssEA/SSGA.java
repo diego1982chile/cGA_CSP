@@ -25,7 +25,7 @@ public class SSGA extends EvolutionaryAlg
 	   double optimum = 0.0; 
       Operator oper;
       Individual iv[] = new Individual[2]; // used for recombination
-  	  Integer ind[] = new Integer[2];      // For avoiding the same individual to be selected twice
+      Integer ind[] = new Integer[2];      // For avoiding the same individual to be selected twice
  
       
       problem.reset(); // Set evaluations to 0
@@ -60,26 +60,25 @@ public class SSGA extends EvolutionaryAlg
       
       while ((problem.getNEvals() < evaluationLimit) && (generationNumber < generationLimit) && bestFitness!=problem.getMaxFitness())
       {
-
       		//First parent selection
-			oper = (Operator)operators.get("selection1");
-			ind[0] = (Integer)oper.execute(population.getIndividuals());
-			
-			iv[0] = (Individual)population.getIndividual(ind[0].intValue()).clone();
+                oper = (Operator)operators.get("selection1");
+                ind[0] = (Integer)oper.execute(population.getIndividuals());
 
-			//Second parent selection
-			oper = (Operator)operators.get("selection2");
-			if (oper != null)
-		    {
-				ind[1] = (Integer)oper.execute(population.getIndividuals());
-				while (ind[0].intValue() == ind[1].intValue())
-				{
-				    // It is not allowed the same parent to be selected twice
-				    // with this population size
-				    ind[1] = (Integer)oper.execute(population.getIndividuals());
-				}
-				iv[1] = (Individual)population.getIndividual(ind[1].intValue()).clone();
-		    }
+                iv[0] = (Individual)population.getIndividual(ind[0].intValue()).clone();
+
+                //Second parent selection
+                oper = (Operator)operators.get("selection2");
+                if (oper != null)
+                {
+                    ind[1] = (Integer)oper.execute(population.getIndividuals());
+                    while (ind[0].intValue() == ind[1].intValue())
+                    {
+                        // It is not allowed the same parent to be selected twice
+                        // with this population size
+                        ind[1] = (Integer)oper.execute(population.getIndividuals());
+                    }
+                    iv[1] = (Individual)population.getIndividual(ind[1].intValue()).clone();
+                }
             
             //recombination
             oper = (Operator)operators.get("crossover");

@@ -57,6 +57,8 @@ public class JCell implements GenerationListener
     static File curvas_conv;
     static File resultados;
     
+    static boolean experimento=true;
+    
     public static void main (String args[]) throws Exception
     {
 //        System.out.println(args[0]);        
@@ -286,24 +288,27 @@ public class JCell implements GenerationListener
 			Problem prob = (Problem)ea.getParam(EvolutionaryAlg.PARAM_PROBLEM);
 			if (prob.numberOfObjectives() == 1)
                         {
-//				writeLine("Generation: "+(Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+"; Best individual: "+df.format(((Double)bestInd.getFitness()).doubleValue()));
+				writeLine("Generation: "+(Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+"; Best individual: "+df.format(((Double)bestInd.getFitness()).doubleValue()));
                                 // Codigo agregado para escribir en archivo de salida
-                                BufferedWriter bw = null;                                
-                                try {
-                                    bw = new BufferedWriter(new FileWriter(curvas_conv, true));
-                                    bw.write((Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+";"+df.format(((Double)bestInd.getFitness()).doubleValue())+";"+df.format(((Double)worstInd.getFitness()).doubleValue())+";"+df.format((Math.round(avg_fit))));
-                                    bw.newLine();
-                                    bw.flush();
-                                } catch (IOException ioe) {
-                                    ioe.printStackTrace();
-                                } finally {                       // always close the file
-                                    if (bw != null) try {
-                                        bw.close();
-                                    } catch (IOException ioe2) {
-                                        // just ignore it
-                                    }
-                                } // end try/catch/finally
-                                //////////////////////
+                                if(experimento)
+                                {
+                                    BufferedWriter bw = null;                                
+                                    try {
+                                        bw = new BufferedWriter(new FileWriter(curvas_conv, true));
+                                        bw.write((Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+";"+df.format(((Double)bestInd.getFitness()).doubleValue())+";"+df.format(((Double)worstInd.getFitness()).doubleValue())+";"+df.format((Math.round(avg_fit))));
+                                        bw.newLine();
+                                        bw.flush();
+                                    } catch (IOException ioe) {
+                                        ioe.printStackTrace();
+                                    } finally {                       // always close the file
+                                        if (bw != null) try {
+                                            bw.close();
+                                        } catch (IOException ioe2) {
+                                            // just ignore it
+                                        }
+                                    } // end try/catch/finally
+                                    //////////////////////
+                                }
                         }
 			else
                         {

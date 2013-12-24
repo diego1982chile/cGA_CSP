@@ -52,7 +52,7 @@ public class GenGA extends EvolutionaryAlg
 	else // if the problem is not multiobjective
 	{
 	  // Compute some statistic measures from the population
-      statistic.calculate(population);
+          statistic.calculate(population);
     
 	  if (Target.maximize) // if it is a maximization problem
 	  	optimum = ((Double)statistic.getStat(SimpleStats.MAX_FIT_VALUE)).doubleValue();
@@ -83,7 +83,7 @@ public class GenGA extends EvolutionaryAlg
       	 
          for (int k=1; k<population.getPopSize(); k++)
          {
-        	 // BREEDING LOOP:
+            // BREEDING LOOP:
         	 
             // First parent selection
 			oper = (Operator)operators.get("selection1");

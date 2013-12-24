@@ -122,4 +122,9 @@ public abstract class Problem implements Utilities
    {
    	return minAllowedValues;
    }
+   
+   @Override
+    public void exportarIndividuo(Individual ind, String fileId) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

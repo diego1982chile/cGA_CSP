@@ -893,7 +893,7 @@ public class CSP extends Problem implements Utilities {
         // Mientras hayan piezas por colocar                
         while(cont<max) 
         {                                                              
-            Pieza pieza = fenotipo_temp.get(cont); // Seleccionar la pieza             
+            Pieza pieza = fenotipo_temp.get(cont); // Seleccionar la pieza            
             
             while(pieza.getCantidad()>0)                                                          
             {                                
@@ -913,6 +913,21 @@ public class CSP extends Problem implements Utilities {
             if(verbose)
                 mostrarLayout();
         } 
+        // Aqui se hace una post-optimizacion, intentando colocar piezas que no fueron consideradas en el fenotipo, en las pérdidas remanentes        
+        cont=0;
+        max=piezas.length;                
+        
+        while(cont<max-1)
+        {
+            Pieza p=piezas[cont];
+            // Si la pieza actual no esta en el fenotipo intentar insertarla
+            if(!p.existePieza(fenotipo))   
+            {
+                colocarPieza(p);                
+            }
+            cont++;
+        } 
+        
         idL=1;
     }    
     
@@ -1041,28 +1056,12 @@ public class CSP extends Problem implements Utilities {
     }
     
 @Override
-    public void exportarIndividuo(Individual ind, int fileId) {
+    public void exportarIndividuo(Individual ind, String fileId) {
         BinaryIndividual bi = (BinaryIndividual)ind;                      
         funcionConstructora(bi);        
         heuristicaColocacion2(fenotipo,false);      
         evaluarLayout(false);        
-//        System.out.println("Genotipo="+ind.toString());           
-//        Iterator it = fenotipo.iterator();        
-//        System.out.print("Fenotipo=");
-//        while(it.hasNext())
-//        {
-//            Pieza p=(Pieza)it.next();
-//            System.out.print("(");
-//            System.out.print(p.getAncho());
-//            System.out.print(",");
-//            System.out.print(p.getAlto());
-//            System.out.print(")");
-//        }
-//        System.out.print("\n");
-////        System.out.println("Fenotipo="+fenotipo.toString());                        
-//        System.out.println("Perdida total="+perdidaTotal);        
-//        System.out.println("Perdida total2="+(anchoPl*altoPl-gananciaTotal));                
-//        System.out.println("Ganancia total="+gananciaTotal);
+
         ExportarLayout eL= new ExportarLayout(anchoPl,altoPl,layout2,perdidaInterna,perdidaExterna2,fileId);        
         try {
             eL.exportar();

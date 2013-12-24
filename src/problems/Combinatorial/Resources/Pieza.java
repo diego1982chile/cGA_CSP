@@ -6,7 +6,9 @@ package problems.Combinatorial.Resources;
 
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.ListIterator;
 import java.util.Map;
 
 /**
@@ -196,4 +198,18 @@ public class Pieza extends Rectangle {
         }                                    
         return mejorId;        
     }     
+    
+    public boolean existePieza(ArrayList<Pieza> fenotipo)
+    {
+//        ListIterator it = fenotipo.listIterator();
+        
+//        while(it.hasNext())
+//        {
+//            Pieza p=(Pieza)it.next();
+//            
+//            if(p.getId()==this.id)
+//                return true;                            
+//        }            
+        return false;
+    }
 }

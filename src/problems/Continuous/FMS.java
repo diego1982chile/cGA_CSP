@@ -92,7 +92,7 @@ public class FMS extends Problem{
   } //y
 
     @Override
-    public void exportarIndividuo(Individual ind, int fileId) {
+    public void exportarIndividuo(Individual ind, String fileId) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 } // class ProblemFMS
