@@ -40,6 +40,9 @@ public class CSP extends Problem implements Utilities {
     public Pair<PiezaLayout,PiezaLayout> perdidaExterna2= new Pair(null,null); // Perdida externa     
     public int idL=1; // Id de las piezas que se van agregando al layout (Para poder referenciarlas mediante los mapas)       
     public SortedSet<Pieza> tiposPiezasUsados = new TreeSet<>(new ComparaPiezaId()); // Conjunto ordenado de piezas por id             
+
+    public int ERS=0; // EmptyRectangularSpace, se usa para el fitness modificado (el area de la perdida mayor)
+    public int MVR=999999; // MinimumValueRectangle, se usa para el fitness modificado (en este caso equivale al area de la pieza mas pequeña
     
     int bitSalto; // 
     int cantPiezasFenotipo; // Largo arreglo fenotipo
@@ -196,7 +199,9 @@ public class CSP extends Problem implements Utilities {
                 alto= (new Integer(st.nextToken())).intValue();                         
                 cantidad= (new Integer(st.nextToken())).intValue();                                                         
                 // Insertar pieza
-                piezas_[i]= new Pieza(id,ancho,alto,cantidad);                    
+                piezas_[i]= new Pieza(id,ancho,alto,cantidad);     
+                if(piezas_[i].getArea()<MVR)
+                    MVR=piezas_[i].getArea();
                 // Insertar pieza rotada
                 // piezas[num+i-1]= new Pieza(id+num,alto,ancho,cantidad);                    
                 //Incremento id++ si quiero que sólo cada tipo pieza tenga id distinto
@@ -938,6 +943,7 @@ public class CSP extends Problem implements Utilities {
         tiposPiezasUsados.clear();
         perdidaExterna2.setFirst(null);
         perdidaExterna2.setSecond(null);              
+        ERS=0;
     }        
     
     public double evaluarLayout(boolean verbose)
@@ -946,10 +952,13 @@ public class CSP extends Problem implements Utilities {
         perdidaTotal=0;
         int cantPiezasUsadas=layout2.size();        
         int cont=1;        
-        int cantidadPerdidas=0;
+        int cantidadPerdidas=0;        
+        int perdidasInt=0;
+        int perdidasExt=0;
         
         while(cont<=cantPiezasUsadas)        
-        {                                        
+        {             
+                
             PiezaLayout perdidaV=perdidaInterna.get(cont).getFirst();
             PiezaLayout perdidaH=perdidaInterna.get(cont).getSecond(); 
             gananciaTotal=gananciaTotal+layout2.get(cont).getArea();
@@ -957,19 +966,25 @@ public class CSP extends Problem implements Utilities {
             if(verbose)            
                 layout2.get(cont).mostrar();                           
                             
-            if(perdidaV!=null)
+            if(perdidaV!=null)          
             {
                 perdidaTotal=perdidaTotal+perdidaV.getArea();
+                perdidasInt=perdidasInt+perdidaV.getArea();
                 cantidadPerdidas++;
                 if(verbose)
                     perdidaV.mostrar();
+                if(perdidaV.getArea()>ERS)
+                    ERS=perdidaV.getArea();            
             }
             if(perdidaH!=null)     
             {
                 perdidaTotal=perdidaTotal+perdidaH.getArea();            
+                perdidasInt=perdidasInt+perdidaH.getArea();
                 cantidadPerdidas++;                
                 if(verbose)
                     perdidaH.mostrar();                
+                if(perdidaH.getArea()>ERS)
+                    ERS=perdidaH.getArea();
             }
             // Descontar intersecciones entre perdidas       
             if(perdidaV!=null && perdidaH!=null)
@@ -988,16 +1003,22 @@ public class CSP extends Problem implements Utilities {
         if(perdidaV!=null)            
         {
             perdidaTotal=perdidaTotal+perdidaV.getArea();
+            perdidasExt=perdidasExt+perdidaV.getArea();
             cantidadPerdidas++;
             if(verbose)
-                    perdidaV.mostrar();            
+                perdidaV.mostrar();            
+            if(perdidaV.getArea()>ERS)
+                ERS=perdidaV.getArea();            
         }
         if(perdidaH!=null)     
         {               
             perdidaTotal=perdidaTotal+perdidaH.getArea();          
+            perdidasExt=perdidasExt+perdidaH.getArea();
             cantidadPerdidas++;                     
             if(verbose)
-                    perdidaH.mostrar();            
+                perdidaH.mostrar();            
+            if(perdidaH.getArea()>ERS)
+                ERS=perdidaH.getArea();            
         }
         
         //UnFitness : Componente_Perdida + Componente_Distancia + Componente_Digregacion
@@ -1007,51 +1028,14 @@ public class CSP extends Problem implements Utilities {
         //El sistema podra discriminar la digregacion dentro de 2 TAU, K: Hay que determinarlo experimentalmente.
 
         float areaPlaca=anchoPl*altoPl;
-        float componentePerdida=peso_perdida*(perdidaTotal/areaPlaca);
+//        float componentePerdida=peso_perdida*(perdidaTotal/areaPlaca);
         
         if(cantPiezasUsadas==0)
             perdidaTotal=(int)areaPlaca;               
         
         ListIterator it= fenotipo.listIterator();
-//        int num=0;
-//        int den=0;
-//        
-//        while(it.hasNext())
-//        {
-//            Pieza pieza= (Pieza)it.next();
-//            num=num+(pieza.restriccion-pieza.cantidad);
-//            den=den+pieza.restriccion;
-//        }
-//        
-//        float componenteDistancia=peso_distancia*(num/den);
-//        
-//        float constante= (float) 1.0;                
-//        float tau=constante*tiposPiezasUsados.size();                
-//                        
-//        float componenteDigregacion=(float)(peso_digregacion*(1-Math.exp(-cantidadPerdidas/tau)));                        
-        /*
-        Eval.c_perdidareal = (peso_perdida * (float) ((float) acum/(float) AreaPlaca)); //Componente Perdida
-        Eval.c_distancia   = (peso_distancia * (float) ((float) (NumPie - PieInc) /(float) NumPie)); //Componente Distancia
-        Eval.c_digregacion = (peso_digregacion * (1.0 - expf((float) (((float) -cont)/TAU)))); //Componente Digregacion
-        */
-        
-//        float perdida = (componentePerdida+componenteDistancia+componenteDigregacion);
-//        Eval.piezas = PieInc;
-//        float areaOcup = (float) (areaPlaca - perdidaTotal) / (float) areaPlaca;        
-        float areaOcup = (float) (areaPlaca - perdidaTotal);        
-        
-        float unifPerd;
 
-        if (cantidadPerdidas == 0) unifPerd = (float) 1.0; //OJO -> Ver esto si esta bien.
-        else unifPerd = (float) 1.0 / (float) cantidadPerdidas;        
-
-//        Eval.n_perdidas = cont; //Número de Pérdidas generadas
-//        Eval.areaocupada = AreaOcup;
-//        Eval.calidad = AreaOcup * peso_func_obj + UnifPerd*peso_uni;        
-        
-//        return (areaOcup*peso_func_obj+unifPerd*peso_uni);
-        
-//        return areaOcup;
+//        return gananciaTotal+0.03*MVR*ERS/areaPlaca;
         return gananciaTotal;
     }
     
