@@ -78,9 +78,11 @@ public class CellularGA extends EvolutionaryAlg
       {
       	PopGrid auxPop = new PopGrid(population.getDimX(),population.getDimY());
          for (int k=0; k<population.getPopSize(); k++)
-         {
-        	 // BREEDING LOOP:
-            selectedCell = cellUpdate.nextCell(); // Go to next cell
+         {             
+                 
+        	 // BREEDING LOOP:             
+            selectedCell = cellUpdate.nextCell(); // Go to next cell                        
+            
             neighPoints = neighborhood.getNeighbors(selectedCell);
             population.getFromPoints(neighPoints,neighIndivs);
 
@@ -102,11 +104,16 @@ public class CellularGA extends EvolutionaryAlg
 				iv[1] = (Individual)neighIndivs[ind[1].intValue()].clone();
 			    }
             
+//            System.out.println("PADRE1="+iv[0].toString());
+//            System.out.println("PADRE2="+iv[1].toString());
+            
             // Recombination
             oper = (Operator)operators.get("crossover");
             if (oper != null)
                if (r.nextDouble() < crossoverProb)
                   iv[0] = (Individual)oper.execute(iv);
+            
+//            System.out.println("HIJO="+iv[0].toString());
             
             // Mutation
             oper = (Operator)operators.get("mutation");

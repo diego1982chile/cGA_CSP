@@ -323,7 +323,9 @@ public abstract class Individual implements Cloneable
    // For the multiobjective case
    
    public abstract Object getAllele(int locus); // Returns the value of gene in locatino 'locus'
+   public abstract Object getAllele2(int locus); // Returns the value of gene in locatino 'locus'
    public abstract void setAllele(int locus, Object allele); //  assigns value 'allele' in 'locus'
+   public abstract void setAllele2(int locus, Object allele); //  assigns value 'allele' in 'locus'
    public abstract void mutate(Random r, int locus); // Mutates gene in 'locus'
    public abstract void setRandomValues(Random r); // Assigns random values to the genes
    public abstract void copyIndividual(Individual ind); // Copies the information in 'ind' into another one

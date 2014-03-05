@@ -235,10 +235,10 @@ public class CSP extends Problem implements Utilities {
             
             //Establece la cantidad máxima de tipos de piezas distintos del problema
             id--;
-            // (se duplica para incluir las piezas rotadas)
+            // (se duplica para incluir los bits para el tipo de combinacion)
             cantidadtipospiezas = numPie;                        
             
-            fenotipo=new ArrayList<>(numPie);                                                        
+            fenotipo=new ArrayList<>(2*numPie);                                                        
             perdidaInterna=new HashMap<>();
             layout2=new HashMap<>();                    
             
@@ -247,7 +247,7 @@ public class CSP extends Problem implements Utilities {
             if (numPie == 0) 
                 System.out.println("ERROR: No se registraron piezas en el archivo de entrada");                                    
                         
-            longitCrom = alelosReservados + numPie; //Define el largo del cromosoma
+            longitCrom = alelosReservados + 2*numPie; //Define el largo del cromosoma
             variables = longitCrom;            
             System.out.println("longit crom="+longitCrom);                        
 //            maxFitness = (float) (altoPl * anchoPl);
@@ -273,8 +273,8 @@ public class CSP extends Problem implements Utilities {
         fenotipo.clear();
         // Obtener string correspondiente a las piezas
         boolean[] piezasg= Arrays.copyOfRange(genotipo.alleles,1+bitSalto,cantidadtipospiezas+1+bitSalto);                  
-        // Obtener string correspondiente a las rotaciones
-//        boolean[] rotaciong= Arrays.copyOfRange(genotipo.alleles,cantidadtipospiezas+1+bitSalto,2*cantidadtipospiezas+1+bitSalto);                          
+        // Obtener string correspondiente a las combinaciones
+        boolean[] combinaciong= Arrays.copyOfRange(genotipo.alleles,cantidadtipospiezas+1+bitSalto,2*cantidadtipospiezas+1+bitSalto);                          
         // Obtener parametros para recorrer el string de piezas y rotaciones de los bits reservados        
         boolean sentidog=genotipo.getBooleanAllele(0);                               
 
@@ -304,7 +304,8 @@ public class CSP extends Problem implements Utilities {
                     int ancho=piezas[desplazamiento].getAncho();
                     int alto=piezas[desplazamiento].getAlto();
                     int cantidad=piezas[desplazamiento].getCantidad();                    
-                    fenotipo.add(new Pieza(id,ancho,alto,cantidad));
+                    boolean combinacion=combinaciong[desplazamiento];
+                    fenotipo.add(new Pieza(id,ancho,alto,cantidad,combinacion));
                     
                     // Descartar la pieza
                     piezasg[desplazamiento]=false;
@@ -818,6 +819,7 @@ public class CSP extends Problem implements Utilities {
         }
         // Sino esta vacia, intentar insertar la pieza en alguna perdida interna (first fit o best fit)
         PiezaLayout perdida=null;
+        PiezaLayout perdida2=null;
         int idPiezaLayout=pieza.firstFit(perdidaInterna);  
         
         if(idPiezaLayout>0) // Si es posible insertar en la perdida interna vertical asociada a la pieza
@@ -835,19 +837,33 @@ public class CSP extends Problem implements Utilities {
             idL++;                                
             return true;
         }                
-        // Sino se pudo insertar en una perdida interna, intentar insertarla en una perdida externa (first fit o best fit)                       
-        idPiezaLayout=pieza.bestFitExt(perdidaExterna2);  
         
-        if(idPiezaLayout>0) // Si es posible insertar en la perdida externa vertical        
-            perdida=perdidaExterna2.getFirst();                         
-        if(idPiezaLayout<0) // Si es posible insertar en la perdida interna horizontal
-            perdida=perdidaExterna2.getSecond();                     
-        if(idPiezaLayout!=0) // Si se encontro una perdida, insertar la pieza
+        if(!pieza.getCombinacion())
+        { // Precedencia V->H
+            perdida=perdidaExterna2.getFirst();
+            perdida2=perdidaExterna2.getSecond();
+        }
+        else
+        { // Precedencia H->V
+            perdida2=perdidaExterna2.getFirst();
+            perdida=perdidaExterna2.getSecond();
+        }
+            
+//        // Sino se pudo insertar en una perdida interna, intentar insertarla en una perdida externa (first fit o best fit)                       
+//        idPiezaLayout=pieza.bestFitExt(perdidaExterna2);  
+        
+        if(pieza.fits(perdida)) // Si se encontro una perdida, insertar la pieza
         {
             insertarPieza(pieza,perdida,0,3);                        
             idL++;                                
             return true;
-        }                                                         
+        }
+        if(pieza.fits(perdida2)) // Si se encontro una perdida, insertar la pieza
+        {
+            insertarPieza(pieza,perdida2,0,3);                        
+            idL++;                                
+            return true;
+        }                    
         // Sino se pudo insertar en una perdida externa, retornar falso
         return false;
     }
@@ -919,19 +935,19 @@ public class CSP extends Problem implements Utilities {
                 mostrarLayout();
         } 
         // Aqui se hace una post-optimizacion, intentando colocar piezas que no fueron consideradas en el fenotipo, en las pérdidas remanentes        
-        cont=0;
-        max=piezas.length;                
-        
-        while(cont<max-1)
-        {
-            Pieza p=piezas[cont];
-            // Si la pieza actual no esta en el fenotipo intentar insertarla
-            if(!p.existePieza(fenotipo))   
-            {
-                colocarPieza(p);                
-            }
-            cont++;
-        } 
+//        cont=0;
+//        max=piezas.length;                
+//        
+//        while(cont<max-1)
+//        {
+//            Pieza p=piezas[cont];
+//            // Si la pieza actual no esta en el fenotipo intentar insertarla
+//            if(!p.existePieza(fenotipo))   
+//            {
+//                colocarPieza(p);                
+//            }
+//            cont++;
+//        } 
         
         idL=1;
     }    

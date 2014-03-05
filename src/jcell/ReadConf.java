@@ -29,6 +29,7 @@ import adaptiveCGA.*;
 import genEA.*;
 import ssEA.*;
 import java.util.Random;
+import java.util.Vector;
 
 import operators.mutation.*;
 import operators.recombination.*;
@@ -520,14 +521,17 @@ public class ReadConf {
 			String indiv = properties.getProperty("Individual");
 			if (indiv == null)
 				throw new MissedPropertyException("Individual");
-			c = Class.forName(indiv);
-			cons = c.getDeclaredConstructors();
+			c = Class.forName(indiv);                        
+			cons = c.getDeclaredConstructors();                        
 			Individual individual = null; // The individual is initialized here.
-			individual = (Individual) c.newInstance();
+                        System.out.println(c);
+                        individual = (Individual) c.newInstance();                                                                                                
+                        System.out.println(individual);
 			individual.setMinMaxAlleleValue(true, problem.getMinAllowedValues());
 			individual.setMinMaxAlleleValue(false, problem.getMaxAllowedValues());
 			individual.setLength(problem.numberOfVariables());
-			individual.setNumberOfFuncts(problem.numberOfObjectives());
+			individual.setNumberOfFuncts(problem.numberOfObjectives());                        
+                        
 			individual.setRandomValues(r);
 			
 			pop.setRandomPop(r,individual); // initialization of the random initial population
@@ -979,12 +983,12 @@ public class ReadConf {
 			String LocalSearch = properties.getProperty("LocalSearch");
 			Operator LS = null;
 			if (LocalSearch != null)
-			{
+			{                                
 				c = Class.forName(LocalSearch);
 				cons = c.getConstructors();
 				
 				for (int i=0; i<cons.length; i++)
-				{
+				{                                        
 					if (cons[0].getParameterTypes().length == 2)
 					// The constructor for every local search needs 2 variables
 					{
@@ -992,6 +996,36 @@ public class ReadConf {
 						aux2[0] = r;
 						aux2[1] = ea;
 						LS = (Operator) cons[0].newInstance(aux2); // Constructor called
+					}
+                                        ////////////////// CODIGO AGREGADO //////////////
+                                        // Si se usa SimulatedAnnealing, el constructor necesita 7 parametros
+                                        if (cons[0].getParameterTypes().length == 7)
+					// The constructor for every local search needs 2 variables
+					{                                               
+						Object[] aux2 = new Object[7];                                                
+						aux2[0] = r;                                                
+						aux2[1] = (Problem)problem;                                                
+                                                // Se utiliza como generador de vecinos, la mutacion
+                                                String neighName = properties.getProperty("NeighOp");                                                
+                                                if (neighName == null)
+                                                    throw new MissedPropertyException("Neighborhood");
+                                                c = Class.forName(neighName);
+                                                Operator neighOp = null;
+                                                Constructor[] cons2 = c.getConstructors();
+                                                if (cons2[0].getParameterTypes().length == 2) 
+                                                // The constructor for every mutation needs 2 variables
+                                                {                                                        
+                                                        Object[] auxNeigh = new Object[2];
+                                                        auxNeigh[0] = r;
+                                                        auxNeigh[1] = ea;
+                                                        neighOp = (Operator) cons2[0].newInstance(auxNeigh); // Constructor called                                                        
+                                                }			
+                                                aux2[2] = (Operator)neighOp;                                                
+                                                aux2[3] = (int)200;                                                
+                                                aux2[4] = (double)10.0;                                                
+                                                aux2[5] = (double)1.0;                                                
+                                                aux2[6] = (double)0.8;                                                
+						LS = (Operator) cons[0].newInstance(aux2); // Constructor called                                                
 					}
 				}
 				

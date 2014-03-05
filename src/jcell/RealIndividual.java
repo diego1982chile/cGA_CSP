@@ -273,4 +273,14 @@ public class RealIndividual extends Individual
 		
 		return true;
 	}
+
+    @Override
+    public Object getAllele2(int locus) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setAllele2(int locus, Object allele) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

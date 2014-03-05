@@ -14,8 +14,7 @@ import java.util.Random;
 public class BinaryIndividual extends Individual
 {
    public boolean alleles[]; // binary chromosome
-   
-   
+      
    // Create a new individual with 10 empty binary genes (to be initialized)
    public BinaryIndividual()
    {
@@ -173,4 +172,14 @@ public class BinaryIndividual extends Individual
       
       return ind;
    }      
+
+    @Override
+    public Object getAllele2(int locus) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setAllele2(int locus, Object allele) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

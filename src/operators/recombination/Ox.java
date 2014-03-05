@@ -51,6 +51,8 @@ public class Ox implements Operator
          cut2 = i;
       }
       
+      System.out.println("cut1="+cut1+" cut2="+cut2);
+      
       if (!Target.isBetterOrEqual(i1, i2))
       {
          auxInd = i1;

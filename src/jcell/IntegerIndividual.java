@@ -128,12 +128,12 @@ public class IntegerIndividual extends Individual
    // Set random values to every gene in position 'locus' assigning them random values 
    // in their allowed ranges
    public void setRandomValues(Random r)
-   {
+   {       
       for (int i=0; i<len; i++)
-      	if ((minAlleleValues!=null) && (maxAlleleValues!=null))
+      	if ((minAlleleValues!=null) && (maxAlleleValues!=null))                    
   	      alleles[i] = ((Integer)minAlleleValues.elementAt(i)).intValue() + 
   	         r.nextInt((((Integer)maxAlleleValues.elementAt(i)).intValue() - 
-  	         		Math.abs(((Integer)minAlleleValues.elementAt(i)).intValue())));
+  	         		Math.abs(((Integer)minAlleleValues.elementAt(i)).intValue())));        
      	  else if ((minAlleleValues!=null) && (maxAlleleValues==null))
   	      alleles[i] = ((Integer)minAlleleValues.elementAt(i)).intValue() + 
   	         r.nextInt((Integer.MAX_VALUE - 
@@ -142,8 +142,8 @@ public class IntegerIndividual extends Individual
      	  	alleles[i] = (Integer.MIN_VALUE + 
   	         r.nextInt(((Integer)maxAlleleValues.elementAt(i)).intValue() - 
   			 		Math.abs(Integer.MIN_VALUE)));
-     	else if ((minAlleleValues==null) && (maxAlleleValues==null))
-  	      alleles[i] = r.nextInt();
+     	else if ((minAlleleValues==null) && (maxAlleleValues==null))                    
+  	      alleles[i] = r.nextInt();        
    }
    
    public void copyIndividual(Individual ind)
@@ -247,5 +247,15 @@ public class IntegerIndividual extends Individual
 				   
 			   }
    }
+
+    @Override
+    public Object getAllele2(int locus) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setAllele2(int locus, Object allele) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 	
 }

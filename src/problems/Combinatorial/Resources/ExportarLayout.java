@@ -53,11 +53,11 @@ public class ExportarLayout {
             
             try {
                 bw = new BufferedWriter(new FileWriter(output, true));
-                bw.write("G,"+(int)pieza.getPosicion().getX()+","+(int)pieza.getPosicion().getY()+","+pieza.getAncho()+","+pieza.getAlto()+";");
+                bw.write("G,"+(int)pieza.getPosicion().getX()+","+(int)pieza.getPosicion().getY()+","+pieza.getAncho()+","+pieza.getAlto()+","+pieza.getId()+";");
                 if(perdidaV!=null)
-                    bw.write("P,"+(int)perdidaV.getPosicion().getX()+","+(int)perdidaV.getPosicion().getY()+","+perdidaV.getAncho()+","+perdidaV.getAlto()+";");                    
+                    bw.write("P,"+(int)perdidaV.getPosicion().getX()+","+(int)perdidaV.getPosicion().getY()+","+perdidaV.getAncho()+","+perdidaV.getAlto()+","+0+";");                    
                 if(perdidaH!=null)
-                    bw.write("P,"+(int)perdidaH.getPosicion().getX()+","+(int)perdidaH.getPosicion().getY()+","+perdidaH.getAncho()+","+perdidaH.getAlto()+";");                                    
+                    bw.write("P,"+(int)perdidaH.getPosicion().getX()+","+(int)perdidaH.getPosicion().getY()+","+perdidaH.getAncho()+","+perdidaH.getAlto()+","+0+";");                                    
 //                bw.newLine();
                 bw.flush();
             } catch (IOException ioe) {
@@ -77,9 +77,9 @@ public class ExportarLayout {
         try {
             bw = new BufferedWriter(new FileWriter(output, true));            
             if(perdidaExtV!=null)            
-                bw.write("P,"+(int)perdidaExtV.getPosicion().getX()+","+(int)perdidaExtV.getPosicion().getY()+","+perdidaExtV.getAncho()+","+perdidaExtV.getAlto()+";");                                    
+                bw.write("P,"+(int)perdidaExtV.getPosicion().getX()+","+(int)perdidaExtV.getPosicion().getY()+","+perdidaExtV.getAncho()+","+perdidaExtV.getAlto()+","+0+";");                                    
             if(perdidaExtH!=null)
-                bw.write("P,"+(int)perdidaExtH.getPosicion().getX()+","+(int)perdidaExtH.getPosicion().getY()+","+perdidaExtH.getAncho()+","+perdidaExtH.getAlto()+";");                                    
+                bw.write("P,"+(int)perdidaExtH.getPosicion().getX()+","+(int)perdidaExtH.getPosicion().getY()+","+perdidaExtH.getAncho()+","+perdidaExtH.getAlto()+","+0+";");                                    
 //            bw.newLine();
             bw.flush();
         } catch (IOException ioe) {

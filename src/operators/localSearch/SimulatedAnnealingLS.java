@@ -25,7 +25,7 @@ public class SimulatedAnnealingLS implements Operator
    
    public SimulatedAnnealingLS(Random r, Problem prob, Operator suc, int steps, double tmax,
       double tmin, double coolingRate)
-   {
+   {      
       this.r = r;
       this.prob = prob;
       this.suc = suc;
@@ -36,7 +36,7 @@ public class SimulatedAnnealingLS implements Operator
    }
    
    public Object execute(Object o)
-   {
+   {      
       Individual current, next;
       double temp, diff;
       
@@ -49,7 +49,7 @@ public class SimulatedAnnealingLS implements Operator
          {
             next = (Individual)suc.execute(current); // get a neighbor solution
             prob.evaluate(next); // evaluate it
-            if (Target.isBetterOrEqual(next.getFitness(), current.getFitness()))
+            if (Target.isBetterOrEqual(next, current))
                current = next; // Accept it if it is better solution
             else
             {

@@ -129,11 +129,12 @@ public class CTDC extends Problem implements Utilities {
             {                
                 for(int j=0;j<piezas_[i].getCantidad();++j)
                 {
-                    piezas[cont]=new Pieza(cont,piezas_[i].getAncho(),piezas_[i].getAlto(),1);
+                    piezas[cont]=new Pieza(piezas_[i].getId(),piezas_[i].getAncho(),piezas_[i].getAlto(),1);   
+                    System.out.print(cont+" ");
+                    piezas[cont].mostrar();
                     ++cont;
-                }                               
-            }                                  
-                             
+                }                                               
+            }                                                                           
             //Establece la cantidad máxima de tipos de piezas distintos del problema
             id--;
             // (se duplica para incluir las piezas rotadas)
@@ -176,18 +177,27 @@ public class CTDC extends Problem implements Utilities {
         int cont=0;                                                                      
         int largoGenotipo= genotipo.getLength();
         
+//        System.out.println(genotipo.toString());
+//        int[] genotipo2= {50,51,0,22,23,57,58,36,1,39,31,24,36,40,24,28,16,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,25,26,27,29,30,31,32,33,34,35,37,38,39,41,42,43,44,45,46,47,48,49,52,53};
+        
         // Mientras exista alguna pieza en el string de piezas
         while(cont<largoGenotipo)                        
         {// Mientras no se haya completado un ciclo en la ruleta de piezas                                                   
-            int pieza=(int)(genotipo.getAllele(cont));
+            int pieza=(int)(genotipo.getAllele(cont));            
+//            int pieza=genotipo2[cont];                  
             // Agregar la pieza al fenotipo
             int id=piezas[pieza].getId();
             int ancho=piezas[pieza].getAncho();
             int alto=piezas[pieza].getAlto();
-            int cantidad=piezas[pieza].getCantidad();                    
-            fenotipo.add(new Pieza(id,ancho,alto,cantidad));                        
+            int cantidad=piezas[pieza].getCantidad();    
+            boolean combinacion=false;
+            if(pieza%2!=0)
+                combinacion=true;
+            
+            fenotipo.add(new Pieza(id,ancho,alto,cantidad,combinacion));                        
             cont++;                                                                       
         }
+//        System.out.println(fenotipo.toString());
         // Fijar el largo del fenotipo
         cantPiezasFenotipo=cont;        
     }                               
@@ -630,6 +640,7 @@ public class CTDC extends Problem implements Utilities {
         }
         // Sino esta vacia, intentar insertar la pieza en alguna perdida interna (first fit o best fit)
         PiezaLayout perdida=null;
+        PiezaLayout perdida2=null;
         int idPiezaLayout=pieza.firstFit(perdidaInterna);  
         
         if(idPiezaLayout>0) // Si es posible insertar en la perdida interna vertical asociada a la pieza
@@ -647,19 +658,44 @@ public class CTDC extends Problem implements Utilities {
             idL++;                                
             return true;
         }                
+        // Intentar hacer un BL
+        idPiezaLayout=pieza.BL(perdidaInterna, layout2, anchoPatron, altoPatron); 
+                
+        if(idPiezaLayout!=0) // Si se encontro un BL, insertar la pieza
+        {
+            // Crear perdida equivalente a la pieza            
+            perdida=perdidaInterna.get(idPiezaLayout).getSecond();
+            insertarPieza(pieza,perdida,idPiezaLayout,2);                        
+            idL++;                                
+            return true;
+        }
+        ///////////////////////
         // Sino se pudo insertar en una perdida interna, intentar insertarla en una perdida externa (first fit o best fit)                       
-        idPiezaLayout=pieza.firstFitExt(perdidaExterna2);  
+//        if(!pieza.getCombinacion())
+//        { // Precedencia V->H
+            perdida=perdidaExterna2.getFirst();
+            perdida2=perdidaExterna2.getSecond();
+//        }
+//        else
+//        { // Precedencia H->V
+//            perdida2=perdidaExterna2.getFirst();
+//            perdida=perdidaExterna2.getSecond();
+//        }
+        //        // Sino se pudo insertar en una perdida interna, intentar insertarla en una perdida externa (first fit o best fit)                       
+//        idPiezaLayout=pieza.bestFitExt(perdidaExterna2);  
         
-        if(idPiezaLayout>0) // Si es posible insertar en la perdida externa vertical        
-            perdida=perdidaExterna2.getFirst();                         
-        if(idPiezaLayout<0) // Si es posible insertar en la perdida interna horizontal
-            perdida=perdidaExterna2.getSecond();                     
-        if(idPiezaLayout!=0) // Si se encontro una perdida, insertar la pieza
+        if(pieza.fits(perdida)) // Si se encontro una perdida, insertar la pieza
         {
             insertarPieza(pieza,perdida,0,3);                        
             idL++;                                
             return true;
-        }                                                         
+        }
+        if(pieza.fits(perdida2)) // Si se encontro una perdida, insertar la pieza
+        {
+            insertarPieza(pieza,perdida2,0,3);                        
+            idL++;                                
+            return true;
+        }                    
         // Sino se pudo insertar en una perdida externa, retornar falso
         return false;
     }
@@ -712,39 +748,27 @@ public class CTDC extends Problem implements Utilities {
         {                                                              
             Pieza pieza = fenotipo_temp.get(cont); // Seleccionar la pieza            
             
-            while(pieza.getCantidad()>0)                                                          
-            {                                
-                if(!colocarPieza(pieza)) // Si no se pudo colocar la pieza en el layout, descartarla             
-                {                    
-                    break;
-                }
-                else // Si se pudo colocar, decrementar las veces que puede repetirse
-                {
-                    tiposPiezasUsados.add(pieza); // Agregar la pieza al conjunto ordenado por id                    
-                    if(descontarPieza(fenotipo,pieza.getId())) // Si la cantidad de la pieza llega a 0, descartarla                    
-                        break;
-                }
-            }
+            colocarPieza(pieza);
+            
             cont++;
             
             if(verbose)
                 mostrarLayout();
         } 
         // Aqui se hace una post-optimizacion, intentando colocar piezas que no fueron consideradas en el fenotipo, en las pérdidas remanentes        
-        cont=0;
-        max=piezas.length;                
-        
-        while(cont<max-1)
-        {
-            Pieza p=piezas[cont];
-            // Si la pieza actual no esta en el fenotipo intentar insertarla
-            if(!p.existePieza(fenotipo))   
-            {
-                colocarPieza(p);                
-            }
-            cont++;
-        } 
-        
+//        cont=0;
+//        max=piezas.length;                
+//        
+//        while(cont<max-1)
+//        {
+//            Pieza p=piezas[cont];
+//            // Si la pieza actual no esta en el fenotipo intentar insertarla
+//            if(!p.existePieza(fenotipo))   
+//            {
+//                colocarPieza(p);                
+//            }
+//            cont++;
+//        }         
         idL=1;
     }    
     

@@ -218,7 +218,8 @@ public class JCell implements GenerationListener
                         {				
                                 /////////////////// Codigo agregado /////////////////
                                 if(prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CSP") ||
-                                   prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CTDC"))                                
+                                   prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CTDC") ||
+                                   prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CTDC2"))                                
                                 {
                                     int pos = ((Integer)((Statistic)ea.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MAX_FIT_POS)).intValue();
                                     Individual bestInd;
@@ -227,7 +228,7 @@ public class JCell implements GenerationListener
                                     else
                                         bestInd = (PermutationIndividual) ((Population) ea.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);
                                     prob.exportarIndividuo(bestInd,prefix+instancia+"/"+"Layout_"+algoritmo+'_'+instancia+'_'+ejecucion+".txt");
-                                    System.out.println("Solution: Best  Generations  Evaluations  Time (ms)  Problem");
+                                    System.out.println("Solution: Best  Generations  Evaluations  Time (ms)  Problem");                                    
                                      // Codigo agregado para escribir en archivo de salida
                                     bw = null;                                
                                     try {
@@ -292,7 +293,8 @@ public class JCell implements GenerationListener
                         Double avg_fit= ((Double)((Statistic)ea.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.AVG_FIT)).doubleValue();
 			Problem prob = (Problem)ea.getParam(EvolutionaryAlg.PARAM_PROBLEM);
 			if (prob.numberOfObjectives() == 1)
-                        {                                
+                        {         
+//                                writeLine(bestInd.toString());
 				writeLine("Generation: "+(Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+"; Best individual: "+df.format(((Double)bestInd.getFitness()).doubleValue()));
                                 // Codigo agregado para escribir en archivo de salida
                                 if(experimento)

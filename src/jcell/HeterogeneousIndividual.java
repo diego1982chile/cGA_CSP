@@ -19,9 +19,10 @@ public class HeterogeneousIndividual extends Individual
    protected Vector variableType;
    
    public HeterogeneousIndividual(Vector types)
-   {
-      this(10,new Vector(10),new Vector(10), types);
+   {      
+      this(10,new Vector(10),new Vector(10), types);      
       variableType = (Vector) types.clone();
+     
    }
    
    public HeterogeneousIndividual(int len, Vector types)
@@ -252,5 +253,15 @@ public class HeterogeneousIndividual extends Individual
 		
 		return true;
 	}
+
+    @Override
+    public Object getAllele2(int locus) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setAllele2(int locus, Object allele) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 }

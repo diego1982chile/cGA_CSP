@@ -107,6 +107,17 @@ public class PiezaLayout extends Pieza{
             return false;
     }
     
+    public boolean coincidePerdida2(PiezaLayout perdida)
+    {
+        if(this==null || perdida==null)
+            return false;            
+        
+        if(this.getPosicion().getLocation().equals(perdida.getPosicion().getLocation()))
+            return true;
+        else
+            return false;
+    }
+        
     public boolean reducirPerdida(PiezaLayout pieza)
     { // Reduce la perdida en funcion de su posicion respecto a la pieza insertada
         // Obtener el vector diferencia entre posicion de la perdida y posicion de la pieza        
@@ -146,4 +157,6 @@ public class PiezaLayout extends Pieza{
         }                                        
         return true;
     }                              
+    
+    
 }
