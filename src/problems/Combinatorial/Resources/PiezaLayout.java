@@ -140,7 +140,7 @@ public class PiezaLayout extends Pieza{
             else // Si la perdida es horizontal se elimina la perdida           
                 return false;                                                    
         }
-        if(angulo==0.0)    
+        if(angulo==0.0 || angulo==pi)    
         { // Si la direccion del vector es horizontal
             if(this.getTipo()==0) // Si la perdida es vertical, se elimina la perdida            
                 return false;                                                                    
@@ -156,7 +156,5 @@ public class PiezaLayout extends Pieza{
             return this.reducirPerdidaV(pieza);                    
         }                                        
         return true;
-    }                              
-    
-    
+    }                                 
 }

@@ -214,7 +214,7 @@ public class JCell implements GenerationListener
 				problems.Combinatorial.SAT sat = (problems.Combinatorial.SAT) (ea.getParam(CellularGA.PARAM_PROBLEM));
 				best = new Double(sat.evalCount(bestInd));
 			}
-			if (((Boolean)ea.getParam(EvolutionaryAlg.PARAM_VERBOSE)).booleanValue())
+			if (true/*((Boolean)ea.getParam(EvolutionaryAlg.PARAM_VERBOSE)).booleanValue()*/)
                         {				
                                 /////////////////// Codigo agregado /////////////////
                                 if(prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CSP") ||

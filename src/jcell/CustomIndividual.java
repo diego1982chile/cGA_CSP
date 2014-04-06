@@ -25,7 +25,7 @@ public class CustomIndividual extends PermutationIndividual{
    {
       super(len);
       alleles2 = new boolean[len];
-   }       
+   }
    
    // Get the allele value in position 'locus'
    // Returns a Boolean object
@@ -53,6 +53,12 @@ public class CustomIndividual extends PermutationIndividual{
    public void setBooleanAllele(int locus, boolean allele)
    {
       alleles2[locus] = allele;
+   }
+   
+   public void setCromosomes(int[] crom1, boolean[] crom2)
+   {
+       alleles=crom1;
+       alleles2=crom2;
    }
    
    public int getIntValue(int gene, int geneSize, int maxValue, int minValue)

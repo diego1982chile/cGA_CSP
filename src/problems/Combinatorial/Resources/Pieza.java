@@ -329,24 +329,28 @@ public class Pieza extends Rectangle {
             if(perdidaV!=null)
             {
                 if(perdidaV.intersection(perdida).getHeight()>0 && perdidaV.intersection(perdida).getWidth()>0)  
-                {
-                    perdidaV=null;
-                    return 0;
+                {                    
+                    if(!perdidaV.reducirPerdida(perdida))                                                                                                            
+                        perdidaV=null;
+//                    return 0;
                 }
             }
             if(perdidaH!=null)
             {
                 if(perdidaH.intersection(perdida).getHeight()>0 && perdidaH.intersection(perdida).getWidth()>0)  
                 {
-                    perdidaH=null;
-                    return 0;
+                    if(!perdidaH.reducirPerdida(perdida))                                                                                                            
+                        perdidaH=null;
+//                    return 0;
                 }
             }                        
         }
         // Si paso todas las pruebas, se asigna la perdida creada al id de la pieza padre y se devuelve
 //        System.out.println(idL);
         if(idL!=0)
+        {            
             perdidas.get(idL).setSecond(perdida);
+        }
         return idL;
     }
 }

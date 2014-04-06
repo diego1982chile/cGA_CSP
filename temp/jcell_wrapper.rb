@@ -1,4 +1,4 @@
-archivo_conf="C:/JCell/src/cfg/genGAforCSP.cfg"
+archivo_conf="C:/JCell/src/cfg/genGAforCSP2.cfg"
 prefix="C:/JCell/temp/instanciasCSP/"
 instancias=["3s.txt","A1s.txt","A2s.txt","A3.txt","A4.txt","A5.txt","ATP30.txt","ATP31.txt","ATP32.txt","ATP33.txt","ATP34.txt","ATP35.txt",
 			"ATP36.txt","ATP37.txt","ATP38.txt","ATP39.txt","CHL1s.txt","CHL2s.txt","CHL3s.txt","CHL4s.txt","CHL5.txt","CHL6.txt","CHL7.txt","CU1.txt",

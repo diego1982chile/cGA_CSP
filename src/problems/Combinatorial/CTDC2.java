@@ -177,8 +177,10 @@ public class CTDC2 extends Problem implements Utilities {
         int largoGenotipo= genotipo.getLength();
         
 //        System.out.println(genotipo.toString());
-//        int[] genotipo2= {50,51,0,22,23,57,58,36,1,39,31,24,36,40,24,28,16,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,25,26,27,29,30,31,32,33,34,35,37,38,39,41,42,43,44,45,46,47,48,49,52,53};
-        
+//        int[] crom_piezas= {50,51,0,22,23,57,58,36,1,39,31,24,36,40,24,28,16,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,25,26,27,29,30,31,32,33,34,35,37,38,39,41,42,43,44,45,46,47,48,49,52,53};
+//        int[] crom_piezas= {50,51,0,21,57,22,58,36,37,38,20,39,40,1,31,24,25,28,16,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20,23,26,27,29,30,32,33,34,35,41,42,43,44,45,46,47,48,49,52,53,54,55,56,59};
+//        boolean[] crom_vh= {false,false,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false};
+//        genotipo.setCromosomes(crom_piezas, crom_vh);
         // Mientras exista alguna pieza en el string de piezas
         while(cont<largoGenotipo)                        
         {// Mientras no se haya completado un ciclo en la ruleta de piezas                                                   
@@ -347,15 +349,15 @@ public class CTDC2 extends Problem implements Utilities {
                     if(idPieza!=idL && pieza.intersection(piezaLayout).getHeight()>0 && 
                        pieza.intersection(piezaLayout).getWidth()>0)                                
                     {
-                        System.out.println("----------------------ME EKIVOKE-----------------------");
-                        pieza.mostrar();
-                        piezaLayout.mostrar();
-                        perdida.mostrar();
-                        layout2.get(idPadre).mostrar();
-                        System.out.println("-------------------------------------------------------"); 
-                        // Deshacer la insercion de la nueva pieza                        
-                        return;
-                        //exportarIndividuo(ci, "resultados/CU9/traza"+Math.random()+".txt");
+//                        System.out.println("----------------------ME EKIVOKE-----------------------");
+//                        pieza.mostrar();
+//                        piezaLayout.mostrar();
+//                        perdida.mostrar();
+//                        layout2.get(idPadre).mostrar();
+//                        System.out.println("-------------------------------------------------------"); 
+                        // Deshacer la insercion de la nueva pieza                                                
+//                        exportarIndividuo(ci, "resultados/CU9/traza"+Math.random()+".txt");
+//                        return;
                     }
                 }                
                 
@@ -438,11 +440,48 @@ public class CTDC2 extends Problem implements Utilities {
                 }
                 break;
             case 2: // Insercion en perdida externa
+                PiezaLayout perdidaN=null;
                 switch(perdida.getTipo())                
                 {
-                    case 0:                        
+                    case 0:                                                
                         if(pieza.getAncho()<=anchoPatron)
                         {// Si la pieza se inserto en la perdida externa vertical y es de menor o igual ancho que el patron
+                            Iterator it2 = perdidaInterna.entrySet().iterator();                                                                                                                
+                            // Buscar perdidas en el extremo superior del patrón
+                            while(it2.hasNext()) 
+                            {                    
+                                Map.Entry pairs = (Map.Entry)it2.next();                        
+                                Pair perdidas=(Pair)pairs.getValue();
+                                Integer idPieza=(Integer)pairs.getKey();                                
+                                
+                                perdidaV=(PiezaLayout)perdidas.getFirst();
+                                perdidaH=(PiezaLayout)perdidas.getSecond();
+                                
+                                if(perdidaV!=null)
+                                {                  
+                                    if(perdidaV.getY()+perdidaV.getAlto()==altoPatron)   
+                                    {
+                                        if(pieza.getX()+pieza.getAncho()<=perdidaV.getX())
+                                            perdidaV.setAlto(perdidaV.getAlto()+pieza.getAlto());                                
+                                        if(perdidaV.getX()<pieza.getX()+pieza.getAncho() && pieza.getX()+pieza.getAncho()<perdidaV.getX()+perdidaV.getAncho())
+                                        {
+                                            
+                                        }
+                                    }   
+                                }                                                                                                
+                                if(perdidaH!=null)
+                                {   
+                                    if(perdidaH.getY()+perdidaH.getAlto()==altoPatron)                                
+                                    {
+                                        if(pieza.getX()+pieza.getAncho()<=perdidaH.getX())
+                                            perdidaH.setAlto(perdidaH.getAlto()+pieza.getAlto());                                                                                                
+                                        if(perdidaH.getX()<pieza.getX()+pieza.getAncho() && pieza.getX()+pieza.getAncho()<perdidaH.getX()+perdidaH.getAncho())
+                                        {
+                                            
+                                        }                                        
+                                    }
+                                }
+                            }
                             // Crear la perdida generada por la pieza
                             anchoPerdidaH=anchoPatron-pieza.getAncho();                                                                                    
                             altoPerdidaH=pieza.getAlto();
@@ -491,22 +530,69 @@ public class CTDC2 extends Problem implements Utilities {
                                         perdidaInterna.get(idPieza).getFirst().setAncho(perdidaV.getAncho()+anchoPerdidaH);                                                                                                                                            
                                 }
                             }                            
-                            perdidaInterna.put(idL,new Pair(null,null));                            
+//                            perdidaInterna.put(idL,new Pair(null,null));                            
                         }
                         break;
-                    case 1:
+                    case 1: 
+                        perdidaInterna.put(idL,new Pair(null,null));
                         if(pieza.getAlto()<=altoPatron)
-                        {// Si la pieza se inserto en la perdida externa horizontal y es de menor o igual alto que el patron
+                        {// Si la pieza se inserto en la perdida externa horizontal y es de menor o igual alto que el patron                            
+                            Iterator it2 = perdidaInterna.entrySet().iterator();                                                                                                                
+                            // Buscar perdidas en el extremo derecho del patrón
+                            while(it2.hasNext()) 
+                            {                    
+                                Map.Entry pairs = (Map.Entry)it2.next();                        
+                                Pair perdidas=(Pair)pairs.getValue();
+                                Integer idPieza=(Integer)pairs.getKey();                                
+                                
+                                perdidaV=(PiezaLayout)perdidas.getFirst();
+                                perdidaH=(PiezaLayout)perdidas.getSecond();
+                                
+                                if(perdidaV!=null)
+                                {                  
+                                    if(perdidaV.getX()+perdidaV.getAncho()==anchoPatron)   
+                                    {
+                                        if(pieza.getY()+pieza.getAlto()<=perdidaV.getY())
+                                            perdidaV.setAncho(perdidaV.getAncho()+pieza.getAncho());  
+                                        if(perdidaV.getY()<pieza.getY()+pieza.getAlto() && pieza.getY()+pieza.getAlto()<perdidaV.getY()+perdidaV.getAlto())                                        
+                                        {
+                                            // crear nueva perdida
+                                            Point posicionPerdidaN=new Point((int)perdidaV.getX(),(int)pieza.getY()+(int)pieza.getAlto());
+                                            int anchoPerdidaN=perdidaV.getAncho()+pieza.getAncho();
+                                            int altoPerdidaN=(int)perdidaV.getY()+(int)perdidaV.getAlto()-((int)pieza.getY()+(int)pieza.getAlto());
+                                            
+                                            perdidaN=new PiezaLayout(0,anchoPerdidaN,altoPerdidaN,1,posicionPerdidaN,0);                                                                                                                                                                                
+                                        }
+                                    }   
+                                }                                                                                                
+                                if(perdidaH!=null)
+                                {   
+                                    if(perdidaH.getX()+perdidaH.getAncho()==anchoPatron)                                
+                                    {
+                                        if(pieza.getY()+pieza.getAlto()<=perdidaH.getY())
+                                            perdidaH.setAncho(perdidaH.getAncho()+pieza.getAncho());                                                                                                
+                                        if(perdidaH.getY()<pieza.getY()+pieza.getAlto() && pieza.getY()+pieza.getAlto()<perdidaH.getY()+perdidaH.getAlto())
+                                        {
+                                            // crear nueva perdida
+                                            Point posicionPerdidaN=new Point((int)perdidaH.getX(),(int)pieza.getY()+(int)pieza.getAlto());
+                                            int anchoPerdidaN=perdidaH.getAncho()+pieza.getAncho();
+                                            int altoPerdidaN=(int)perdidaH.getY()+(int)perdidaH.getAlto()-((int)pieza.getY()+(int)pieza.getAlto());
+                                            
+                                            perdidaN=new PiezaLayout(0,anchoPerdidaN,altoPerdidaN,1,posicionPerdidaN,0);                                                                                                                                                                                
+                                        }                                        
+                                    }
+                                }
+                            }
                             anchoPerdidaV=pieza.getAncho();                                                                                    
                             altoPerdidaV=altoPatron-pieza.getAlto();
                             posicionPerdidaV= new Point(anchoPatron,pieza.getAlto());                                                                                            
                             
-                            perdidaV=new PiezaLayout(0,anchoPerdidaV,altoPerdidaV,1,posicionPerdidaV,0);
+                            perdidaV=new PiezaLayout(0,anchoPerdidaV,altoPerdidaV,1,posicionPerdidaV,0);                                                                                    
                             
                             if(pieza.getAlto()<altoPatron)
-                                perdidaInterna.put(idL,new Pair(perdidaV,null));    
-                            else // Si la pieza es de igual alto que el patron no existen perdidas asociadas
-                                perdidaInterna.put(idL,new Pair(null,null));                                                                                            
+                                perdidaInterna.get(idL).setFirst(perdidaV);
+//                                perdidaInterna.put(idL,new Pair(perdidaV,null));    
+                            // Si la pieza es de igual alto que el patron no existen perdidas asociadas                                                                                                                            
                         }
                         else
                         {// Si la pieza se inserto en la perdida externa horizontal y es de mayor alto que el patron        
@@ -540,7 +626,7 @@ public class CTDC2 extends Problem implements Utilities {
                                         perdidaInterna.get(idPieza).getFirst().setAlto(perdidaV.getAlto()+altoPerdidaV);                                                                                                                                            
                                 }
                             }                               
-                            perdidaInterna.put(idL,new Pair(null,null));                            
+//                            perdidaInterna.put(idL,new Pair(null,null));                            
                         }                        
                         break;
                 }                
@@ -666,16 +752,16 @@ public class CTDC2 extends Problem implements Utilities {
             return true;
         }                
         // Intentar hacer un BL
-        idPiezaLayout=pieza.BL(perdidaInterna, layout2, anchoPatron, altoPatron); 
-                
-        if(idPiezaLayout!=0) // Si se encontro un BL, insertar la pieza
-        {
-            // Crear perdida equivalente a la pieza            
-            perdida=perdidaInterna.get(idPiezaLayout).getSecond();
-            insertarPieza(ci,pieza,perdida,idPiezaLayout,2);                        
-            idL++;                                
-            return true;
-        }
+//        idPiezaLayout=pieza.BL(perdidaInterna, layout2, anchoPatron, altoPatron); 
+//                
+//        if(idPiezaLayout!=0) // Si se encontro un BL, insertar la pieza
+//        {
+//            // Crear perdida equivalente a la pieza            
+//            perdida=perdidaInterna.get(idPiezaLayout).getSecond();
+//            insertarPieza(ci,pieza,perdida,idPiezaLayout,2);                        
+//            idL++;                                
+//            return true;
+//        }
         ///////////////////////
         // Sino se pudo insertar en una perdida interna, intentar insertarla en una perdida externa (first fit o best fit)                       
         if(!pieza.getCombinacion())
@@ -904,7 +990,8 @@ public class CTDC2 extends Problem implements Utilities {
             Logger.getLogger(CTDC.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(CTDC.class.getName()).log(Level.SEVERE, null, ex);
-        }        
+        }
+//        System.exit(0);
     }     
 
     public void mostrarLayout()
