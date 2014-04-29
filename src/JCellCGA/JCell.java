@@ -219,11 +219,13 @@ public class JCell implements GenerationListener
                                 /////////////////// Codigo agregado /////////////////
                                 if(prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CSP") ||
                                    prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CTDC") ||
-                                   prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CTDC2"))                                
+                                   prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CTDC2") ||
+                                   prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.MaxTriangleSum"))                                           
                                 {
                                     int pos = ((Integer)((Statistic)ea.getParam(EvolutionaryAlg.PARAM_STATISTIC)).getStat(SimpleStats.MAX_FIT_POS)).intValue();
                                     Individual bestInd;
-                                    if(prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CSP"))
+                                    if(prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.CSP") ||
+                                       prob.getClass().getName().equalsIgnoreCase("problems.Combinatorial.MaxTriangleSum"))
                                         bestInd = (BinaryIndividual) ((Population) ea.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);                                                                                                                                                                                                                               
                                     else
                                         bestInd = (PermutationIndividual) ((Population) ea.getParam(EvolutionaryAlg.PARAM_POPULATION)).getIndividual(pos);
@@ -295,7 +297,8 @@ public class JCell implements GenerationListener
 			if (prob.numberOfObjectives() == 1)
                         {         
 //                                writeLine(bestInd.toString());
-				writeLine("Generation: "+(Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+"; Best individual: "+df.format(((Double)bestInd.getFitness()).doubleValue()));
+                            
+				System.out.println("Generation: "+(Integer)ea.getParam(CellularGA.PARAM_GENERATION_NUMBER)+"; Best individual: "+df.format(((Double)bestInd.getFitness()).doubleValue()));
                                 // Codigo agregado para escribir en archivo de salida
                                 if(experimento)
                                 {
@@ -315,7 +318,7 @@ public class JCell implements GenerationListener
                                         }
                                     } // end try/catch/finally
                                     //////////////////////
-                                }
+                                }                                
                         }
 			else
                         {

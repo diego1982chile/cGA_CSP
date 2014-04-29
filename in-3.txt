@@ -1,1 +1,0 @@
-ATP31.txt 20 20 linear5 frs 150000 1.0 1.0
